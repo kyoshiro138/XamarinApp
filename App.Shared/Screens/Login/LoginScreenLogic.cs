@@ -57,7 +57,8 @@ namespace App.Shared
 
         public void ShowUserErrorDialog(string message)
         {
-            
+            var dialog = loginScreen.BuildUsernameErrorDialog(message);
+            dialog.Show();
         }
     }
 }

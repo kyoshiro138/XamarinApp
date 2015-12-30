@@ -41,6 +41,7 @@ namespace Xamarin.Core.Android
             {
                 var args = new OnDialogButtonClickEventArgs(Tag, which);
                 OnButtonClicked.Invoke(this, args);
+                OnButtonClicked = null;
             }
 
             dialog.Dismiss();

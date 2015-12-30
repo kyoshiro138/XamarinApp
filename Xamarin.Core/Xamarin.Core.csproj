@@ -47,6 +47,7 @@
     <Compile Include="Service\ServiceResponseEventArgs.cs" />
     <Compile Include="Interface\Dialog\IDialog.cs" />
     <Compile Include="Interface\Dialog\OnDialogButtonClickEventArgs.cs" />
+    <Compile Include="Interface\Dialog\IDialogBuilder.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ItemGroup>

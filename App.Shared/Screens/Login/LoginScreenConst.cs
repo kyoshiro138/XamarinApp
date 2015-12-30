@@ -18,6 +18,8 @@
         public const string ControlTextFieldUsername = "ControlTextFieldUsername";
         public const string ControlTextFieldPassword = "ControlTextFieldPassword";
 
+        public const string DialogUsernameError = "DialogUsernameError";
+
         public const string StringButtonNext = CommonScreenConst.StringButtonNext;
         public const string StringButtonBack = CommonScreenConst.StringButtonBack;
         public const string StringButtonSignIn = "SIGN IN";

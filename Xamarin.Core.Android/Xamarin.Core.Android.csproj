@@ -81,6 +81,7 @@
     <Compile Include="Service\AndroidService.cs" />
     <Compile Include="Dialog\alert\BaseAlertDialog.cs" />
     <Compile Include="Dialog\alert\SystemAlertDialog.cs" />
+    <Compile Include="Dialog\DialogBuilder.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

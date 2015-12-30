@@ -33,6 +33,7 @@ namespace App.Android
         private FadeInAnimator RegisterDisappearAnimator;
 
         private LoginScreenLogic loginSL;
+        private DialogBuilder dialogBuilder;
         private App.Shared.UserManager userManager;
 
         protected override int FragmentLayoutResId
@@ -66,6 +67,8 @@ namespace App.Android
         {
             loginSL = new LoginScreenLogic(this);
             loginSL.InitializeScreen();
+
+            dialogBuilder = new DialogBuilder(Context);
 
             var service = new AppService();
             service.OnResponseSuccess += Service_OnResponseSuccess;
@@ -286,10 +289,23 @@ namespace App.Android
                     }
                     else if (response.ErrorCode.Equals(ServiceConstants.ErrorCodeUserNotExisted))
                     {
-                        
+                        loginSL.ShowUserErrorDialog(response.ErrorMessage);
                     }
                     break;
             }
+        }
+
+        public IDialog BuildUsernameErrorDialog(string message)
+        {
+            var dialog = dialogBuilder.BuildSystemAlertDialog(LoginScreenConst.DialogUsernameError, "", message) as SystemAlertDialog;
+            dialog.OnButtonClicked += Dialog_OnButtonClicked;
+
+            return dialog;
+        }
+
+        private void Dialog_OnButtonClicked (object sender, OnDialogButtonClickEventArgs e)
+        {
+            
         }
     }
 }
