@@ -54,6 +54,11 @@ namespace App.Shared
             ILabel lblUsername = loginScreen.GetControlByTag(LoginScreenConst.ControlLabelUsername) as ILabel;
             lblUsername.Text = user.Username;
         }
+
+        public void ShowUserErrorDialog(string message)
+        {
+            
+        }
     }
 }
 

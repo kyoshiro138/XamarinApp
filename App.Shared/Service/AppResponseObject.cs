@@ -9,7 +9,10 @@ namespace App.Shared
         public bool Status { get; set; }
 
         [JsonProperty("code")]
-        public int Code { get; set; }
+        public int ErrorCode { get; set; }
+
+        [JsonProperty("message")]
+        public string ErrorMessage { get; set; }
     }
 }
 

@@ -10,6 +10,18 @@ namespace App.Shared
 
         [JsonProperty("username")]
         public string Username { get; set; }
+
+        [JsonProperty("userType")]
+        public int UserType { get; set; }
+
+        [JsonProperty("firstName")]
+        public string FirstName { get; set; }
+
+        [JsonProperty("lastName")]
+        public string LastName { get; set; }
+
+        [JsonProperty("avatarUrl")]
+        public string AvatarUrl { get; set; }
     }
 }
 

@@ -45,6 +45,8 @@
     <Compile Include="Service\IService.cs" />
     <Compile Include="Service\BaseResponseObject.cs" />
     <Compile Include="Service\ServiceResponseEventArgs.cs" />
+    <Compile Include="Interface\Dialog\IDialog.cs" />
+    <Compile Include="Interface\Dialog\OnDialogButtonClickEventArgs.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ItemGroup>
@@ -57,5 +59,6 @@
     <Folder Include="Interface\Toolbar\" />
     <Folder Include="Interface\UI\TextField\" />
     <Folder Include="Service\" />
+    <Folder Include="Interface\Dialog\" />
   </ItemGroup>
 </Project>

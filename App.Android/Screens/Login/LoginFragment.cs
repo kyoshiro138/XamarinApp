@@ -157,8 +157,11 @@ namespace App.Android
             base.OnPause();
 
             LayoutAppearAnimator.OnAnimationFinished -= OnAnimationFinished;
+            AvatarAppearAnimator.OnAnimationStarting -= OnAnimationStarting;
             ContentAppearAnimator.OnAnimationStarting -= OnAnimationStarting;
             ContentDisappearAnimator.OnAnimationFinished -= OnAnimationFinished;
+            RegisterDisappearAnimator.OnAnimationFinished -= OnAnimationFinished;
+            RegisterAppearAnimator.OnAnimationStarting -= OnAnimationStarting;
 
             btnNext.Click -= OnButtonClicked;
             btnSignIn.Click -= OnButtonClicked;
@@ -275,8 +278,16 @@ namespace App.Android
             {
                 case LoginScreenConst.ServiceGetBasicInfo:
                     var response = e.ResponseObject as GetLoginInfoResponse;
-                    loginSL.UpdateUserBasicInfo(response.Data.User);
-                    ShowPasswordLayout();
+                    var isSucceess = response.Status.Equals(true);
+                    if (isSucceess)
+                    {
+                        loginSL.UpdateUserBasicInfo(response.Data.User);
+                        ShowPasswordLayout();
+                    }
+                    else if (response.ErrorCode.Equals(ServiceConstants.ErrorCodeUserNotExisted))
+                    {
+                        
+                    }
                     break;
             }
         }

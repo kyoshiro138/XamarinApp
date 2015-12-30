@@ -10,6 +10,8 @@ namespace App.Shared
         public const string UrlAuthentication = "http://demo1616447.mockable.io/authenticate";
         public const string UrlGetProfile = "http://demo1616447.mockable.io/getProfile";
         public const string UrlGetTravelData = "http://demo1616447.mockable.io/getTravelData";
+
+        public const int ErrorCodeUserNotExisted = 200;
     }
 }
 

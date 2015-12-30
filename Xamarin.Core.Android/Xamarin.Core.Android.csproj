@@ -79,6 +79,8 @@
     <Compile Include="Utils\ResourceUtil.cs" />
     <Compile Include="Utils\FontUtil.cs" />
     <Compile Include="Service\AndroidService.cs" />
+    <Compile Include="Dialog\alert\BaseAlertDialog.cs" />
+    <Compile Include="Dialog\alert\SystemAlertDialog.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
