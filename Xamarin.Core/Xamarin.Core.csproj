@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{29E6E83D-C894-4B5E-B4BB-F3EA870A9BE8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Xamarin.Core</RootNamespace>
+    <AssemblyName>Xamarin.Core</AssemblyName>
+    <TargetFrameworkProfile>Profile78</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Interface\UI\IControl.cs" />
+    <Compile Include="Interface\UI\IScreen.cs" />
+    <Compile Include="Interface\UI\ListVIew\IListView.cs" />
+    <Compile Include="Interface\UI\Label\ILabel.cs" />
+    <Compile Include="Interface\UI\ListVIew\IListDataSource.cs" />
+    <Compile Include="Interface\UI\Button\IButton.cs" />
+    <Compile Include="Interface\Navigator\INavigator.cs" />
+    <Compile Include="Interface\Navigator\INavigationScreen.cs" />
+    <Compile Include="Interface\Toolbar\IToolbar.cs" />
+    <Compile Include="Interface\Toolbar\IToolbarScreen.cs" />
+    <Compile Include="Interface\UI\TextField\ITextField.cs" />
+    <Compile Include="Service\IService.cs" />
+    <Compile Include="Service\BaseResponseObject.cs" />
+    <Compile Include="Service\ServiceResponseEventArgs.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Interface\" />
+    <Folder Include="Interface\UI\" />
+    <Folder Include="Interface\UI\ListVIew\" />
+    <Folder Include="Interface\UI\Label\" />
+    <Folder Include="Interface\UI\Button\" />
+    <Folder Include="Interface\Navigator\" />
+    <Folder Include="Interface\Toolbar\" />
+    <Folder Include="Interface\UI\TextField\" />
+    <Folder Include="Service\" />
+  </ItemGroup>
+</Project>

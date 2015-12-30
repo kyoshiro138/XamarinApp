@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{EA580AAD-E6AE-4884-93A6-198E33ABD7C7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Xamarin.Core.Android</RootNamespace>
+    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
+    <AssemblyName>Xamarin.Core.Android</AssemblyName>
+    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <AndroidLinkMode>None</AndroidLinkMode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Android" />
+    <Reference Include="Xamarin.Android.Support.v4">
+      <HintPath>..\packages\Xamarin.Android.Support.v4.23.1.1.0\lib\MonoAndroid403\Xamarin.Android.Support.v4.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.AppCompat">
+      <HintPath>..\packages\Xamarin.Android.Support.v7.AppCompat.23.1.1.0\lib\MonoAndroid403\Xamarin.Android.Support.v7.AppCompat.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.1\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Resources\Resource.designer.cs" />
+    <Compile Include="Activity\BaseFragmentActivity.cs" />
+    <Compile Include="Activity\NavigationDrawer\BaseDrawerActivity.cs" />
+    <Compile Include="Controls\ListView\XamarinListView.cs" />
+    <Compile Include="Utils\PixelConverter.cs" />
+    <Compile Include="Controls\Label\MaterialLabel.cs" />
+    <Compile Include="Controls\ListView\BaseListAdapter.cs" />
+    <Compile Include="Controls\ListView\BaseListItemView.cs" />
+    <Compile Include="Navigator\BaseNavigator.cs" />
+    <Compile Include="Navigator\IParamTransfer.cs" />
+    <Compile Include="Navigator\IParamReceive.cs" />
+    <Compile Include="Fragment\BaseFragment.cs" />
+    <Compile Include="Toolbar\BaseCustomToolbar.cs" />
+    <Compile Include="Toolbar\SystemSupportToolbar.cs" />
+    <Compile Include="Animation\BaseAnimator.cs" />
+    <Compile Include="Animation\ZoomOutAnimator.cs" />
+    <Compile Include="Animation\ZoomInAnimator.cs" />
+    <Compile Include="Animation\ResizeAnimator.cs" />
+    <Compile Include="Animation\FadeInAnimator.cs" />
+    <Compile Include="Animation\FadeOutAnimator.cs" />
+    <Compile Include="Controls\Button\SystemButton.cs" />
+    <Compile Include="Controls\Button\MaterialButton.cs" />
+    <Compile Include="Controls\TextField\SinglelineTextField.cs" />
+    <Compile Include="Controls\TextField\SinglelineTextFieldDense.cs" />
+    <Compile Include="Utils\ResourceUtil.cs" />
+    <Compile Include="Utils\FontUtil.cs" />
+    <Compile Include="Service\AndroidService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\colors_debug.xml" />
+    <AndroidResource Include="Resources\values\colors_material_primary.xml" />
+    <AndroidResource Include="Resources\values\colors_material_text.xml" />
+    <AndroidResource Include="Resources\values\attrs_material.xml" />
+    <AndroidResource Include="Resources\drawable\bg_ratio1x1.xml" />
+    <AndroidResource Include="Resources\drawable\bg_ratio16x9.xml" />
+    <AndroidResource Include="Resources\drawable\bg_text_field_cursor.xml" />
+    <AndroidResource Include="Resources\values\attrs_material_theme.xml" />
+    <AndroidResource Include="Resources\values\styles_material_theme.xml" />
+    <AndroidResource Include="Resources\layout\control_text_field_singleline.axml" />
+    <AndroidResource Include="Resources\layout\control_text_field_singleline_dense.axml" />
+    <AndroidResource Include="Resources\drawable\bg_text_field_divider_default.xml" />
+    <AndroidResource Include="Resources\drawable\bg_text_field_divider_disabled.xml" />
+    <AndroidResource Include="Resources\drawable\bg_text_field_divider_focused.xml" />
+    <AndroidResource Include="Resources\drawable\bg_text_field_divider_error.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controls\" />
+    <Folder Include="Controls\ListView\" />
+    <Folder Include="Activity\" />
+    <Folder Include="Activity\NavigationDrawer\" />
+    <Folder Include="Assets\" />
+    <Folder Include="Assets\Fonts\" />
+    <Folder Include="Utils\" />
+    <Folder Include="Controls\Label\" />
+    <Folder Include="Controls\Button\" />
+    <Folder Include="Resources\drawable\" />
+    <Folder Include="Navigator\" />
+    <Folder Include="Fragment\" />
+    <Folder Include="Animation\" />
+    <Folder Include="Controls\TextField\" />
+    <Folder Include="Resources\layout\" />
+    <Folder Include="Resources\color\" />
+    <Folder Include="Service\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Xamarin.Core\Xamarin.Core.csproj">
+      <Project>{29E6E83D-C894-4B5E-B4BB-F3EA870A9BE8}</Project>
+      <Name>Xamarin.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Fonts\roboto_light.ttf" />
+    <AndroidAsset Include="Assets\Fonts\roboto_medium.ttf" />
+    <AndroidAsset Include="Assets\Fonts\roboto_regular.ttf" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+</Project>

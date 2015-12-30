@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+    <declare-styleable name="MaterialThemeAttribute">
+        <attr name="MaterialTextColor" format="color"/>
+        <attr name="MaterialTextSecondaryColor" format="color"/>
+        <attr name="MaterialTextHintColor" format="color"/>
+        <attr name="MaterialTextDisabledColor" format="color"/>
+        <attr name="MaterialDividerColor" format="color"/>
+
+        <attr name="MaterialTextFieldLabelColor" format="color"/>
+        <attr name="MaterialTextFieldLabelColorPrimary" format="color"/>
+    </declare-styleable>
+</resources>

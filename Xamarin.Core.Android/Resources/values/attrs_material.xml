@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="MaterialLabel">
+        <attr name="display_type" format="enum">
+            <enum name="display4" value="1"/>
+            <enum name="display3" value="2"/>
+            <enum name="display2" value="3"/>
+            <enum name="display1" value="4"/>
+            <enum name="headline" value="5"/>
+            <enum name="title" value="6"/>
+            <enum name="subhead" value="7"/>
+            <enum name="body2" value="8"/>
+            <enum name="body1" value="9"/>
+            <enum name="caption" value="10"/>
+        </attr>
+        <attr name="material_font" format="enum">
+            <enum name="roboto_light" value="1"/>
+            <enum name="roboto_regular" value="2"/>
+            <enum name="roboto_medium" value="3"/>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="SingleLineTextField">
+        <attr name="error_enabled" format="boolean"/>
+        <attr name="helper_text" format="string"/>
+    </declare-styleable>
+</resources>

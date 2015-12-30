@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<!-- Menu -->
+    <dimen name="d_menu_margin">16dp</dimen>
+    <dimen name="d_menu_avatar_image_size">64dp</dimen>
+    <dimen name="d_menu_avatar_image_radius">32dp</dimen>
+    <dimen name="d_menu_user_subtitle_height">56dp</dimen>
+    <dimen name="d_menu_user_info_height">48dp</dimen>
+
+	<!-- Login -->
+    <dimen name="d_login_layout_width">240dp</dimen>
+    <dimen name="d_login_layout_username_height">160dp</dimen>
+    <dimen name="d_login_layout_password_height">180dp</dimen>
+</resources>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="40dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="2dp"
+    android:paddingLeft="4dp"
+    android:paddingRight="4dp">
+    <TextView
+        android:id="@+id/text_field_label"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="16dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:textColor="?attr/MaterialTextFieldLabelColor"
+        android:visibility="gone" />
+    <EditText
+        android:id="@+id/text_field_input"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_field_label"
+        android:minHeight="20dp"
+        android:textColorHint="?attr/MaterialTextHintColor"
+        android:textCursorDrawable="@drawable/bg_text_field_cursor"
+        android:background="@null" />
+    <View
+        android:id="@+id/text_field_divider"
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/text_field_input"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="2dp"
+        android:layerType="software"
+        android:background="@drawable/bg_text_field_divider_default" />
+    <TextView
+        android:id="@+id/text_field_error"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="16dp"
+        android:layout_below="@id/text_field_divider"
+        android:textColor="@color/c_text_error"
+        android:visibility="gone" />
+    <TextView
+        android:id="@+id/text_field_helper"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="16dp"
+        android:layout_below="@id/text_field_divider"
+        android:textColor="?attr/MaterialTextHintColor"
+        android:visibility="gone" />
+</RelativeLayout>
