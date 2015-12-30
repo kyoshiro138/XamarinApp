@@ -22,7 +22,7 @@ namespace App.Android
         private MaterialButton btnSignIn;
         private MaterialButton btnBack;
         private SinglelineTextField tfUsername;
-        private SinglelineTextFieldDense tfPassword;
+        private SinglelineTextField tfPassword;
 
         private ZoomOutAnimator LayoutAppearAnimator;
         private ResizeAnimator LayoutResizeAnimator;
@@ -59,7 +59,7 @@ namespace App.Android
             btnBack = rootView.FindViewById<MaterialButton>(Resource.Id.btn_login_back);
 
             tfUsername = rootView.FindViewById<SinglelineTextField>(Resource.Id.tf_login_username);
-            tfPassword = rootView.FindViewById<SinglelineTextFieldDense>(Resource.Id.tf_login_password);
+            tfPassword = rootView.FindViewById<SinglelineTextField>(Resource.Id.tf_login_password);
         }
 
         protected override void LoadData()
