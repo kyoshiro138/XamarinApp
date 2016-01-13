@@ -5,7 +5,7 @@ using Android.OS;
 
 namespace App.Android
 {
-    public abstract class AppFragment : BaseFragment, INavigationScreen, IToolbarScreen
+    public abstract class AppFragment : BaseFragment, INavigationScreen, IToolbarScreen, IDatabaseController
     {
         protected AppDrawerActivity DrawerActivity { get; private set; }
 
@@ -13,7 +13,7 @@ namespace App.Android
         {
             get
             {
-                if(DrawerActivity!=null)
+                if (DrawerActivity != null)
                 {
                     return DrawerActivity.Navigator;
                 }
@@ -25,9 +25,21 @@ namespace App.Android
         {
             get
             {
-                if(DrawerActivity!=null)
+                if (DrawerActivity != null)
                 {
                     return DrawerActivity.Toolbar;
+                }
+                return null;
+            }
+        }
+
+        public IDatabaseManager DatabaseManager
+        {
+            get
+            {
+                if (DrawerActivity != null)
+                {
+                    return DrawerActivity.DatabaseManager;
                 }
                 return null;
             }
@@ -55,10 +67,10 @@ namespace App.Android
             base.OnActivityCreated(savedInstanceState);
 
             Bundle arg = Arguments;
-            if(arg!=null)
+            if (arg != null)
             {
                 string paramTag = arg.GetString(AndroidNavigator.PARAM_TAG);
-                if(!string.IsNullOrEmpty(paramTag))
+                if (!string.IsNullOrEmpty(paramTag))
                 {
                     ReceivedParam = ReceiveParamObject(arg, paramTag) as TParam;
                 }

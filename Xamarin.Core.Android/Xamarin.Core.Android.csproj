@@ -82,6 +82,7 @@
     <Compile Include="Dialog\alert\BaseAlertDialog.cs" />
     <Compile Include="Dialog\alert\SystemAlertDialog.cs" />
     <Compile Include="Dialog\DialogBuilder.cs" />
+    <Compile Include="Dialog\progress\SystemProgressDialog.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -122,6 +123,7 @@
     <Folder Include="Resources\layout\" />
     <Folder Include="Resources\color\" />
     <Folder Include="Service\" />
+    <Folder Include="Dialog\progress\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Xamarin.Core\Xamarin.Core.csproj">

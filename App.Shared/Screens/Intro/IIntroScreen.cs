@@ -3,7 +3,7 @@ using Xamarin.Core;
 
 namespace App.Shared
 {
-    public interface IIntroScreen : IScreen, INavigationScreen
+    public interface IIntroScreen : IScreen, INavigationScreen, IDatabaseController
     {
     }
 }

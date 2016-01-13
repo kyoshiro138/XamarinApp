@@ -1,11 +1,9 @@
-﻿using Android.OS;
-using Android.Views;
+﻿using Android.Views;
 using App.Shared;
 using Xamarin.Core;
 using Xamarin.Core.Android;
 using Android.Widget;
-using System.Net.Http;
-using ModernHttpClient;
+using Android.Content;
 
 namespace App.Android
 {
@@ -34,14 +32,14 @@ namespace App.Android
 
         private LoginScreenLogic loginSL;
         private DialogBuilder dialogBuilder;
-        private App.Shared.UserManager userManager;
+        private UserManager userManager;
 
         protected override int FragmentLayoutResId
         {
             get { return Resource.Layout.fragment_login; }
         }
 
-        public App.Shared.UserManager UserManager
+        public UserManager UserManager
         {
             get { return userManager; }
         }
@@ -73,7 +71,9 @@ namespace App.Android
             var service = new AppService();
             service.OnResponseSuccess += Service_OnResponseSuccess;
             service.OnResponseFailed += Service_OnResponseFailed;
-            userManager = new App.Shared.UserManager(service);
+            service.Dialog = new SystemProgressDialog(Activity);
+
+            userManager = new UserManager(service);
         }
 
         public IControl GetControlByTag(string tag)
@@ -298,6 +298,8 @@ namespace App.Android
         public IDialog BuildUsernameErrorDialog(string message)
         {
             var dialog = dialogBuilder.BuildSystemAlertDialog(LoginScreenConst.DialogUsernameError, "", message) as SystemAlertDialog;
+            dialog.SetButton((int)DialogButtonType.Positive, LoginScreenConst.StringButtonSignInAsGuest);
+            dialog.SetButton((int)DialogButtonType.Negative, LoginScreenConst.StringButtonRegister);
             dialog.OnButtonClicked += Dialog_OnButtonClicked;
 
             return dialog;
@@ -305,7 +307,19 @@ namespace App.Android
 
         private void Dialog_OnButtonClicked (object sender, OnDialogButtonClickEventArgs e)
         {
-            
+            switch(e.DialogTag)
+            {
+                case LoginScreenConst.DialogUsernameError:
+                    if(e.ButtonId == (int)DialogButtonType.Positive)
+                    {
+                        // TODO: Sign in as guest
+                    }
+                    else if(e.ButtonId == (int)DialogButtonType.Negative)
+                    {
+                        // TODO: Register account
+                    }
+                    break;
+            }
         }
     }
 }

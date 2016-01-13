@@ -48,6 +48,7 @@
     <Compile Include="Service\IAppService.cs" />
     <Compile Include="Service\AppResponseObject.cs" />
     <Compile Include="Service\Response\GetLoginInfoResponse.cs" />
+    <Compile Include="Storage\AppDatabaseManager.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ItemGroup>
@@ -59,6 +60,7 @@
     <Folder Include="Service\" />
     <Folder Include="Models\" />
     <Folder Include="Service\Response\" />
+    <Folder Include="Storage\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Xamarin.Core\Xamarin.Core.csproj">
@@ -69,6 +71,12 @@
   <ItemGroup>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.8.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLite.Net">
+      <HintPath>..\packages\SQLite.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLite.Net.Async">
+      <HintPath>..\packages\SQLite.Net.Async.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>

@@ -9,6 +9,7 @@ namespace App.Android
     public class IntroFragment : AppFragment, IIntroScreen
     {
         private MaterialLabel lblTitle;
+        private MaterialLabel lblDBVersion;
         private IntroScreenLogic introSL;
 
         protected override int FragmentLayoutResId
@@ -19,6 +20,7 @@ namespace App.Android
         protected override void BindControls(View rootView)
         {
             lblTitle = rootView.FindViewById<MaterialLabel>(Resource.Id.lbl_intro_title);
+            lblDBVersion = rootView.FindViewById<MaterialLabel>(Resource.Id.lbl_intro_db_version);
         }
 
         protected override void LoadData()
@@ -31,8 +33,9 @@ namespace App.Android
         public override async void OnStart()
         {
             base.OnStart();
+            await introSL.LoadDBVersion();
 
-            if(introSL.IsUserSignedIn())
+            if (introSL.IsUserSignedIn())
             {
                 // TODO: Should navigate to home screen instead
                 await introSL.NavigateWithDelay(new LoginFragment());
@@ -49,6 +52,8 @@ namespace App.Android
             {
                 case IntroScreenConst.ControlLabelTitle:
                     return lblTitle;
+                case IntroScreenConst.ControlLabelDBVersion:
+                    return lblDBVersion;
                 default:
                     return null;
             }

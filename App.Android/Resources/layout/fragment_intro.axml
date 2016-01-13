@@ -12,4 +12,10 @@
         android:textColor="?attr/MaterialTextColor"
         android:textSize="32sp"
         app:display_type="title" />
+    <Xamarin.Core.Android.MaterialLabel
+        android:id="@+id/lbl_intro_db_version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:textColor="?attr/MaterialTextColor" />
 </FrameLayout>

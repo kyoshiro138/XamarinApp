@@ -23,6 +23,9 @@
         public const string StringButtonNext = CommonScreenConst.StringButtonNext;
         public const string StringButtonBack = CommonScreenConst.StringButtonBack;
         public const string StringButtonSignIn = "SIGN IN";
+        public const string StringButtonSignInAsGuest = "SIGN IN AS GUEST";
+        public const string StringButtonRegister = "REGISTER";
+
         public const string StringCreateAccount = "Create Account";
         public const string StringLabelUsername = "Username";
         public const string StringLabelPassword = "Password";

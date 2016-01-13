@@ -27,6 +27,8 @@ namespace App.Android
 		public static void UpdateIdValues()
 		{
 			global::ModernHttpClient.Resource.String.library_name = global::App.Android.Resource.String.library_name;
+			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.ApplicationName = global::App.Android.Resource.String.ApplicationName;
+			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.Hello = global::App.Android.Resource.String.Hello;
 			global::Xamarin.Core.Android.Resource.Animation.abc_fade_in = global::App.Android.Resource.Animation.abc_fade_in;
 			global::Xamarin.Core.Android.Resource.Animation.abc_fade_out = global::App.Android.Resource.Animation.abc_fade_out;
 			global::Xamarin.Core.Android.Resource.Animation.abc_grow_fade_in_from_bottom = global::App.Android.Resource.Animation.abc_grow_fade_in_from_bottom;
@@ -2903,8 +2905,8 @@ namespace App.Android
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f0b0076
-			public const int action0 = 2131427446;
+			// aapt resource value: 0x7f0b0077
+			public const int action0 = 2131427447;
 			
 			// aapt resource value: 0x7f0b004d
 			public const int action_bar = 2131427405;
@@ -2930,8 +2932,8 @@ namespace App.Android
 			// aapt resource value: 0x7f0b004e
 			public const int action_context_bar = 2131427406;
 			
-			// aapt resource value: 0x7f0b007a
-			public const int action_divider = 2131427450;
+			// aapt resource value: 0x7f0b007b
+			public const int action_divider = 2131427451;
 			
 			// aapt resource value: 0x7f0b0002
 			public const int action_menu_divider = 2131427330;
@@ -2966,20 +2968,20 @@ namespace App.Android
 			// aapt resource value: 0x7f0b0022
 			public const int body2 = 2131427362;
 			
+			// aapt resource value: 0x7f0b0071
+			public const int btn_login_back = 2131427441;
+			
+			// aapt resource value: 0x7f0b006c
+			public const int btn_login_next = 2131427436;
+			
 			// aapt resource value: 0x7f0b0070
-			public const int btn_login_back = 2131427440;
-			
-			// aapt resource value: 0x7f0b006b
-			public const int btn_login_next = 2131427435;
-			
-			// aapt resource value: 0x7f0b006f
-			public const int btn_login_sign_in = 2131427439;
+			public const int btn_login_sign_in = 2131427440;
 			
 			// aapt resource value: 0x7f0b0037
 			public const int buttonPanel = 2131427383;
 			
-			// aapt resource value: 0x7f0b0077
-			public const int cancel_action = 2131427447;
+			// aapt resource value: 0x7f0b0078
+			public const int cancel_action = 2131427448;
 			
 			// aapt resource value: 0x7f0b0023
 			public const int caption = 2131427363;
@@ -2987,8 +2989,8 @@ namespace App.Android
 			// aapt resource value: 0x7f0b0045
 			public const int checkbox = 2131427397;
 			
-			// aapt resource value: 0x7f0b007d
-			public const int chronometer = 2131427453;
+			// aapt resource value: 0x7f0b007e
+			public const int chronometer = 2131427454;
 			
 			// aapt resource value: 0x7f0b001c
 			public const int collapseActionView = 2131427356;
@@ -3029,8 +3031,8 @@ namespace App.Android
 			// aapt resource value: 0x7f0b0019
 			public const int end = 2131427353;
 			
-			// aapt resource value: 0x7f0b0082
-			public const int end_padder = 2131427458;
+			// aapt resource value: 0x7f0b0083
+			public const int end_padder = 2131427459;
 			
 			// aapt resource value: 0x7f0b0032
 			public const int expand_activities_button = 2131427378;
@@ -3056,14 +3058,14 @@ namespace App.Android
 			// aapt resource value: 0x7f0b0033
 			public const int image = 2131427379;
 			
-			// aapt resource value: 0x7f0b0069
-			public const int img_login_avatar = 2131427433;
+			// aapt resource value: 0x7f0b006a
+			public const int img_login_avatar = 2131427434;
 			
-			// aapt resource value: 0x7f0b0074
-			public const int img_menu_icon = 2131427444;
+			// aapt resource value: 0x7f0b0075
+			public const int img_menu_icon = 2131427445;
 			
-			// aapt resource value: 0x7f0b0081
-			public const int info = 2131427457;
+			// aapt resource value: 0x7f0b0082
+			public const int info = 2131427458;
 			
 			// aapt resource value: 0x7f0b005e
 			public const int layout_content = 2131427422;
@@ -3074,14 +3076,14 @@ namespace App.Android
 			// aapt resource value: 0x7f0b005f
 			public const int layout_left_drawer = 2131427423;
 			
-			// aapt resource value: 0x7f0b0068
-			public const int layout_login = 2131427432;
+			// aapt resource value: 0x7f0b0069
+			public const int layout_login = 2131427433;
 			
-			// aapt resource value: 0x7f0b006d
-			public const int layout_login_password = 2131427437;
+			// aapt resource value: 0x7f0b006e
+			public const int layout_login_password = 2131427438;
 			
-			// aapt resource value: 0x7f0b006a
-			public const int layout_login_username = 2131427434;
+			// aapt resource value: 0x7f0b006b
+			public const int layout_login_username = 2131427435;
 			
 			// aapt resource value: 0x7f0b0060
 			public const int layout_right_drawer = 2131427424;
@@ -3089,20 +3091,23 @@ namespace App.Android
 			// aapt resource value: 0x7f0b0066
 			public const int lblTest = 2131427430;
 			
+			// aapt resource value: 0x7f0b0068
+			public const int lbl_intro_db_version = 2131427432;
+			
 			// aapt resource value: 0x7f0b0067
 			public const int lbl_intro_title = 2131427431;
 			
-			// aapt resource value: 0x7f0b0072
-			public const int lbl_login_create_account = 2131427442;
+			// aapt resource value: 0x7f0b0073
+			public const int lbl_login_create_account = 2131427443;
 			
-			// aapt resource value: 0x7f0b006e
-			public const int lbl_login_username = 2131427438;
+			// aapt resource value: 0x7f0b006f
+			public const int lbl_login_username = 2131427439;
 			
-			// aapt resource value: 0x7f0b007b
-			public const int line1 = 2131427451;
+			// aapt resource value: 0x7f0b007c
+			public const int line1 = 2131427452;
 			
-			// aapt resource value: 0x7f0b007f
-			public const int line3 = 2131427455;
+			// aapt resource value: 0x7f0b0080
+			public const int line3 = 2131427456;
 			
 			// aapt resource value: 0x7f0b0009
 			public const int listMode = 2131427337;
@@ -3110,11 +3115,11 @@ namespace App.Android
 			// aapt resource value: 0x7f0b0035
 			public const int list_item = 2131427381;
 			
-			// aapt resource value: 0x7f0b0073
-			public const int list_menu = 2131427443;
+			// aapt resource value: 0x7f0b0074
+			public const int list_menu = 2131427444;
 			
-			// aapt resource value: 0x7f0b0079
-			public const int media_actions = 2131427449;
+			// aapt resource value: 0x7f0b007a
+			public const int media_actions = 2131427450;
 			
 			// aapt resource value: 0x7f0b001a
 			public const int middle = 2131427354;
@@ -3224,8 +3229,8 @@ namespace App.Android
 			// aapt resource value: 0x7f0b0017
 			public const int src_over = 2131427351;
 			
-			// aapt resource value: 0x7f0b0078
-			public const int status_bar_latest_event_content = 2131427448;
+			// aapt resource value: 0x7f0b0079
+			public const int status_bar_latest_event_content = 2131427449;
 			
 			// aapt resource value: 0x7f0b0029
 			public const int subhead = 2131427369;
@@ -3236,11 +3241,11 @@ namespace App.Android
 			// aapt resource value: 0x7f0b000b
 			public const int tabMode = 2131427339;
 			
-			// aapt resource value: 0x7f0b0080
-			public const int text = 2131427456;
+			// aapt resource value: 0x7f0b0081
+			public const int text = 2131427457;
 			
-			// aapt resource value: 0x7f0b007e
-			public const int text2 = 2131427454;
+			// aapt resource value: 0x7f0b007f
+			public const int text2 = 2131427455;
 			
 			// aapt resource value: 0x7f0b0040
 			public const int textSpacerNoButtons = 2131427392;
@@ -3260,14 +3265,14 @@ namespace App.Android
 			// aapt resource value: 0x7f0b0061
 			public const int text_field_label = 2131427425;
 			
-			// aapt resource value: 0x7f0b0071
-			public const int tf_login_password = 2131427441;
+			// aapt resource value: 0x7f0b0072
+			public const int tf_login_password = 2131427442;
 			
-			// aapt resource value: 0x7f0b006c
-			public const int tf_login_username = 2131427436;
+			// aapt resource value: 0x7f0b006d
+			public const int tf_login_username = 2131427437;
 			
-			// aapt resource value: 0x7f0b007c
-			public const int time = 2131427452;
+			// aapt resource value: 0x7f0b007d
+			public const int time = 2131427453;
 			
 			// aapt resource value: 0x7f0b002a
 			public const int title = 2131427370;
@@ -3281,8 +3286,8 @@ namespace App.Android
 			// aapt resource value: 0x7f0b003a
 			public const int topPanel = 2131427386;
 			
-			// aapt resource value: 0x7f0b0075
-			public const int tv_menu_title = 2131427445;
+			// aapt resource value: 0x7f0b0076
+			public const int tv_menu_title = 2131427446;
 			
 			// aapt resource value: 0x7f0b0008
 			public const int up = 2131427336;
@@ -3485,6 +3490,12 @@ namespace App.Android
 		public partial class String
 		{
 			
+			// aapt resource value: 0x7f050015
+			public const int ApplicationName = 2131034133;
+			
+			// aapt resource value: 0x7f050014
+			public const int Hello = 2131034132;
+			
 			// aapt resource value: 0x7f050000
 			public const int abc_action_bar_home_description = 2131034112;
 			
@@ -3542,8 +3553,8 @@ namespace App.Android
 			// aapt resource value: 0x7f050012
 			public const int abc_toolbar_collapse_description = 2131034130;
 			
-			// aapt resource value: 0x7f050014
-			public const int library_name = 2131034132;
+			// aapt resource value: 0x7f050016
+			public const int library_name = 2131034134;
 			
 			// aapt resource value: 0x7f050013
 			public const int status_bar_notification_info_overflow = 2131034131;

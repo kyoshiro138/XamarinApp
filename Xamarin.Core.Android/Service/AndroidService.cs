@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using System;
 using Newtonsoft.Json;
+using Android.App;
 
 namespace Xamarin.Core.Android
 {
@@ -13,6 +14,8 @@ namespace Xamarin.Core.Android
         public event EventHandler<ServiceResponseEventArgs<T>> OnResponseFailed;
         public event EventHandler<ServiceResponseEventArgs<T>> OnParseError;
 
+        public ProgressDialog Dialog { get; set; }
+
         public AndroidService(HttpClient client)
         {
             Client = client;
@@ -21,7 +24,7 @@ namespace Xamarin.Core.Android
         public async Task ExecuteGet(string tag, string url)
         {
             Console.WriteLine("[REQUEST {0}] [URL {1}]", tag, url);
-
+            ShowProgressDialog();
             var responseMessage = await Client.GetAsync(url);
             if (responseMessage.IsSuccessStatusCode)
             {
@@ -44,12 +47,13 @@ namespace Xamarin.Core.Android
                     OnResponseFailed.Invoke(this, args);
                 }
             }
+            CloseProgressDialog();
         }
 
         public async Task ExecuteGet<T1>(string tag, string url) where T1 : T
         {
             Console.WriteLine("[REQUEST {0}] [URL {1}]", tag, url);
-
+            ShowProgressDialog();
             var responseMessage = await Client.GetAsync(url);
             if (responseMessage.IsSuccessStatusCode)
             {
@@ -83,6 +87,23 @@ namespace Xamarin.Core.Android
                     var args = new ServiceResponseEventArgs<T>(tag, string.Empty);
                     OnResponseFailed.Invoke(this, args);
                 }
+            }
+            CloseProgressDialog();
+        }
+
+        private void ShowProgressDialog()
+        {
+            if(Dialog!=null && !Dialog.IsShowing)
+            {
+                Dialog.Show();
+            }
+        }
+
+        private void CloseProgressDialog()
+        {
+            if(Dialog!=null && Dialog.IsShowing)
+            {
+                Dialog.Dismiss();
             }
         }
     }
