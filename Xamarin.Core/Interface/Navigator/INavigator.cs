@@ -2,7 +2,7 @@
 {
     public interface INavigator
     {
-        void NavigateTo(IScreen screen);
+        void NavigateTo(IScreen screen, bool isFirstLevelScreen = false);
 
         void NavigateBack();
     }

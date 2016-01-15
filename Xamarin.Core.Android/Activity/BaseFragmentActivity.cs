@@ -66,6 +66,7 @@ namespace Xamarin.Core.Android
         {
             var trasaction = SupportFragmentManager.BeginTransaction();
             trasaction.Replace(FragmentContainerId, fragment, fragment.Class.SimpleName);
+            trasaction.AddToBackStack(null);
             trasaction.Commit();
         }
     }

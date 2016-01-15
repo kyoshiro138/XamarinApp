@@ -1,5 +1,4 @@
-﻿using System;
-using Xamarin.Core;
+﻿using Xamarin.Core;
 
 namespace App.Shared
 {
@@ -8,6 +7,8 @@ namespace App.Shared
         UserManager UserManager { get; }
 
         IDialog BuildUsernameErrorDialog(string message);
+
+        IDialog BuildPasswordIncorrectDialog(string message);
     }
 }
 

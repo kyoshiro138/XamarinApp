@@ -17,64 +17,33 @@ namespace App.Shared
 
         public override int DBVersion
         {
-            get { return 2; }
+            get { return 1; }
         }
 
-        protected AppDatabaseManager()
-            : base()
+        protected AppDatabaseManager(ISQLitePlatform platform, string folderPath)
+            : base(platform, folderPath)
         {
             
         }
 
-        public override async Task InitDatabase(ISQLitePlatform platform, string folderPath)
+        public override async Task InitDatabase()
         {
-            string dbPath = Path.Combine(folderPath, DBName);
-            DBConnection = new SQLiteAsyncConnection(() => new SQLiteConnectionWithLock(platform, new SQLiteConnectionString(dbPath, false)));
-
-            if (IsDatabaseCreated(dbPath))
+            if (!IsDatabaseCreated(DBPath))
             {
-                bool isLatestDBVersion = await IsLatestDatabaseVersion();
-                if (isLatestDBVersion)
-                {
-                    await UpdateDatabaseInfo();
-                }
-            }
-            else
-            {
-                await InitDatabaseInfo();
+                await InitTables();
             }
         }
 
-        private async Task InitDatabaseInfo()
+        protected override async Task InitTables()
         {
-            await DBConnection.CreateTableAsync<DatabaseInfo>();
-            await DBConnection.InsertAsync(new DatabaseInfo()
-                {
-                    DBLocalVersion = DBVersion
-                });
+            await DBConnection.CreateTableAsync<TravelPlace>();
+            await DBConnection.CreateTableAsync<PlaceLocation>();
+            await DBConnection.CreateTableAsync<User>();
         }
 
-        private async Task<bool> IsLatestDatabaseVersion()
+        protected void InitData()
         {
-            var dbInfo = await GetFirst<DatabaseInfo>();
-            if (dbInfo.DBLocalVersion.Equals(DBVersion))
-            {
-                return true;
-            }
-            return false;
-        }
 
-        private async Task UpdateDatabaseInfo()
-        {
-            await DBConnection.DeleteAllAsync<DatabaseInfo>();
-            await DBConnection.InsertAsync(new DatabaseInfo()
-                {
-                    DBLocalVersion = DBVersion
-                });
-        }
-
-        protected override void InitTables()
-        {
         }
     }
 }

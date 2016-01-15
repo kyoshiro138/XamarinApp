@@ -1,11 +1,12 @@
 ﻿using App.Shared;
+using SQLite.Net.Interop;
 
 namespace App.Android
 {
     public class AppAndroidDatabaseManager : AppDatabaseManager
     {
-        public AppAndroidDatabaseManager()
-            : base()
+        public AppAndroidDatabaseManager(ISQLitePlatform platform, string folderPath)
+            : base(platform, folderPath)
         {
             
         }

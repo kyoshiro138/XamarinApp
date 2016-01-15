@@ -34,8 +34,6 @@ namespace App.Android
 
         public SystemSupportToolbar Toolbar { get; protected set; }
 
-        public AppAndroidDatabaseManager DatabaseManager { get; protected set; }
-
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -46,11 +44,6 @@ namespace App.Android
             ExitAppOnBack = false;
             SetSupportActionBar(Toolbar);
             SupportActionBar.Hide();
-        }
-
-        protected override void OnResume()
-        {
-            base.OnResume();
         }
     }
 }

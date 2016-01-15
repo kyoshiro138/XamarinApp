@@ -48,7 +48,7 @@
     </Reference>
     <Reference Include="System.Net.Http" />
     <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.8.0.1\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -83,6 +83,7 @@
     <Compile Include="Dialog\alert\SystemAlertDialog.cs" />
     <Compile Include="Dialog\DialogBuilder.cs" />
     <Compile Include="Dialog\progress\SystemProgressDialog.cs" />
+    <Compile Include="Storage\ApplicationPreferences.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -124,6 +125,7 @@
     <Folder Include="Resources\color\" />
     <Folder Include="Service\" />
     <Folder Include="Dialog\progress\" />
+    <Folder Include="Storage\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Xamarin.Core\Xamarin.Core.csproj">

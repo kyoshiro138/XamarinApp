@@ -1,0 +1,7 @@
+﻿INSERT INTO [travel_place] ([travel_name]) VALUES ('Ho Chi Minh City');
+INSERT INTO [travel_place] ([travel_name]) VALUES ('Ha Noi Capital');
+INSERT INTO [travel_place] ([travel_name]) VALUES ('Vung Tau City');
+INSERT INTO [travel_place] ([travel_name]) VALUES ('Da Lat City');
+INSERT INTO [travel_place] ([travel_name]) VALUES ('Ha Long Bay');
+INSERT INTO [travel_place] ([travel_name]) VALUES ('Nha Trang City');
+INSERT INTO [travel_place] ([travel_name]) VALUES ('Da Nang City');

@@ -1,8 +1,8 @@
-﻿using System.Net.Http;
+﻿using System;
+using System.Net.Http;
 using System.Threading.Tasks;
-using System;
-using Newtonsoft.Json;
 using Android.App;
+using Newtonsoft.Json;
 
 namespace Xamarin.Core.Android
 {

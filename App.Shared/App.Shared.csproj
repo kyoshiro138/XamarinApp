@@ -49,6 +49,13 @@
     <Compile Include="Service\AppResponseObject.cs" />
     <Compile Include="Service\Response\GetLoginInfoResponse.cs" />
     <Compile Include="Storage\AppDatabaseManager.cs" />
+    <Compile Include="Models\TravelPlace.cs" />
+    <Compile Include="Models\PlaceLocation.cs" />
+    <Compile Include="Service\Response\AuthenticationResponse.cs" />
+    <Compile Include="Storage\AppStorageKeys.cs" />
+    <Compile Include="Screens\Home\IHomeScreen.cs" />
+    <Compile Include="Screens\Home\HomeScreenConst.cs" />
+    <Compile Include="Screens\Home\HomeScreenLogic.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ItemGroup>
@@ -61,6 +68,7 @@
     <Folder Include="Models\" />
     <Folder Include="Service\Response\" />
     <Folder Include="Storage\" />
+    <Folder Include="Screens\Home\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Xamarin.Core\Xamarin.Core.csproj">
@@ -69,14 +77,17 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.8.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="SQLite.Net">
       <HintPath>..\packages\SQLite.Net.dll</HintPath>
     </Reference>
     <Reference Include="SQLite.Net.Async">
       <HintPath>..\packages\SQLite.Net.Async.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\portable-net45+wp80+win8+wpa81+dnxcore50\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Storage\DataQuery.txt" />
   </ItemGroup>
 </Project>

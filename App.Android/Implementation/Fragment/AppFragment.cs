@@ -5,7 +5,7 @@ using Android.OS;
 
 namespace App.Android
 {
-    public abstract class AppFragment : BaseFragment, INavigationScreen, IToolbarScreen, IDatabaseController
+    public abstract class AppFragment : BaseFragment, INavigationScreen, IToolbarScreen
     {
         protected AppDrawerActivity DrawerActivity { get; private set; }
 
@@ -28,18 +28,6 @@ namespace App.Android
                 if (DrawerActivity != null)
                 {
                     return DrawerActivity.Toolbar;
-                }
-                return null;
-            }
-        }
-
-        public IDatabaseManager DatabaseManager
-        {
-            get
-            {
-                if (DrawerActivity != null)
-                {
-                    return DrawerActivity.DatabaseManager;
                 }
                 return null;
             }

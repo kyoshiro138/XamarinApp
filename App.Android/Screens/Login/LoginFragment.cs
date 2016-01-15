@@ -1,9 +1,11 @@
-﻿using Android.Views;
+﻿using System;
+using Android.Content;
+using Android.Views;
+using Android.Widget;
 using App.Shared;
 using Xamarin.Core;
 using Xamarin.Core.Android;
-using Android.Widget;
-using Android.Content;
+using System.Threading.Tasks;
 
 namespace App.Android
 {
@@ -32,17 +34,13 @@ namespace App.Android
 
         private LoginScreenLogic loginSL;
         private DialogBuilder dialogBuilder;
-        private UserManager userManager;
 
         protected override int FragmentLayoutResId
         {
             get { return Resource.Layout.fragment_login; }
         }
 
-        public UserManager UserManager
-        {
-            get { return userManager; }
-        }
+        public UserManager UserManager { get; private set; }
 
         protected override void BindControls(View rootView)
         {
@@ -63,9 +61,6 @@ namespace App.Android
 
         protected override void LoadData()
         {
-            loginSL = new LoginScreenLogic(this);
-            loginSL.InitializeScreen();
-
             dialogBuilder = new DialogBuilder(Context);
 
             var service = new AppService();
@@ -73,7 +68,13 @@ namespace App.Android
             service.OnResponseFailed += Service_OnResponseFailed;
             service.Dialog = new SystemProgressDialog(Activity);
 
-            userManager = new UserManager(service);
+            var database = new AppAndroidDatabaseManager(new SQLite.Net.Platform.XamarinAndroid.SQLitePlatformAndroid(), Environment.GetFolderPath(Environment.SpecialFolder.Personal));
+            var appPref = new ApplicationPreferences();
+
+            UserManager = new UserManager(service, database, appPref);
+
+            loginSL = new LoginScreenLogic(this);
+            loginSL.InitializeScreen();
         }
 
         public IControl GetControlByTag(string tag)
@@ -184,6 +185,11 @@ namespace App.Android
                     await loginSL.HandleNextButton();
                     break;
                 case Resource.Id.btn_login_sign_in:
+                    if (tfPassword.IsFocused)
+                    {
+                        tfPassword.ClearFocus();
+                    }
+                    await loginSL.HandleSignIn();
                     break;
                 case Resource.Id.btn_login_back:
                     if (tfPassword.IsFocused)
@@ -275,23 +281,44 @@ namespace App.Android
 
         }
 
-        private void Service_OnResponseSuccess(object sender, ServiceResponseEventArgs<AppResponseObject> e)
+        private async void Service_OnResponseSuccess(object sender, ServiceResponseEventArgs<AppResponseObject> e)
         {
             switch (e.RequestTag)
             {
                 case LoginScreenConst.ServiceGetBasicInfo:
-                    var response = e.ResponseObject as GetLoginInfoResponse;
-                    var isSucceess = response.Status.Equals(true);
-                    if (isSucceess)
-                    {
-                        loginSL.UpdateUserBasicInfo(response.Data.User);
-                        ShowPasswordLayout();
-                    }
-                    else if (response.ErrorCode.Equals(ServiceConstants.ErrorCodeUserNotExisted))
-                    {
-                        loginSL.ShowUserErrorDialog(response.ErrorMessage);
-                    }
+                    HandleGetLoginInfoResponse((GetLoginInfoResponse)e.ResponseObject);
                     break;
+                case LoginScreenConst.ServiceAuthenticate:
+                    await HandleAuthenticationResponse((AuthenticationResponse)e.ResponseObject);
+                    break;
+            }
+        }
+
+        private void HandleGetLoginInfoResponse(GetLoginInfoResponse response)
+        {
+            bool isSucceess = response.Status.Equals(true);
+            if (isSucceess)
+            {
+                loginSL.UpdateUserBasicInfo(response.Data.User);
+                ShowPasswordLayout();
+            }
+            else if (response.ErrorCode.Equals(ServiceConstants.ErrorCodeUserNotExisted))
+            {
+                loginSL.ShowUsernameErrorDialog(response.ErrorMessage);
+            }
+        }
+
+        private async Task HandleAuthenticationResponse(AuthenticationResponse response)
+        {
+            bool isSucceess = response.Status.Equals(true);
+            if (isSucceess)
+            {
+                await loginSL.SaveAuthenticationKey(response.Data.Key);
+                loginSL.NavigateToHome(new HomeFragment());
+            }
+            else if (response.ErrorCode.Equals(ServiceConstants.ErrorCodePasswordIncorrect))
+            {
+                loginSL.ShowPasswordIncorrectDialog(response.ErrorMessage);
             }
         }
 
@@ -305,16 +332,22 @@ namespace App.Android
             return dialog;
         }
 
-        private void Dialog_OnButtonClicked (object sender, OnDialogButtonClickEventArgs e)
+        public IDialog BuildPasswordIncorrectDialog(string message)
         {
-            switch(e.DialogTag)
+            var dialog = dialogBuilder.BuildSystemAlertDialog(LoginScreenConst.DialogPasswordError, "", message) as SystemAlertDialog;
+            return dialog;
+        }
+
+        private void Dialog_OnButtonClicked(object sender, OnDialogButtonClickEventArgs e)
+        {
+            switch (e.DialogTag)
             {
                 case LoginScreenConst.DialogUsernameError:
-                    if(e.ButtonId == (int)DialogButtonType.Positive)
+                    if (e.ButtonId == (int)DialogButtonType.Positive)
                     {
                         // TODO: Sign in as guest
                     }
-                    else if(e.ButtonId == (int)DialogButtonType.Negative)
+                    else if (e.ButtonId == (int)DialogButtonType.Negative)
                     {
                         // TODO: Register account
                     }

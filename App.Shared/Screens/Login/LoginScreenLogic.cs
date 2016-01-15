@@ -7,6 +7,7 @@ namespace App.Shared
     public class LoginScreenLogic
     {
         private readonly ILoginScreen loginScreen;
+        private User CurrentLoginUser = null;
 
         public LoginScreenLogic(ILoginScreen screen)
         {
@@ -49,15 +50,53 @@ namespace App.Shared
             }
         }
 
+        public async Task HandleSignIn()
+        {
+            ITextField tfPassword = loginScreen.GetControlByTag(LoginScreenConst.ControlTextFieldPassword) as ITextField;
+            string password = tfPassword.Input;
+            if (!string.IsNullOrEmpty(password))
+            {
+                if (CurrentLoginUser != null)
+                {
+                    await loginScreen.UserManager.Authenticate(CurrentLoginUser, password);
+                }
+            }
+            else
+            {
+                tfPassword.Error = LoginScreenConst.ErrorPasswordEmpty;
+            }
+        }
+
         public void UpdateUserBasicInfo(User user)
         {
+            CurrentLoginUser = user;
+
             ILabel lblUsername = loginScreen.GetControlByTag(LoginScreenConst.ControlLabelUsername) as ILabel;
             lblUsername.Text = user.Username;
         }
 
-        public void ShowUserErrorDialog(string message)
+        public async Task SaveAuthenticationKey(string key)
+        {
+            if (CurrentLoginUser != null && !string.IsNullOrEmpty(key))
+            {
+                await loginScreen.UserManager.SaveUserAuthentication(CurrentLoginUser, key);
+            }
+        }
+
+        public void NavigateToHome(IScreen home)
+        {
+            loginScreen.Navigator.NavigateTo(home, true);
+        }
+
+        public void ShowUsernameErrorDialog(string message)
         {
             var dialog = loginScreen.BuildUsernameErrorDialog(message);
+            dialog.Show();
+        }
+
+        public void ShowPasswordIncorrectDialog(string message)
+        {
+            var dialog = loginScreen.BuildPasswordIncorrectDialog(message);
             dialog.Show();
         }
     }

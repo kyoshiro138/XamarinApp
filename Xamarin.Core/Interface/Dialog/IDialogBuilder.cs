@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Xamarin.Core
+﻿namespace Xamarin.Core
 {
     public interface IDialogBuilder
     {

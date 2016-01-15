@@ -2,10 +2,6 @@
 {
     public static class LoginScreenConst
     {
-        public const string TestUsername = "user";
-        public const string TestPassword = "test";
-        public const string GuestUsername = "guest";
-
         public const string ServiceGetBasicInfo = "ServiceGetBasicInfo";
         public const string ServiceAuthenticate = "ServiceAuthenticate";
         public const string ServiceGetProfile = "ServiceGetProfile";
@@ -19,6 +15,7 @@
         public const string ControlTextFieldPassword = "ControlTextFieldPassword";
 
         public const string DialogUsernameError = "DialogUsernameError";
+        public const string DialogPasswordError = "DialogPasswordError";
 
         public const string StringButtonNext = CommonScreenConst.StringButtonNext;
         public const string StringButtonBack = CommonScreenConst.StringButtonBack;

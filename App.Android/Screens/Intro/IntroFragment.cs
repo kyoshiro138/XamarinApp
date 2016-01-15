@@ -11,11 +11,14 @@ namespace App.Android
         private MaterialLabel lblTitle;
         private MaterialLabel lblDBVersion;
         private IntroScreenLogic introSL;
+        private AppAndroidDatabaseManager database;
 
         protected override int FragmentLayoutResId
         {
             get { return Resource.Layout.fragment_intro; }
         }
+
+        public UserManager UserManager { get; private set; }
 
         protected override void BindControls(View rootView)
         {
@@ -25,20 +28,28 @@ namespace App.Android
 
         protected override void LoadData()
         {
-            introSL = new IntroScreenLogic(this);
+            var service = new AppService();
+            service.OnResponseSuccess += Service_OnResponseSuccess;
+            service.OnResponseFailed += Service_OnResponseFailed;
+            service.Dialog = new SystemProgressDialog(Activity);
 
+            database = new AppAndroidDatabaseManager(new SQLite.Net.Platform.XamarinAndroid.SQLitePlatformAndroid(), Environment.GetFolderPath(Environment.SpecialFolder.Personal));
+            var appPref = new ApplicationPreferences();
+
+            UserManager = new UserManager(service, database, appPref);
+
+            introSL = new IntroScreenLogic(this);
             introSL.InitializeScreen();
         }
 
         public override async void OnStart()
         {
             base.OnStart();
-            await introSL.LoadDBVersion();
-
-            if (introSL.IsUserSignedIn())
+            await database.InitDatabase();
+            bool isUserSignedIn = await introSL.IsUserSignedIn();
+            if (isUserSignedIn)
             {
-                // TODO: Should navigate to home screen instead
-                await introSL.NavigateWithDelay(new LoginFragment());
+                await introSL.NavigateWithDelay(new HomeFragment());
             }
             else
             {
@@ -56,6 +67,22 @@ namespace App.Android
                     return lblDBVersion;
                 default:
                     return null;
+            }
+        }
+
+        private void Service_OnResponseFailed(object sender, ServiceResponseEventArgs<AppResponseObject> e)
+        {
+
+        }
+
+        private void Service_OnResponseSuccess(object sender, ServiceResponseEventArgs<AppResponseObject> e)
+        {
+            switch (e.RequestTag)
+            {
+                case LoginScreenConst.ServiceGetBasicInfo:
+                    break;
+                case LoginScreenConst.ServiceAuthenticate:
+                    break;
             }
         }
     }

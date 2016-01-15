@@ -49,9 +49,8 @@
     <Compile Include="Interface\Dialog\OnDialogButtonClickEventArgs.cs" />
     <Compile Include="Interface\Dialog\IDialogBuilder.cs" />
     <Compile Include="Storage\Database\BaseDatabaseManager.cs" />
-    <Compile Include="Storage\Database\IDatabaseManager.cs" />
-    <Compile Include="Storage\Database\IDatabaseController.cs" />
-    <Compile Include="Storage\Database\DatabaseInfo.cs" />
+    <Compile Include="Storage\Database\IDatabase.cs" />
+    <Compile Include="Storage\AppStorage\IAppStorage.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ItemGroup>
@@ -67,6 +66,7 @@
     <Folder Include="Interface\Dialog\" />
     <Folder Include="Storage\" />
     <Folder Include="Storage\Database\" />
+    <Folder Include="Storage\AppStorage\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="SQLite.Net">

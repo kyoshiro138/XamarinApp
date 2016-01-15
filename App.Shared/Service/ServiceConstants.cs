@@ -6,12 +6,13 @@ namespace App.Shared
     {
         public const int ServiceTimeout = 30 * 1000; // 30 seconds
 
-        public const string UrlGetLoginInfo = "http://demo1616447.mockable.io/getLoginInfo";
-        public const string UrlAuthentication = "http://demo1616447.mockable.io/authenticate";
-        public const string UrlGetProfile = "http://demo1616447.mockable.io/getProfile";
-        public const string UrlGetTravelData = "http://demo1616447.mockable.io/getTravelData";
+        public const string UrlGetLoginInfo = "http://smartboox.getsandbox.com/user/getLoginInfo";
+        public const string UrlAuthentication = "http://smartboox.getsandbox.com/user/authenticate";
+        public const string UrlGetProfile = "http://smartboox.getsandbox.com/user/getProfile";
+        public const string UrlGetTravelData = "http://smartboox.getsandbox.com/travel/getTravelData";
 
         public const int ErrorCodeUserNotExisted = 1001;
+        public const int ErrorCodePasswordIncorrect = 1004;
     }
 }
 

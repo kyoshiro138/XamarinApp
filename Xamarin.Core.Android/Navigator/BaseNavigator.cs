@@ -3,7 +3,7 @@ using Android.Support.V4.App;
 using Fragment = Android.Support.V4.App.Fragment;
 using Android.OS;
 
-namespace Xamarin.Core.Android  
+namespace Xamarin.Core.Android
 {
     public class BaseNavigator : INavigator
     {
@@ -17,11 +17,16 @@ namespace Xamarin.Core.Android
             FragmentManager = fragmentManager;
         }
 
-        public void NavigateTo(IScreen screen)
+        public void NavigateTo(IScreen screen, bool isFirstLevelScreen = false)
         {
             Fragment fragment = screen as Fragment;
             if (fragment != null && IsNavigable())
             {
+                if (isFirstLevelScreen)
+                {
+                    FragmentManager.PopBackStackImmediate(null, FragmentManager.PopBackStackInclusive);
+                }
+
                 FragmentTransaction transaction = FragmentManager.BeginTransaction();
                 transaction.SetCustomAnimations(Android.Resource.Animation.abc_fade_in, Android.Resource.Animation.abc_fade_out);
                 transaction.Replace(FragmentContainerId, fragment, fragment.Class.SimpleName);
@@ -30,13 +35,18 @@ namespace Xamarin.Core.Android
             }
         }
 
-        public void NavigateTo<TParam>(IScreen screen, TParam param, string paramTag)
+        public void NavigateTo<TParam>(IScreen screen, TParam param, string paramTag, bool isFirstLevelScreen = false)
         {
             Fragment fragment = screen as Fragment;
             if (fragment != null && IsNavigable())
             {
+                if (isFirstLevelScreen)
+                {
+                    FragmentManager.PopBackStackImmediate(null, FragmentManager.PopBackStackInclusive);
+                }
+
                 var transferableNavigator = this as IParamTransfer;
-                if(transferableNavigator != null)
+                if (transferableNavigator != null)
                 {
                     Bundle arg = transferableNavigator.CreateParamBundle(param, paramTag);
 
