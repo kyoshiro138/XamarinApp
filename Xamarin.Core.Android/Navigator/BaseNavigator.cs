@@ -22,13 +22,14 @@ namespace Xamarin.Core.Android
             Fragment fragment = screen as Fragment;
             if (fragment != null && IsNavigable())
             {
+                FragmentTransaction transaction = FragmentManager.BeginTransaction();
+                transaction.SetCustomAnimations(Android.Resource.Animation.abc_fade_in, Android.Resource.Animation.abc_fade_out, Android.Resource.Animation.abc_fade_in, Android.Resource.Animation.abc_fade_out);
+
                 if (isFirstLevelScreen)
                 {
-                    FragmentManager.PopBackStackImmediate(null, FragmentManager.PopBackStackInclusive);
+                    FragmentManager.PopBackStack(null, FragmentManager.PopBackStackInclusive);
                 }
 
-                FragmentTransaction transaction = FragmentManager.BeginTransaction();
-                transaction.SetCustomAnimations(Android.Resource.Animation.abc_fade_in, Android.Resource.Animation.abc_fade_out);
                 transaction.Replace(FragmentContainerId, fragment, fragment.Class.SimpleName);
                 transaction.AddToBackStack(null);
                 transaction.Commit();
@@ -40,21 +41,21 @@ namespace Xamarin.Core.Android
             Fragment fragment = screen as Fragment;
             if (fragment != null && IsNavigable())
             {
-                if (isFirstLevelScreen)
-                {
-                    FragmentManager.PopBackStackImmediate(null, FragmentManager.PopBackStackInclusive);
-                }
-
                 var transferableNavigator = this as IParamTransfer;
                 if (transferableNavigator != null)
                 {
                     Bundle arg = transferableNavigator.CreateParamBundle(param, paramTag);
-
                     fragment.Arguments = arg;
                 }
 
                 FragmentTransaction transaction = FragmentManager.BeginTransaction();
-                transaction.SetCustomAnimations(Android.Resource.Animation.abc_fade_in, Android.Resource.Animation.abc_fade_out);
+                transaction.SetCustomAnimations(Android.Resource.Animation.abc_fade_in, Android.Resource.Animation.abc_fade_out, Android.Resource.Animation.abc_fade_in, Android.Resource.Animation.abc_fade_out);
+
+                if (isFirstLevelScreen)
+                {
+                    FragmentManager.PopBackStack(null, FragmentManager.PopBackStackInclusive);
+                }
+
                 transaction.Replace(FragmentContainerId, fragment, fragment.Class.SimpleName);
                 transaction.AddToBackStack(null);
                 transaction.Commit();

@@ -64,10 +64,11 @@ namespace Xamarin.Core.Android
 
         protected void SetContentFragment(Fragment fragment)
         {
-            var trasaction = SupportFragmentManager.BeginTransaction();
-            trasaction.Replace(FragmentContainerId, fragment, fragment.Class.SimpleName);
-            trasaction.AddToBackStack(null);
-            trasaction.Commit();
+            var transaction = SupportFragmentManager.BeginTransaction();
+            transaction.SetCustomAnimations(Android.Resource.Animation.abc_fade_in, Android.Resource.Animation.abc_fade_out, Android.Resource.Animation.abc_fade_in, Android.Resource.Animation.abc_fade_out);
+            transaction.Replace(FragmentContainerId, fragment, fragment.Class.SimpleName);
+            transaction.AddToBackStack(null);
+            transaction.Commit();
         }
     }
 }
