@@ -3584,6 +3584,12 @@ namespace App.Android
 			// aapt resource value: 0x7f080080
 			public const int Animation_AppCompat_DropDownUp = 2131230848;
 			
+			// aapt resource value: 0x7f080136
+			public const int AppDarkTheme = 2131231030;
+			
+			// aapt resource value: 0x7f080135
+			public const int AppLightTheme = 2131231029;
+			
 			// aapt resource value: 0x7f080081
 			public const int Base_AlertDialog_AppCompat = 2131230849;
 			

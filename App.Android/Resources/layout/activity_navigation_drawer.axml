@@ -12,7 +12,7 @@
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:minHeight="?android:attr/actionBarSize"
-            android:background="@android:color/holo_green_light" />
+            android:background="?android:attr/colorPrimary" />
         <FrameLayout
             android:id="@+id/layout_content"
             android:layout_width="match_parent"

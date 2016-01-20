@@ -3,7 +3,7 @@ using Android.OS;
 
 namespace App.Android
 {
-    [Activity(Label = "App.Android", Theme = "@style/LightTheme", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Label = "App.Android", Theme = "@style/AppLightTheme", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : AppDrawerActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
