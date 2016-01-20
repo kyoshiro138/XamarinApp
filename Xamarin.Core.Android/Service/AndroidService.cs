@@ -21,10 +21,11 @@ namespace Xamarin.Core.Android
             Client = client;
         }
 
-        public async Task ExecuteGet(string tag, string url)
+        public virtual async Task ExecuteGet(string tag, string url)
         {
             Console.WriteLine("[REQUEST {0}] [URL {1}]", tag, url);
             ShowProgressDialog();
+
             var responseMessage = await Client.GetAsync(url);
             if (responseMessage.IsSuccessStatusCode)
             {
@@ -41,19 +42,16 @@ namespace Xamarin.Core.Android
             else
             {
                 Console.WriteLine("[REQUEST {0}] [RESPONSE ERRROR STATUS {1}]", tag, responseMessage.StatusCode);
-                if (OnResponseFailed != null)
-                {
-                    var args = new ServiceResponseEventArgs<T>(tag, string.Empty);
-                    OnResponseFailed.Invoke(this, args);
-                }
+                HandleResponseFailure(tag, string.Empty);
             }
             CloseProgressDialog();
         }
 
-        public async Task ExecuteGet<T1>(string tag, string url) where T1 : T
+        public virtual async Task ExecuteGet<T1>(string tag, string url) where T1 : T
         {
             Console.WriteLine("[REQUEST {0}] [URL {1}]", tag, url);
             ShowProgressDialog();
+
             var responseMessage = await Client.GetAsync(url);
             if (responseMessage.IsSuccessStatusCode)
             {
@@ -82,26 +80,31 @@ namespace Xamarin.Core.Android
             else
             {
                 Console.WriteLine("[REQUEST {0}] [RESPONSE ERRROR STATUS {1}]", tag, responseMessage.StatusCode);
-                if (OnResponseFailed != null)
-                {
-                    var args = new ServiceResponseEventArgs<T>(tag, string.Empty);
-                    OnResponseFailed.Invoke(this, args);
-                }
+                HandleResponseFailure(tag, string.Empty);
             }
             CloseProgressDialog();
         }
 
-        private void ShowProgressDialog()
+        protected void HandleResponseFailure(string tag, string errorMessage)
         {
-            if(Dialog!=null && !Dialog.IsShowing)
+            if (OnResponseFailed != null)
+            {
+                var args = new ServiceResponseEventArgs<T>(tag, errorMessage);
+                OnResponseFailed.Invoke(this, args);
+            }
+        }
+
+        protected void ShowProgressDialog()
+        {
+            if (Dialog != null && !Dialog.IsShowing)
             {
                 Dialog.Show();
             }
         }
 
-        private void CloseProgressDialog()
+        protected void CloseProgressDialog()
         {
-            if(Dialog!=null && Dialog.IsShowing)
+            if (Dialog != null && Dialog.IsShowing)
             {
                 Dialog.Dismiss();
             }

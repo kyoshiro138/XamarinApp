@@ -17,7 +17,7 @@ namespace Xamarin.Core.Android
 
         protected override Animator InitAnimation()
         {
-            ValueAnimator animator = ValueAnimator.OfFloat(1.0f, 0.0f);
+            ValueAnimator animator = ValueAnimator.OfFloat(0.0f, 1.0f);
             animator.SetInterpolator(new AccelerateInterpolator());
 
             return animator;

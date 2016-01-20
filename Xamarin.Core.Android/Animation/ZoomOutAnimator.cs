@@ -22,7 +22,7 @@ namespace Xamarin.Core.Android
 
         protected override Animator InitAnimation()
         {
-            ValueAnimator animator = ValueAnimator.OfInt(0, 100);
+            ValueAnimator animator = ValueAnimator.OfInt(100, 0);
             animator.SetInterpolator(new AccelerateInterpolator());
 
             return animator;
@@ -38,8 +38,8 @@ namespace Xamarin.Core.Android
 
             ViewGroup.LayoutParams layoutParams = view.LayoutParameters;
 
-            layoutParams.Width = 0;
-            layoutParams.Height = 0;
+            layoutParams.Width = ViewWidth;
+            layoutParams.Height = ViewHeight;
 
             view.LayoutParameters = layoutParams;
         }

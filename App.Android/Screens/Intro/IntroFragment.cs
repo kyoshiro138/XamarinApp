@@ -47,7 +47,7 @@ namespace App.Android
             base.OnStart();
             await database.InitDatabase();
             bool isUserSignedIn = await introSL.IsUserSignedIn();
-            if (isUserSignedIn)
+            if (false)
             {
                 await introSL.NavigateWithDelay(new HomeFragment());
             }

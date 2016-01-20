@@ -22,7 +22,7 @@ namespace Xamarin.Core.Android
 
         protected override Animator InitAnimation()
         {
-            ValueAnimator animator = ValueAnimator.OfInt(100, 0);
+            ValueAnimator animator = ValueAnimator.OfInt(0, 100);
             animator.SetInterpolator(new AccelerateInterpolator());
 
             return animator;

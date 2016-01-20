@@ -24,13 +24,16 @@ namespace App.Android
         private SinglelineTextField tfUsername;
         private SinglelineTextField tfPassword;
 
-        private ZoomOutAnimator LayoutAppearAnimator;
+        private ZoomInAnimator LayoutAppearAnimator;
+        private ZoomOutAnimator LayoutDisappearAnimator;
         private ResizeAnimator LayoutResizeAnimator;
-        private FadeOutAnimator ContentAppearAnimator;
-        private FadeInAnimator ContentDisappearAnimator;
-        private FadeOutAnimator AvatarAppearAnimator;
-        private FadeOutAnimator RegisterAppearAnimator;
-        private FadeInAnimator RegisterDisappearAnimator;
+        private FadeInAnimator ContentAppearAnimator;
+        private FadeOutAnimator ContentDisappearAnimator;
+        private FadeOutAnimator ContentHideAnimator;
+        private FadeInAnimator AvatarAppearAnimator;
+        private FadeOutAnimator AvatarDisappearAnimator;
+        private FadeInAnimator RegisterAppearAnimator;
+        private FadeOutAnimator RegisterDisappearAnimator;
 
         private LoginScreenLogic loginSL;
         private DialogBuilder dialogBuilder;
@@ -106,8 +109,12 @@ namespace App.Android
 
             if (LayoutAppearAnimator == null)
             {
-                LayoutAppearAnimator = new ZoomOutAnimator("LayoutAppearAnimator");
+                LayoutAppearAnimator = new ZoomInAnimator("LayoutAppearAnimator");
                 LayoutAppearAnimator.SetAnimationView(LayoutLogin);
+            }
+            if (LayoutDisappearAnimator == null)
+            {
+                LayoutDisappearAnimator = new ZoomOutAnimator("LayoutDisappearAnimator");
             }
             if (LayoutResizeAnimator == null)
             {
@@ -115,32 +122,43 @@ namespace App.Android
             }
             if (ContentAppearAnimator == null)
             {
-                ContentAppearAnimator = new FadeOutAnimator("ContentAppearAnimator");
+                ContentAppearAnimator = new FadeInAnimator("ContentAppearAnimator");
                 ContentAppearAnimator.SetAnimationView(LayoutLoginUsername);
             }
             if (ContentDisappearAnimator == null)
             {
-                ContentDisappearAnimator = new FadeInAnimator("ContentDisappearAnimator");
+                ContentDisappearAnimator = new FadeOutAnimator("ContentDisappearAnimator");
+            }
+            if (ContentHideAnimator == null)
+            {
+                ContentHideAnimator = new FadeOutAnimator("ContentHideAnimator");
             }
             if (AvatarAppearAnimator == null)
             {
-                AvatarAppearAnimator = new FadeOutAnimator("AvatarAppearAnimator");
+                AvatarAppearAnimator = new FadeInAnimator("AvatarAppearAnimator");
+                AvatarAppearAnimator.SetAnimationView(imgAvatar);
+            }
+            if (AvatarDisappearAnimator == null)
+            {
+                AvatarDisappearAnimator = new FadeOutAnimator("AvatarDisappearAnimator");
                 AvatarAppearAnimator.SetAnimationView(imgAvatar);
             }
             if (RegisterAppearAnimator == null)
             {
-                RegisterAppearAnimator = new FadeOutAnimator("RegisterAppearAnimator");
+                RegisterAppearAnimator = new FadeInAnimator("RegisterAppearAnimator");
                 RegisterAppearAnimator.SetAnimationView(lblCreateAccount);
             }
             if (RegisterDisappearAnimator == null)
             {
-                RegisterDisappearAnimator = new FadeInAnimator("RegisterDisappearAnimator");
+                RegisterDisappearAnimator = new FadeOutAnimator("RegisterDisappearAnimator");
             }
 
             LayoutAppearAnimator.OnAnimationFinished += OnAnimationFinished;
+            LayoutDisappearAnimator.OnAnimationFinished += OnAnimationFinished;
             AvatarAppearAnimator.OnAnimationStarting += OnAnimationStarting;
             ContentAppearAnimator.OnAnimationStarting += OnAnimationStarting;
             ContentDisappearAnimator.OnAnimationFinished += OnAnimationFinished;
+            ContentHideAnimator.OnAnimationFinished += OnAnimationFinished;
             RegisterDisappearAnimator.OnAnimationFinished += OnAnimationFinished;
             RegisterAppearAnimator.OnAnimationStarting += OnAnimationStarting;
 
@@ -161,9 +179,11 @@ namespace App.Android
             base.OnPause();
 
             LayoutAppearAnimator.OnAnimationFinished -= OnAnimationFinished;
+            LayoutDisappearAnimator.OnAnimationFinished -= OnAnimationFinished;
             AvatarAppearAnimator.OnAnimationStarting -= OnAnimationStarting;
             ContentAppearAnimator.OnAnimationStarting -= OnAnimationStarting;
             ContentDisappearAnimator.OnAnimationFinished -= OnAnimationFinished;
+            ContentHideAnimator.OnAnimationFinished -= OnAnimationFinished;
             RegisterDisappearAnimator.OnAnimationFinished -= OnAnimationFinished;
             RegisterAppearAnimator.OnAnimationStarting -= OnAnimationStarting;
 
@@ -237,6 +257,28 @@ namespace App.Android
             RegisterDisappearAnimator.Start();
         }
 
+        private void HideLoginUsernameLayout()
+        {
+            AvatarDisappearAnimator.SetAnimationView(imgAvatar);
+            ContentHideAnimator.SetAnimationView(LayoutLoginUsername);
+            LayoutDisappearAnimator.SetAnimationView(LayoutLogin);
+            RegisterDisappearAnimator.SetAnimationView(lblCreateAccount);
+
+            AvatarDisappearAnimator.Start();
+            ContentHideAnimator.Start();
+            RegisterDisappearAnimator.Start();
+        }
+
+        private void HideLoginPasswordLayout()
+        {
+            AvatarDisappearAnimator.SetAnimationView(imgAvatar);
+            ContentHideAnimator.SetAnimationView(LayoutLoginPassword);
+            LayoutDisappearAnimator.SetAnimationView(LayoutLogin);
+
+            AvatarDisappearAnimator.Start();
+            ContentHideAnimator.Start();
+        }
+
         private void OnAnimationStarting(object sender, AnimatorEventArgs e)
         {
             BaseAnimator animator = sender as BaseAnimator;
@@ -272,13 +314,19 @@ namespace App.Android
                     case "RegisterDisappearAnimator":
                         e.AnimationView.Visibility = ViewStates.Gone;
                         break;
+                    case "ContentHideAnimator":
+                        LayoutDisappearAnimator.Start();
+                        break;
+                    case "LayoutDisappearAnimator":
+                        loginSL.NavigateToHome(new HomeFragment());
+                        break;
                 }
             }
         }
 
         private void Service_OnResponseFailed(object sender, ServiceResponseEventArgs<AppResponseObject> e)
         {
-
+            
         }
 
         private async void Service_OnResponseSuccess(object sender, ServiceResponseEventArgs<AppResponseObject> e)
@@ -314,7 +362,7 @@ namespace App.Android
             if (isSucceess)
             {
                 await loginSL.SaveAuthenticationKey(response.Data.Key);
-                loginSL.NavigateToHome(new HomeFragment());
+                HideLoginPasswordLayout();
             }
             else if (response.ErrorCode.Equals(ServiceConstants.ErrorCodePasswordIncorrect))
             {
@@ -346,6 +394,8 @@ namespace App.Android
                     if (e.ButtonId == (int)DialogButtonType.Positive)
                     {
                         // TODO: Sign in as guest
+
+                        HideLoginUsernameLayout();
                     }
                     else if (e.ButtonId == (int)DialogButtonType.Negative)
                     {

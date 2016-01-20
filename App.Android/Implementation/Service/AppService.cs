@@ -2,6 +2,10 @@
 using Xamarin.Core.Android;
 using System.Net.Http;
 using ModernHttpClient;
+using System.Threading.Tasks;
+using System.Net;
+using Xamarin.Core;
+using Java.Net;
 
 namespace App.Android
 {
@@ -11,13 +15,39 @@ namespace App.Android
             : base(null)
         {
             Client = new HttpClient(new NativeMessageHandler());
-//            Client.Timeout = new System.TimeSpan(ServiceConstants.ServiceTimeout);
-            System.Console.WriteLine(Client.Timeout.Ticks);
         }
 
         public AppService(HttpClient client)
             : base(client)
         {
+        }
+
+        public override async Task ExecuteGet(string tag, string url)
+        {
+            try
+            {
+                await base.ExecuteGet(tag, url);
+            }
+            catch (UnknownHostException e)
+            {
+                e.PrintStackTrace();
+                HandleResponseFailure(tag, string.Empty);
+                CloseProgressDialog();
+            }
+        }
+
+        public override async Task ExecuteGet<T1>(string tag, string url)
+        {
+            try
+            {
+                await base.ExecuteGet<T1>(tag, url);
+            }
+            catch (UnknownHostException e)
+            {
+                e.PrintStackTrace();
+                HandleResponseFailure(tag, string.Empty);
+                CloseProgressDialog();
+            }
         }
     }
 }

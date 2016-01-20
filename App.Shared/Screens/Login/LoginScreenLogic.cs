@@ -67,6 +67,17 @@ namespace App.Shared
             }
         }
 
+        public async Task HandleGuestSignIn(string username)
+        {
+            User user = new User();
+            user.UserId = 0;
+            user.Username = username;
+            user.UserType = 0;
+
+            CurrentLoginUser = user;
+            await loginScreen.UserManager.SaveUserAuthentication(CurrentLoginUser, "");
+        }
+
         public void UpdateUserBasicInfo(User user)
         {
             CurrentLoginUser = user;
