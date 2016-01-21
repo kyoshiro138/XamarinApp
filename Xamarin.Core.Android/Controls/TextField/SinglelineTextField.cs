@@ -14,6 +14,11 @@ namespace Xamarin.Core.Android
         private const float ERROR_FONT_SIZE = 12f;
         private const float HELPER_FONT_SIZE = 12f;
 
+        private const int STATE_NORMAL = 0;
+        private const int STATE_DISABLE = 1;
+        private const int STATE_FOCUSED = 2;
+        private const int STATE_ERROR = 3;
+
         private const string FONT_PATH = "Fonts/roboto_regular.ttf";
 
         private ResourceUtil ResUtil;
@@ -52,14 +57,11 @@ namespace Xamarin.Core.Android
 
                 if (value)
                 {
-                    DividerView.SetBackgroundResource(Resource.Drawable.bg_text_field_divider_default);
-                    InputView.SetTextColor(ResUtil.GetColorFromAttribute(Resource.Attribute.MaterialTextColor));
+                    ChangeColorByState(STATE_NORMAL);
                 }
                 else
                 {
-                    DividerView.SetBackgroundResource(Resource.Drawable.bg_text_field_divider_disabled);
-                    InputView.SetTextColor(ResUtil.GetColorFromAttribute(Resource.Attribute.MaterialTextDisabledColor));
-                    LabelView.SetTextColor(ResUtil.GetColorFromAttribute(Resource.Attribute.MaterialTextFieldLabelColor));
+                    ChangeColorByState(STATE_DISABLE);
                     Error = string.Empty;
                 }
             }
@@ -108,9 +110,20 @@ namespace Xamarin.Core.Android
                 if (ErrorEnabled)
                 {
                     ErrorView.Visibility = string.IsNullOrEmpty(value) ? ViewStates.Invisible : ViewStates.Visible;
-                    if (string.IsNullOrEmpty(value) && !string.IsNullOrEmpty(Helper))
+                    if (string.IsNullOrEmpty(value))
                     {
-                        Helper = HelperView.Text;
+                        if (!InputView.IsFocused)
+                        {
+                            ChangeColorByState(STATE_NORMAL);
+                            if (!string.IsNullOrEmpty(Helper))
+                            {
+                                Helper = HelperView.Text;    
+                            }
+                        }
+                    }
+                    else
+                    {
+                        ChangeColorByState(STATE_ERROR);
                     }
                 }
                 ErrorView.Text = value;
@@ -206,19 +219,11 @@ namespace Xamarin.Core.Android
             {
                 if (e.HasFocus)
                 {
-                    if (!string.IsNullOrEmpty(Label))
-                    {
-                        LabelView.SetTextColor(ResUtil.GetColorFromAttribute(Resource.Attribute.MaterialTextFieldLabelColorPrimary));
-                    }
-                    DividerView.SetBackgroundResource(Resource.Drawable.bg_text_field_divider_focused);
+                    ChangeColorByState(STATE_FOCUSED);
                 }
                 else
                 {
-                    if (!string.IsNullOrEmpty(Label))
-                    {
-                        LabelView.SetTextColor(ResUtil.GetColorFromAttribute(Resource.Attribute.MaterialTextFieldLabelColor));
-                    }
-                    DividerView.SetBackgroundResource(Resource.Drawable.bg_text_field_divider_default);
+                    ChangeColorByState(STATE_NORMAL);
                 }
             }
         }
@@ -227,21 +232,50 @@ namespace Xamarin.Core.Android
         {
             if (InputView.IsFocused)
             {
-                if (!string.IsNullOrEmpty(Label))
-                {
-                    LabelView.SetTextColor(ResUtil.GetColorFromAttribute(Resource.Attribute.MaterialTextFieldLabelColorPrimary));
-                }
-                DividerView.SetBackgroundResource(Resource.Drawable.bg_text_field_divider_focused);
+                ChangeColorByState(STATE_FOCUSED);
             }
             else
             {
-                if (!string.IsNullOrEmpty(Label))
-                {
-                    LabelView.SetTextColor(ResUtil.GetColorFromAttribute(Resource.Attribute.MaterialTextFieldLabelColor));
-                }
-                DividerView.SetBackgroundResource(Resource.Drawable.bg_text_field_divider_default);
+                ChangeColorByState(STATE_NORMAL);
             }
             Error = string.Empty;
+        }
+
+        private void ChangeColorByState(int state)
+        {
+            switch (state)
+            {
+                case STATE_NORMAL:
+                    if (!string.IsNullOrEmpty(Label))
+                    {
+                        LabelView.SetTextColor(ResUtil.GetColorFromAttribute(Resource.Attribute.MaterialTextFieldLabelColor));
+                    }
+                    InputView.SetTextColor(ResUtil.GetColorFromAttribute(Resource.Attribute.MaterialTextColor));
+                    DividerView.SetBackgroundResource(Resource.Drawable.bg_text_field_divider_default);
+                    break;
+                case STATE_DISABLE:
+                    if (!string.IsNullOrEmpty(Label))
+                    {
+                        LabelView.SetTextColor(ResUtil.GetColorFromAttribute(Resource.Attribute.MaterialTextFieldLabelColor));
+                    }
+                    InputView.SetTextColor(ResUtil.GetColorFromAttribute(Resource.Attribute.MaterialTextDisabledColor));
+                    DividerView.SetBackgroundResource(Resource.Drawable.bg_text_field_divider_disabled);
+                    break;
+                case STATE_FOCUSED:
+                    if (!string.IsNullOrEmpty(Label))
+                    {
+                        LabelView.SetTextColor(ResUtil.GetColorFromAttribute(Resource.Attribute.MaterialTextFieldLabelColorPrimary));
+                    }
+                    DividerView.SetBackgroundResource(Resource.Drawable.bg_text_field_divider_focused);
+                    break;
+                case STATE_ERROR:
+                    if (!string.IsNullOrEmpty(Label))
+                    {
+                        LabelView.SetTextColor(ResUtil.GetColorFromAttribute(Resource.Attribute.MaterialTextFieldLabelColorError));
+                    }
+                    DividerView.SetBackgroundResource(Resource.Drawable.bg_text_field_divider_error);
+                    break;
+            }
         }
     }
 }

@@ -10,6 +10,7 @@
 		<item name="MaterialDividerColor">@color/c_text_black_12</item>
 
 		<item name="MaterialTextFieldLabelColor">@color/c_text_black_38</item>
+		<item name="MaterialTextFieldLabelColorError">@color/c_text_error</item>
 		<item name="MaterialTextFieldLabelColorPrimary">@color/c_primary_color500</item>
 	</style>
 
@@ -23,6 +24,7 @@
 		<item name="MaterialDividerColor">@color/c_text_white_12</item>
 
 		<item name="MaterialTextFieldLabelColor">@color/c_text_white_30</item>
+		<item name="MaterialTextFieldLabelColorError">@color/c_text_error</item>
 		<item name="MaterialTextFieldLabelColorPrimary">@color/c_primary_color500</item>
 	</style>
 </resources>

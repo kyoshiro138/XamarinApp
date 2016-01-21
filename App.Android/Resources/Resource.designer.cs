@@ -43,6 +43,7 @@ namespace App.Android
 			global::Xamarin.Core.Android.Resource.Attribute.MaterialTextColor = global::App.Android.Resource.Attribute.MaterialTextColor;
 			global::Xamarin.Core.Android.Resource.Attribute.MaterialTextDisabledColor = global::App.Android.Resource.Attribute.MaterialTextDisabledColor;
 			global::Xamarin.Core.Android.Resource.Attribute.MaterialTextFieldLabelColor = global::App.Android.Resource.Attribute.MaterialTextFieldLabelColor;
+			global::Xamarin.Core.Android.Resource.Attribute.MaterialTextFieldLabelColorError = global::App.Android.Resource.Attribute.MaterialTextFieldLabelColorError;
 			global::Xamarin.Core.Android.Resource.Attribute.MaterialTextFieldLabelColorPrimary = global::App.Android.Resource.Attribute.MaterialTextFieldLabelColorPrimary;
 			global::Xamarin.Core.Android.Resource.Attribute.MaterialTextHintColor = global::App.Android.Resource.Attribute.MaterialTextHintColor;
 			global::Xamarin.Core.Android.Resource.Attribute.MaterialTextSecondaryColor = global::App.Android.Resource.Attribute.MaterialTextSecondaryColor;
@@ -1091,6 +1092,7 @@ namespace App.Android
 			global::Xamarin.Core.Android.Resource.Styleable.MaterialThemeAttribute_MaterialTextColor = global::App.Android.Resource.Styleable.MaterialThemeAttribute_MaterialTextColor;
 			global::Xamarin.Core.Android.Resource.Styleable.MaterialThemeAttribute_MaterialTextDisabledColor = global::App.Android.Resource.Styleable.MaterialThemeAttribute_MaterialTextDisabledColor;
 			global::Xamarin.Core.Android.Resource.Styleable.MaterialThemeAttribute_MaterialTextFieldLabelColor = global::App.Android.Resource.Styleable.MaterialThemeAttribute_MaterialTextFieldLabelColor;
+			global::Xamarin.Core.Android.Resource.Styleable.MaterialThemeAttribute_MaterialTextFieldLabelColorError = global::App.Android.Resource.Styleable.MaterialThemeAttribute_MaterialTextFieldLabelColorError;
 			global::Xamarin.Core.Android.Resource.Styleable.MaterialThemeAttribute_MaterialTextFieldLabelColorPrimary = global::App.Android.Resource.Styleable.MaterialThemeAttribute_MaterialTextFieldLabelColorPrimary;
 			global::Xamarin.Core.Android.Resource.Styleable.MaterialThemeAttribute_MaterialTextHintColor = global::App.Android.Resource.Styleable.MaterialThemeAttribute_MaterialTextHintColor;
 			global::Xamarin.Core.Android.Resource.Styleable.MaterialThemeAttribute_MaterialTextSecondaryColor = global::App.Android.Resource.Styleable.MaterialThemeAttribute_MaterialTextSecondaryColor;
@@ -1392,7 +1394,10 @@ namespace App.Android
 			public const int MaterialTextFieldLabelColor = 2130772183;
 			
 			// aapt resource value: 0x7f0100d8
-			public const int MaterialTextFieldLabelColorPrimary = 2130772184;
+			public const int MaterialTextFieldLabelColorError = 2130772184;
+			
+			// aapt resource value: 0x7f0100d9
+			public const int MaterialTextFieldLabelColorPrimary = 2130772185;
 			
 			// aapt resource value: 0x7f0100d4
 			public const int MaterialTextHintColor = 2130772180;
@@ -4851,7 +4856,8 @@ namespace App.Android
 					2130772181,
 					2130772182,
 					2130772183,
-					2130772184};
+					2130772184,
+					2130772185};
 			
 			// aapt resource value: 4
 			public const int MaterialThemeAttribute_MaterialDividerColor = 4;
@@ -4866,7 +4872,10 @@ namespace App.Android
 			public const int MaterialThemeAttribute_MaterialTextFieldLabelColor = 5;
 			
 			// aapt resource value: 6
-			public const int MaterialThemeAttribute_MaterialTextFieldLabelColorPrimary = 6;
+			public const int MaterialThemeAttribute_MaterialTextFieldLabelColorError = 6;
+			
+			// aapt resource value: 7
+			public const int MaterialThemeAttribute_MaterialTextFieldLabelColorPrimary = 7;
 			
 			// aapt resource value: 2
 			public const int MaterialThemeAttribute_MaterialTextHintColor = 2;

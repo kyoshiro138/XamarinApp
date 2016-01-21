@@ -83,7 +83,10 @@ namespace Xamarin.Core.Android
 			public static int MaterialTextFieldLabelColor = 2130772183;
 			
 			// aapt resource value: 0x7f0100d8
-			public static int MaterialTextFieldLabelColorPrimary = 2130772184;
+			public static int MaterialTextFieldLabelColorError = 2130772184;
+			
+			// aapt resource value: 0x7f0100d9
+			public static int MaterialTextFieldLabelColorPrimary = 2130772185;
 			
 			// aapt resource value: 0x7f0100d4
 			public static int MaterialTextHintColor = 2130772180;
@@ -3407,7 +3410,8 @@ namespace Xamarin.Core.Android
 					2130772181,
 					2130772182,
 					2130772183,
-					2130772184};
+					2130772184,
+					2130772185};
 			
 			// aapt resource value: 4
 			public static int MaterialThemeAttribute_MaterialDividerColor = 4;
@@ -3422,7 +3426,10 @@ namespace Xamarin.Core.Android
 			public static int MaterialThemeAttribute_MaterialTextFieldLabelColor = 5;
 			
 			// aapt resource value: 6
-			public static int MaterialThemeAttribute_MaterialTextFieldLabelColorPrimary = 6;
+			public static int MaterialThemeAttribute_MaterialTextFieldLabelColorError = 6;
+			
+			// aapt resource value: 7
+			public static int MaterialThemeAttribute_MaterialTextFieldLabelColorPrimary = 7;
 			
 			// aapt resource value: 2
 			public static int MaterialThemeAttribute_MaterialTextHintColor = 2;

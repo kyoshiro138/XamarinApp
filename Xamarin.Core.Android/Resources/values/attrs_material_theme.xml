@@ -8,6 +8,7 @@
         <attr name="MaterialDividerColor" format="color"/>
 
         <attr name="MaterialTextFieldLabelColor" format="color"/>
+        <attr name="MaterialTextFieldLabelColorError" format="color"/>
         <attr name="MaterialTextFieldLabelColorPrimary" format="color"/>
     </declare-styleable>
 </resources>
