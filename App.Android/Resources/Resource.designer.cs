@@ -834,6 +834,7 @@ namespace App.Android
 			global::Xamarin.Core.Android.Resource.Style.Base_Widget_AppCompat_Toolbar = global::App.Android.Resource.Style.Base_Widget_AppCompat_Toolbar;
 			global::Xamarin.Core.Android.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation = global::App.Android.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation;
 			global::Xamarin.Core.Android.Resource.Style.DarkTheme = global::App.Android.Resource.Style.DarkTheme;
+			global::Xamarin.Core.Android.Resource.Style.DialogLightTheme = global::App.Android.Resource.Style.DialogLightTheme;
 			global::Xamarin.Core.Android.Resource.Style.LightTheme = global::App.Android.Resource.Style.LightTheme;
 			global::Xamarin.Core.Android.Resource.Style.Platform_AppCompat = global::App.Android.Resource.Style.Platform_AppCompat;
 			global::Xamarin.Core.Android.Resource.Style.Platform_AppCompat_Light = global::App.Android.Resource.Style.Platform_AppCompat_Light;
@@ -3589,11 +3590,11 @@ namespace App.Android
 			// aapt resource value: 0x7f080080
 			public const int Animation_AppCompat_DropDownUp = 2131230848;
 			
-			// aapt resource value: 0x7f080136
-			public const int AppDarkTheme = 2131231030;
+			// aapt resource value: 0x7f080137
+			public const int AppDarkTheme = 2131231031;
 			
-			// aapt resource value: 0x7f080135
-			public const int AppLightTheme = 2131231029;
+			// aapt resource value: 0x7f080136
+			public const int AppLightTheme = 2131231030;
 			
 			// aapt resource value: 0x7f080081
 			public const int Base_AlertDialog_AppCompat = 2131230849;
@@ -4017,6 +4018,9 @@ namespace App.Android
 			
 			// aapt resource value: 0x7f080134
 			public const int DarkTheme = 2131231028;
+			
+			// aapt resource value: 0x7f080135
+			public const int DialogLightTheme = 2131231029;
 			
 			// aapt resource value: 0x7f080133
 			public const int LightTheme = 2131231027;

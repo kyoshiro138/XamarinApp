@@ -2572,6 +2572,9 @@ namespace Xamarin.Core.Android
 			// aapt resource value: 0x7f080134
 			public static int DarkTheme = 2131231028;
 			
+			// aapt resource value: 0x7f080135
+			public static int DialogLightTheme = 2131231029;
+			
 			// aapt resource value: 0x7f080133
 			public static int LightTheme = 2131231027;
 			
