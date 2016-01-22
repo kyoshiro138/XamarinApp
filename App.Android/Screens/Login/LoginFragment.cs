@@ -6,6 +6,7 @@ using App.Shared;
 using Xamarin.Core;
 using Xamarin.Core.Android;
 using System.Threading.Tasks;
+using Android.Provider;
 
 namespace App.Android
 {
@@ -66,7 +67,7 @@ namespace App.Android
         {
             dialogBuilder = new DialogBuilder(Context);
 
-            var service = new AppService();
+            var service = new AppService(Context);
             service.OnResponseSuccess += Service_OnResponseSuccess;
             service.OnResponseFailed += Service_OnResponseFailed;
             service.Dialog = new SystemProgressDialog(Activity);
@@ -107,51 +108,35 @@ namespace App.Android
         {
             base.OnDisplayed();
 
-            if (LayoutAppearAnimator == null)
+            if (LayoutAppearAnimator != null)
             {
-                LayoutAppearAnimator = new ZoomInAnimator("LayoutAppearAnimator");
                 LayoutAppearAnimator.SetAnimationView(LayoutLogin);
             }
-            if (LayoutDisappearAnimator == null)
+            if (ContentAppearAnimator != null)
             {
-                LayoutDisappearAnimator = new ZoomOutAnimator("LayoutDisappearAnimator");
-            }
-            if (LayoutResizeAnimator == null)
-            {
-                LayoutResizeAnimator = new ResizeAnimator("LayoutResizeAnimator");
-            }
-            if (ContentAppearAnimator == null)
-            {
-                ContentAppearAnimator = new FadeInAnimator("ContentAppearAnimator");
                 ContentAppearAnimator.SetAnimationView(LayoutLoginUsername);
             }
-            if (ContentDisappearAnimator == null)
+            if (AvatarAppearAnimator != null)
             {
-                ContentDisappearAnimator = new FadeOutAnimator("ContentDisappearAnimator");
-            }
-            if (ContentHideAnimator == null)
-            {
-                ContentHideAnimator = new FadeOutAnimator("ContentHideAnimator");
-            }
-            if (AvatarAppearAnimator == null)
-            {
-                AvatarAppearAnimator = new FadeInAnimator("AvatarAppearAnimator");
                 AvatarAppearAnimator.SetAnimationView(imgAvatar);
             }
-            if (AvatarDisappearAnimator == null)
+            if (AvatarDisappearAnimator != null)
             {
-                AvatarDisappearAnimator = new FadeOutAnimator("AvatarDisappearAnimator");
                 AvatarAppearAnimator.SetAnimationView(imgAvatar);
             }
-            if (RegisterAppearAnimator == null)
+            if (RegisterAppearAnimator != null)
             {
-                RegisterAppearAnimator = new FadeInAnimator("RegisterAppearAnimator");
                 RegisterAppearAnimator.SetAnimationView(lblCreateAccount);
             }
-            if (RegisterDisappearAnimator == null)
-            {
-                RegisterDisappearAnimator = new FadeOutAnimator("RegisterDisappearAnimator");
-            }
+
+            LayoutAppearAnimator.Start();
+        }
+
+        public override void OnResume()
+        {
+            base.OnResume();
+
+            InitAnimators();
 
             LayoutAppearAnimator.OnAnimationFinished += OnAnimationFinished;
             LayoutDisappearAnimator.OnAnimationFinished += OnAnimationFinished;
@@ -161,13 +146,6 @@ namespace App.Android
             ContentHideAnimator.OnAnimationFinished += OnAnimationFinished;
             RegisterDisappearAnimator.OnAnimationFinished += OnAnimationFinished;
             RegisterAppearAnimator.OnAnimationStarting += OnAnimationStarting;
-
-            LayoutAppearAnimator.Start();
-        }
-
-        public override void OnResume()
-        {
-            base.OnResume();
 
             btnNext.Click += OnButtonClicked;
             btnSignIn.Click += OnButtonClicked;
@@ -190,6 +168,50 @@ namespace App.Android
             btnNext.Click -= OnButtonClicked;
             btnSignIn.Click -= OnButtonClicked;
             btnBack.Click -= OnButtonClicked;
+        }
+
+        private void InitAnimators()
+        {
+            if (LayoutAppearAnimator == null)
+            {
+                LayoutAppearAnimator = new ZoomInAnimator("LayoutAppearAnimator");
+            }
+            if (LayoutDisappearAnimator == null)
+            {
+                LayoutDisappearAnimator = new ZoomOutAnimator("LayoutDisappearAnimator");
+            }
+            if (LayoutResizeAnimator == null)
+            {
+                LayoutResizeAnimator = new ResizeAnimator("LayoutResizeAnimator");
+            }
+            if (ContentAppearAnimator == null)
+            {
+                ContentAppearAnimator = new FadeInAnimator("ContentAppearAnimator");
+            }
+            if (ContentDisappearAnimator == null)
+            {
+                ContentDisappearAnimator = new FadeOutAnimator("ContentDisappearAnimator");
+            }
+            if (ContentHideAnimator == null)
+            {
+                ContentHideAnimator = new FadeOutAnimator("ContentHideAnimator");
+            }
+            if (AvatarAppearAnimator == null)
+            {
+                AvatarAppearAnimator = new FadeInAnimator("AvatarAppearAnimator");
+            }
+            if (AvatarDisappearAnimator == null)
+            {
+                AvatarDisappearAnimator = new FadeOutAnimator("AvatarDisappearAnimator");
+            }
+            if (RegisterAppearAnimator == null)
+            {
+                RegisterAppearAnimator = new FadeInAnimator("RegisterAppearAnimator");
+            }
+            if (RegisterDisappearAnimator == null)
+            {
+                RegisterDisappearAnimator = new FadeOutAnimator("RegisterDisappearAnimator");
+            }
         }
 
         private async void OnButtonClicked(object sender, System.EventArgs e)
@@ -326,7 +348,16 @@ namespace App.Android
 
         private void Service_OnResponseFailed(object sender, ServiceResponseEventArgs<AppResponseObject> e)
         {
-            
+            switch (e.RequestTag)
+            {
+                case LoginScreenConst.ServiceGetBasicInfo:
+                    if (e.ResponseString.Equals(AndroidService<AppResponseObject>.ErrorNoConnection))
+                    {
+                        var dialog = BuildOfflineLoginErrorDialog();
+                        dialog.Show();
+                    }
+                    break;
+            }
         }
 
         private async void Service_OnResponseSuccess(object sender, ServiceResponseEventArgs<AppResponseObject> e)
@@ -386,20 +417,43 @@ namespace App.Android
             return dialog;
         }
 
-        private void Dialog_OnButtonClicked(object sender, OnDialogButtonClickEventArgs e)
+        public IDialog BuildOfflineLoginErrorDialog()
+        {
+            var dialog = dialogBuilder.BuildSystemAlertDialog(LoginScreenConst.DialogOfflineLogin, "", LoginScreenConst.ErrorOfflineLogin) as SystemAlertDialog;
+            dialog.SetButton((int)DialogButtonType.Positive, LoginScreenConst.StringButtonSignInAsGuest);
+            dialog.SetButton((int)DialogButtonType.Negative, LoginScreenConst.StringButtonSettings);
+            dialog.OnButtonClicked += Dialog_OnButtonClicked;
+
+            return dialog;
+        }
+
+        private async void Dialog_OnButtonClicked(object sender, OnDialogButtonClickEventArgs e)
         {
             switch (e.DialogTag)
             {
                 case LoginScreenConst.DialogUsernameError:
                     if (e.ButtonId == (int)DialogButtonType.Positive)
                     {
-                        // TODO: Sign in as guest
-
+                        // Sign in as guest
+                        await loginSL.HandleGuestSignIn(tfUsername.Input);
                         HideLoginUsernameLayout();
                     }
                     else if (e.ButtonId == (int)DialogButtonType.Negative)
                     {
-                        // TODO: Register account
+                        // Register account
+                    }
+                    break;
+                case LoginScreenConst.DialogOfflineLogin:
+                    if (e.ButtonId == (int)DialogButtonType.Positive)
+                    {
+                        // Sign in as guest
+                        await loginSL.HandleGuestSignIn(tfUsername.Input);
+                        HideLoginUsernameLayout();
+                    }
+                    else if (e.ButtonId == (int)DialogButtonType.Negative)
+                    {
+                        // Go to device settings
+                        Context.StartActivity(new Intent(Settings.ActionWirelessSettings));
                     }
                     break;
             }

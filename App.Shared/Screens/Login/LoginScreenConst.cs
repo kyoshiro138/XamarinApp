@@ -16,12 +16,14 @@
 
         public const string DialogUsernameError = "DialogUsernameError";
         public const string DialogPasswordError = "DialogPasswordError";
+        public const string DialogOfflineLogin = "DialogOfflineLogin";
 
         public const string StringButtonNext = CommonScreenConst.StringButtonNext;
         public const string StringButtonBack = CommonScreenConst.StringButtonBack;
         public const string StringButtonSignIn = "SIGN IN";
         public const string StringButtonSignInAsGuest = "SIGN IN AS GUEST";
         public const string StringButtonRegister = "REGISTER";
+        public const string StringButtonSettings = "SETTINGS";
 
         public const string StringCreateAccount = "Create Account";
         public const string StringLabelUsername = "Username";
@@ -29,6 +31,7 @@
 
         public const string ErrorUsernameEmpty = "Username can not be empty";
         public const string ErrorPasswordEmpty = "Password can not be empty";
+        public const string ErrorOfflineLogin = "You're not connected to the internet. Do you want to try application offline as guest?";
     }
 }
 

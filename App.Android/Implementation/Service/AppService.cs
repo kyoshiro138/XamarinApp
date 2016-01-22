@@ -3,22 +3,21 @@ using Xamarin.Core.Android;
 using System.Net.Http;
 using ModernHttpClient;
 using System.Threading.Tasks;
-using System.Net;
-using Xamarin.Core;
 using Java.Net;
+using Android.Content;
 
 namespace App.Android
 {
     public class AppService : AndroidService<AppResponseObject>, IAppService
     {
-        public AppService()
-            : base(null)
+        public AppService(Context context)
+            : base(context, null)
         {
             Client = new HttpClient(new NativeMessageHandler());
         }
 
-        public AppService(HttpClient client)
-            : base(client)
+        public AppService(Context context, HttpClient client)
+            : base(context, client)
         {
         }
 

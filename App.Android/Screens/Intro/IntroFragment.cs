@@ -28,7 +28,7 @@ namespace App.Android
 
         protected override void LoadData()
         {
-            var service = new AppService();
+            var service = new AppService(Context);
             service.OnResponseSuccess += Service_OnResponseSuccess;
             service.OnResponseFailed += Service_OnResponseFailed;
             service.Dialog = new SystemProgressDialog(Activity);

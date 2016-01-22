@@ -4,22 +4,26 @@ using Android.Content;
 
 namespace Xamarin.Core.Android
 {
-    public abstract class BaseAlertDialog : AlertDialog, IDialog, IDialogInterfaceOnClickListener
+    public abstract class BaseAlertDialog : AlertDialog, IDialog, 
+            IDialogInterfaceOnClickListener, IDialogInterfaceOnDismissListener, IDialogInterfaceOnCancelListener
     {
         public string Tag { get; set; }
 
         public event EventHandler<OnDialogButtonClickEventArgs> OnButtonClicked;
+        public event EventHandler<EventArgs> OnDialogClosed;
 
         protected BaseAlertDialog(Context context)
             : base(context)
         {
             InitDialog(context);
+            SetOnCancelListener(this);
         }
 
         protected BaseAlertDialog(Context context, int theme)
             : base(context, theme)
         {
             InitDialog(context);
+            SetOnCancelListener(this);
         }
 
         protected BaseAlertDialog(Context context, bool cancelable, IDialogInterfaceOnCancelListener cancelListener)
@@ -45,6 +49,28 @@ namespace Xamarin.Core.Android
             }
 
             dialog.Dismiss();
+        }
+
+        public void OnDismiss(IDialogInterface dialog)
+        {
+            if (OnDialogClosed != null)
+            {
+                OnDialogClosed.Invoke(this, new EventArgs());
+                OnDialogClosed = null;
+            }
+
+            OnButtonClicked = null;
+        }
+
+        public void OnCancel(IDialogInterface dialog)
+        {
+            if (OnDialogClosed != null)
+            {
+                OnDialogClosed.Invoke(this, new EventArgs());
+                OnDialogClosed = null;
+            }
+
+            OnButtonClicked = null;
         }
     }
 }
