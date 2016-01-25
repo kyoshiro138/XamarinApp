@@ -25,7 +25,7 @@ namespace App.Android
         {
             base.LoadItemData(data);
 
-            txtTitle.Text = data.Title;
+            txtTitle.Text = data.MenuTitle;
         }
     }
 }

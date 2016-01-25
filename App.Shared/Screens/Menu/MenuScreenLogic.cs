@@ -1,6 +1,7 @@
 ﻿using System;
 using Xamarin.Core;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace App.Shared
 {
@@ -13,16 +14,35 @@ namespace App.Shared
             menuScreen = screen;
         }
 
-        public void InitMenuList()
+        public async void LoadMenu()
         {
+            User currentUser = await menuScreen.UserManager.GetCurrentUser();
             List<MenuItem> menuList = new List<MenuItem>();
-            menuList.Add(new MenuItem() { Title = "Menu 1", ScreenTag = "" });
-            menuList.Add(new MenuItem() { Title = "Menu 2", ScreenTag = "" });
-            menuList.Add(new MenuItem() { Title = "Menu 3", ScreenTag = "" });
-            menuList.Add(new MenuItem() { Title = "Menu 4", ScreenTag = "" });
+            if (currentUser.UserId == 1)
+            {
+                // Menu for member
+                menuList.Add(new MenuItem() { MenuTitle = MenuScreenConst.StringMenuSettings, MenuId = MenuScreenConst.MenuSettings });
+                menuList.Add(new MenuItem() { MenuTitle = MenuScreenConst.StringMenuSignOut, MenuId = MenuScreenConst.MenuSignOut });
+            }
+            else
+            {
+                // Menu for guest
+                menuList.Add(new MenuItem() { MenuTitle = MenuScreenConst.StringMenuSettings, MenuId = MenuScreenConst.MenuSettings });
+                menuList.Add(new MenuItem() { MenuTitle = MenuScreenConst.StringMenuSignOut, MenuId = MenuScreenConst.MenuSignOut });
+            }
 
             IListView menuListView = menuScreen.GetControlByTag(MenuScreenConst.ControlListView) as IListView;
             menuListView.SetDataSource(menuScreen.GetMenuListDataSource(menuList));
+        }
+
+        public async Task SignOut()
+        {
+            await menuScreen.UserManager.RemoveUserAuthentication();
+        }
+
+        public void NavigateToLogin(IScreen loginScreen)
+        {
+            menuScreen.Navigator.NavigateTo(loginScreen, true);
         }
     }
 }

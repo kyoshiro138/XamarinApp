@@ -453,7 +453,7 @@ namespace App.Android
                     else if (e.ButtonId == (int)DialogButtonType.Negative)
                     {
                         // Go to device settings
-                        Context.StartActivity(new Intent(Settings.ActionWirelessSettings));
+                        Context.StartActivity(new Intent(Settings.ActionWifiSettings));
                     }
                     break;
             }

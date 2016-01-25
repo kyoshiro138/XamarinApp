@@ -4,17 +4,9 @@ namespace App.Shared
 {
     public class MenuItem
     {
-        public string Title
-        {
-            get;
-            set;
-        }
+        public string MenuTitle { get; set; }
 
-        public string ScreenTag
-        {
-            get;
-            set;
-        }
+        public int MenuId { get; set; }
     }
 }
 

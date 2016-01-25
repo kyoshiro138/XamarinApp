@@ -25,8 +25,13 @@ namespace App.Android
         {
         }
 
-        protected override void LoadData()
+        protected override async void LoadData()
         {
+            MainActivity activity = DrawerActivity as MainActivity;
+            if (activity != null)
+            {
+                activity.LoadMenu();
+            }
         }
 
         public IControl GetControlByTag(string tag)
