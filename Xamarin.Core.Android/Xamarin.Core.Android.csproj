@@ -103,9 +103,11 @@
     <AndroidResource Include="Resources\layout\control_text_field_singleline.axml" />
     <AndroidResource Include="Resources\layout\control_text_field_singleline_dense.axml" />
     <AndroidResource Include="Resources\drawable\bg_text_field_divider_default.xml" />
-    <AndroidResource Include="Resources\drawable\bg_text_field_divider_disabled.xml" />
-    <AndroidResource Include="Resources\drawable\bg_text_field_divider_focused.xml" />
-    <AndroidResource Include="Resources\drawable\bg_text_field_divider_error.xml" />
+    <AndroidResource Include="Resources\layout\list_item_signle_line.axml" />
+    <AndroidResource Include="Resources\drawable-v21\bg_text_field_divider_default.xml" />
+    <AndroidResource Include="Resources\drawable-v21\bg_text_field_divider_disabled.xml" />
+    <AndroidResource Include="Resources\drawable-v21\bg_text_field_divider_error.xml" />
+    <AndroidResource Include="Resources\drawable-v21\bg_text_field_divider_focused.xml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controls\" />
@@ -127,6 +129,7 @@
     <Folder Include="Service\" />
     <Folder Include="Dialog\progress\" />
     <Folder Include="Storage\" />
+    <Folder Include="Resources\drawable-v21\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Xamarin.Core\Xamarin.Core.csproj">

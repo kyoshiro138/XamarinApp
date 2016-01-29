@@ -1,8 +1,14 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <resources>
+	<declare-styleable name="CardStyle">
+	     <attr name="CardStyle" format="reference" />
+	</declare-styleable>
+
 	<style name="AppLightTheme" parent="@style/LightTheme">
+		<item name="CardStyle">@style/CardView.Light</item>
 	</style>
 
 	<style name="AppDarkTheme" parent="@style/DarkTheme">
+		<item name="CardStyle">@style/CardView.Dark</item>
 	</style>
 </resources>

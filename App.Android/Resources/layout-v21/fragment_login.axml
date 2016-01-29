@@ -10,7 +10,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginBottom="24dp">
+        android:layout_marginBottom="24dp"
+        android:elevation="4dp">
         <LinearLayout
             android:id="@+id/layout_login"
             android:layout_width="wrap_content"
@@ -64,6 +65,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_gravity="center_horizontal"
+                    android:textColor="@color/c_text_black_87"
                     app:display_type="body2" />
                 <Xamarin.Core.Android.MaterialButton
                     android:id="@+id/btn_login_sign_in"

@@ -1557,8 +1557,8 @@ namespace Xamarin.Core.Android
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f0b0061
-			public static int action0 = 2131427425;
+			// aapt resource value: 0x7f0b0063
+			public static int action0 = 2131427427;
 			
 			// aapt resource value: 0x7f0b004d
 			public static int action_bar = 2131427405;
@@ -1584,8 +1584,8 @@ namespace Xamarin.Core.Android
 			// aapt resource value: 0x7f0b004e
 			public static int action_context_bar = 2131427406;
 			
-			// aapt resource value: 0x7f0b0065
-			public static int action_divider = 2131427429;
+			// aapt resource value: 0x7f0b0067
+			public static int action_divider = 2131427431;
 			
 			// aapt resource value: 0x7f0b0002
 			public static int action_menu_divider = 2131427330;
@@ -1623,8 +1623,8 @@ namespace Xamarin.Core.Android
 			// aapt resource value: 0x7f0b0037
 			public static int buttonPanel = 2131427383;
 			
-			// aapt resource value: 0x7f0b0062
-			public static int cancel_action = 2131427426;
+			// aapt resource value: 0x7f0b0064
+			public static int cancel_action = 2131427428;
 			
 			// aapt resource value: 0x7f0b0023
 			public static int caption = 2131427363;
@@ -1632,8 +1632,8 @@ namespace Xamarin.Core.Android
 			// aapt resource value: 0x7f0b0045
 			public static int checkbox = 2131427397;
 			
-			// aapt resource value: 0x7f0b0068
-			public static int chronometer = 2131427432;
+			// aapt resource value: 0x7f0b006a
+			public static int chronometer = 2131427434;
 			
 			// aapt resource value: 0x7f0b001c
 			public static int collapseActionView = 2131427356;
@@ -1674,8 +1674,8 @@ namespace Xamarin.Core.Android
 			// aapt resource value: 0x7f0b0019
 			public static int end = 2131427353;
 			
-			// aapt resource value: 0x7f0b006d
-			public static int end_padder = 2131427437;
+			// aapt resource value: 0x7f0b006f
+			public static int end_padder = 2131427439;
 			
 			// aapt resource value: 0x7f0b0032
 			public static int expand_activities_button = 2131427378;
@@ -1701,14 +1701,14 @@ namespace Xamarin.Core.Android
 			// aapt resource value: 0x7f0b0033
 			public static int image = 2131427379;
 			
+			// aapt resource value: 0x7f0b006e
+			public static int info = 2131427438;
+			
+			// aapt resource value: 0x7f0b0068
+			public static int line1 = 2131427432;
+			
 			// aapt resource value: 0x7f0b006c
-			public static int info = 2131427436;
-			
-			// aapt resource value: 0x7f0b0066
-			public static int line1 = 2131427430;
-			
-			// aapt resource value: 0x7f0b006a
-			public static int line3 = 2131427434;
+			public static int line3 = 2131427436;
 			
 			// aapt resource value: 0x7f0b0009
 			public static int listMode = 2131427337;
@@ -1716,8 +1716,14 @@ namespace Xamarin.Core.Android
 			// aapt resource value: 0x7f0b0035
 			public static int list_item = 2131427381;
 			
-			// aapt resource value: 0x7f0b0064
-			public static int media_actions = 2131427428;
+			// aapt resource value: 0x7f0b0061
+			public static int list_item_single_line_image = 2131427425;
+			
+			// aapt resource value: 0x7f0b0062
+			public static int list_item_single_line_text = 2131427426;
+			
+			// aapt resource value: 0x7f0b0066
+			public static int media_actions = 2131427430;
 			
 			// aapt resource value: 0x7f0b001a
 			public static int middle = 2131427354;
@@ -1827,8 +1833,8 @@ namespace Xamarin.Core.Android
 			// aapt resource value: 0x7f0b0017
 			public static int src_over = 2131427351;
 			
-			// aapt resource value: 0x7f0b0063
-			public static int status_bar_latest_event_content = 2131427427;
+			// aapt resource value: 0x7f0b0065
+			public static int status_bar_latest_event_content = 2131427429;
 			
 			// aapt resource value: 0x7f0b0029
 			public static int subhead = 2131427369;
@@ -1839,11 +1845,11 @@ namespace Xamarin.Core.Android
 			// aapt resource value: 0x7f0b000b
 			public static int tabMode = 2131427339;
 			
-			// aapt resource value: 0x7f0b006b
-			public static int text = 2131427435;
+			// aapt resource value: 0x7f0b006d
+			public static int text = 2131427437;
 			
-			// aapt resource value: 0x7f0b0069
-			public static int text2 = 2131427433;
+			// aapt resource value: 0x7f0b006b
+			public static int text2 = 2131427435;
 			
 			// aapt resource value: 0x7f0b0040
 			public static int textSpacerNoButtons = 2131427392;
@@ -1863,8 +1869,8 @@ namespace Xamarin.Core.Android
 			// aapt resource value: 0x7f0b005c
 			public static int text_field_label = 2131427420;
 			
-			// aapt resource value: 0x7f0b0067
-			public static int time = 2131427431;
+			// aapt resource value: 0x7f0b0069
+			public static int time = 2131427433;
 			
 			// aapt resource value: 0x7f0b002a
 			public static int title = 2131427370;
@@ -2010,40 +2016,43 @@ namespace Xamarin.Core.Android
 			public static int control_text_field_singleline_dense = 2130903066;
 			
 			// aapt resource value: 0x7f03001b
-			public static int notification_media_action = 2130903067;
+			public static int list_item_signle_line = 2130903067;
 			
 			// aapt resource value: 0x7f03001c
-			public static int notification_media_cancel_action = 2130903068;
+			public static int notification_media_action = 2130903068;
 			
 			// aapt resource value: 0x7f03001d
-			public static int notification_template_big_media = 2130903069;
+			public static int notification_media_cancel_action = 2130903069;
 			
 			// aapt resource value: 0x7f03001e
-			public static int notification_template_big_media_narrow = 2130903070;
+			public static int notification_template_big_media = 2130903070;
 			
 			// aapt resource value: 0x7f03001f
-			public static int notification_template_lines = 2130903071;
+			public static int notification_template_big_media_narrow = 2130903071;
 			
 			// aapt resource value: 0x7f030020
-			public static int notification_template_media = 2130903072;
+			public static int notification_template_lines = 2130903072;
 			
 			// aapt resource value: 0x7f030021
-			public static int notification_template_part_chronometer = 2130903073;
+			public static int notification_template_media = 2130903073;
 			
 			// aapt resource value: 0x7f030022
-			public static int notification_template_part_time = 2130903074;
+			public static int notification_template_part_chronometer = 2130903074;
 			
 			// aapt resource value: 0x7f030023
-			public static int select_dialog_item_material = 2130903075;
+			public static int notification_template_part_time = 2130903075;
 			
 			// aapt resource value: 0x7f030024
-			public static int select_dialog_multichoice_material = 2130903076;
+			public static int select_dialog_item_material = 2130903076;
 			
 			// aapt resource value: 0x7f030025
-			public static int select_dialog_singlechoice_material = 2130903077;
+			public static int select_dialog_multichoice_material = 2130903077;
 			
 			// aapt resource value: 0x7f030026
-			public static int support_simple_spinner_dropdown_item = 2130903078;
+			public static int select_dialog_singlechoice_material = 2130903078;
+			
+			// aapt resource value: 0x7f030027
+			public static int support_simple_spinner_dropdown_item = 2130903079;
 			
 			static Layout()
 			{

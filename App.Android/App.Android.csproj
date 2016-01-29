@@ -68,6 +68,9 @@
       <HintPath>..\packages\SQLite.Net.Platform.XamarinAndroid.dll</HintPath>
     </Reference>
     <Reference Include="Mono.CSharp" />
+    <Reference Include="Xamarin.Android.Support.v7.CardView">
+      <HintPath>..\packages\Xamarin.Android.Support.v7.CardView.23.1.1.0\lib\MonoAndroid403\Xamarin.Android.Support.v7.CardView.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
@@ -109,8 +112,8 @@
     <AndroidResource Include="Resources\layout\list_menu_item.axml" />
     <AndroidResource Include="Resources\layout\fragment_intro.axml" />
     <AndroidResource Include="Resources\layout\fragment_login.axml" />
-    <AndroidResource Include="Resources\drawable\bg_card.xml" />
     <AndroidResource Include="Resources\drawable-hdpi\img_default_avatar.png" />
+    <AndroidResource Include="Resources\layout-v21\fragment_login.axml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Xamarin.Core.Android\Xamarin.Core.Android.csproj">
@@ -141,6 +144,7 @@
     <Folder Include="Resources\color\" />
     <Folder Include="Implementation\Service\" />
     <Folder Include="Implementation\Storage\" />
+    <Folder Include="Resources\layout-v21\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

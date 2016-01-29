@@ -7,6 +7,7 @@ using Xamarin.Core;
 using Xamarin.Core.Android;
 using System.Threading.Tasks;
 using Android.Provider;
+using Android.Support.V7.Widget;
 
 namespace App.Android
 {
@@ -48,7 +49,7 @@ namespace App.Android
 
         protected override void BindControls(View rootView)
         {
-            LayoutLogin = rootView.FindViewById(Resource.Id.layout_login);
+            LayoutLogin = rootView.FindViewById(Resource.Id.card_login);
             LayoutLoginUsername = rootView.FindViewById(Resource.Id.layout_login_username);
             LayoutLoginPassword = rootView.FindViewById(Resource.Id.layout_login_password);
 

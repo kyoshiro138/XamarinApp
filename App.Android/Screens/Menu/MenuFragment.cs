@@ -59,6 +59,8 @@ namespace App.Android
         public override void OnPause()
         {
             base.OnPause();
+
+            menuList.ItemClick -= MenuItemClick;
         }
 
         private async void MenuItemClick(object sender, global::Android.Widget.AdapterView.ItemClickEventArgs e)

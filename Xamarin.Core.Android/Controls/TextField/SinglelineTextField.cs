@@ -4,6 +4,9 @@ using Android.Util;
 using Android.Views;
 using Android.Graphics;
 using Android.Text;
+using Android.Graphics.Drawables;
+using Android.Graphics.Drawables.Shapes;
+using Android.OS;
 
 namespace Xamarin.Core.Android
 {
@@ -22,6 +25,7 @@ namespace Xamarin.Core.Android
         private const string FONT_PATH = "Fonts/roboto_regular.ttf";
 
         private ResourceUtil ResUtil;
+        private PixelConverter PixelConverter;
         private View DividerView;
 
         protected EditText InputView { get; private set; }
@@ -112,7 +116,7 @@ namespace Xamarin.Core.Android
                     ErrorView.Visibility = string.IsNullOrEmpty(value) ? ViewStates.Invisible : ViewStates.Visible;
                     if (string.IsNullOrEmpty(value))
                     {
-                        if (!InputView.IsFocused)
+                        if (!InputView.IsFocused && Enabled)
                         {
                             ChangeColorByState(STATE_NORMAL);
                             if (!string.IsNullOrEmpty(Helper))
@@ -179,6 +183,7 @@ namespace Xamarin.Core.Android
         {
             Inflate(context, TextFieldLayoutResId, this);
             ResUtil = new ResourceUtil(context);
+            PixelConverter = new PixelConverter(context);
 
             InputView = FindViewById<EditText>(Resource.Id.text_field_input);
             LabelView = FindViewById<TextView>(Resource.Id.text_field_label);
@@ -251,7 +256,17 @@ namespace Xamarin.Core.Android
                         LabelView.SetTextColor(ResUtil.GetColorFromAttribute(Resource.Attribute.MaterialTextFieldLabelColor));
                     }
                     InputView.SetTextColor(ResUtil.GetColorFromAttribute(Resource.Attribute.MaterialTextColor));
-                    DividerView.SetBackgroundResource(Resource.Drawable.bg_text_field_divider_default);
+                    DividerView.SetBackgroundResource(0);
+                    if (Build.VERSION.SdkInt >= BuildVersionCodes.Lollipop)
+                    {
+                        DividerView.SetBackgroundResource(Resource.Drawable.bg_text_field_divider_default);
+                    }
+                    else
+                    {
+                        DividerView.SetBackgroundResource(Resource.Drawable.bg_text_field_divider_default);
+                        var drawable = DividerView.Background as GradientDrawable;
+                        drawable.SetColor(ResUtil.GetColorFromAttribute(Resource.Attribute.MaterialDividerColor).DefaultColor);
+                    }
                     break;
                 case STATE_DISABLE:
                     if (!string.IsNullOrEmpty(Label))
@@ -259,21 +274,51 @@ namespace Xamarin.Core.Android
                         LabelView.SetTextColor(ResUtil.GetColorFromAttribute(Resource.Attribute.MaterialTextFieldLabelColor));
                     }
                     InputView.SetTextColor(ResUtil.GetColorFromAttribute(Resource.Attribute.MaterialTextDisabledColor));
-                    DividerView.SetBackgroundResource(Resource.Drawable.bg_text_field_divider_disabled);
+                    DividerView.SetBackgroundResource(0);
+                    if (Build.VERSION.SdkInt >= BuildVersionCodes.Lollipop)
+                    {
+                        DividerView.SetBackgroundResource(Resource.Drawable.bg_text_field_divider_disabled);
+                    }
+                    else
+                    {
+                        DividerView.SetBackgroundResource(Resource.Drawable.bg_text_field_divider_default);
+                        var drawable = DividerView.Background as GradientDrawable;
+                        drawable.SetColor(ResUtil.GetColorFromAttribute(Resource.Attribute.MaterialDividerColor).DefaultColor);
+                    }
                     break;
                 case STATE_FOCUSED:
                     if (!string.IsNullOrEmpty(Label))
                     {
                         LabelView.SetTextColor(ResUtil.GetColorFromAttribute(Resource.Attribute.MaterialTextFieldLabelColorPrimary));
                     }
-                    DividerView.SetBackgroundResource(Resource.Drawable.bg_text_field_divider_focused);
+                    DividerView.SetBackgroundResource(0);
+                    if (Build.VERSION.SdkInt >= BuildVersionCodes.Lollipop)
+                    {
+                        DividerView.SetBackgroundResource(Resource.Drawable.bg_text_field_divider_focused);
+                    }
+                    else
+                    {
+                        DividerView.SetBackgroundResource(Resource.Drawable.bg_text_field_divider_default);
+                        var drawable = DividerView.Background as GradientDrawable;
+                        drawable.SetColor(ResUtil.GetColorFromAttribute(Resource.Attribute.MaterialTextFieldLabelColorPrimary).DefaultColor);
+                    }
                     break;
                 case STATE_ERROR:
                     if (!string.IsNullOrEmpty(Label))
                     {
                         LabelView.SetTextColor(ResUtil.GetColorFromAttribute(Resource.Attribute.MaterialTextFieldLabelColorError));
                     }
-                    DividerView.SetBackgroundResource(Resource.Drawable.bg_text_field_divider_error);
+                    DividerView.SetBackgroundResource(0);
+                    if (Build.VERSION.SdkInt >= BuildVersionCodes.Lollipop)
+                    {
+                        DividerView.SetBackgroundResource(Resource.Drawable.bg_text_field_divider_error);
+                    }
+                    else
+                    {
+                        DividerView.SetBackgroundResource(Resource.Drawable.bg_text_field_divider_default);
+                        var drawable = DividerView.Background as GradientDrawable;
+                        drawable.SetColor(ResUtil.GetColorFromAttribute(Resource.Attribute.MaterialTextFieldLabelColorError).DefaultColor);
+                    }
                     break;
             }
         }

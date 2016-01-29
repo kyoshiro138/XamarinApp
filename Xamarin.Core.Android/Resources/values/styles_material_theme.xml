@@ -5,6 +5,7 @@
 		<item name="colorPrimary">@color/c_primary_color500</item>
 		<item name="colorAccent">@color/c_primary_color500</item>
 		<item name="alertDialogTheme">@style/DialogLightTheme</item>
+		<item name="android:textColorPrimary">@color/c_text_black_87</item>
 
 		<!-- Custom App Theme -->
 		<item name="MaterialTextColor">@color/c_text_black_87</item>
@@ -24,7 +25,8 @@
 		<item name="colorPrimary">@color/c_primary_color500</item>
 		<item name="colorAccent">@color/c_primary_color500</item>
 		<item name="alertDialogTheme">@style/DialogLightTheme</item>
-
+		<item name="android:textColorPrimary">@color/c_text_white</item>
+		
 		<!-- Custom App Theme -->
 		<item name="MaterialTextColor">@color/c_text_white</item>
 		<item name="MaterialTextSecondaryColor">@color/c_text_white_70</item>
