@@ -1381,32 +1381,32 @@ namespace App.Android
 		public partial class Attribute
 		{
 			
-			// aapt resource value: 0x7f0100e5
-			public const int CardStyle = 2130772197;
+			// aapt resource value: 0x7f0100ef
+			public const int CardStyle = 2130772207;
 			
-			// aapt resource value: 0x7f0100e1
-			public const int MaterialDividerColor = 2130772193;
+			// aapt resource value: 0x7f0100eb
+			public const int MaterialDividerColor = 2130772203;
 			
-			// aapt resource value: 0x7f0100dd
-			public const int MaterialTextColor = 2130772189;
+			// aapt resource value: 0x7f0100e7
+			public const int MaterialTextColor = 2130772199;
 			
-			// aapt resource value: 0x7f0100e0
-			public const int MaterialTextDisabledColor = 2130772192;
+			// aapt resource value: 0x7f0100ea
+			public const int MaterialTextDisabledColor = 2130772202;
 			
-			// aapt resource value: 0x7f0100e2
-			public const int MaterialTextFieldLabelColor = 2130772194;
+			// aapt resource value: 0x7f0100ec
+			public const int MaterialTextFieldLabelColor = 2130772204;
 			
-			// aapt resource value: 0x7f0100e3
-			public const int MaterialTextFieldLabelColorError = 2130772195;
+			// aapt resource value: 0x7f0100ed
+			public const int MaterialTextFieldLabelColorError = 2130772205;
 			
-			// aapt resource value: 0x7f0100e4
-			public const int MaterialTextFieldLabelColorPrimary = 2130772196;
+			// aapt resource value: 0x7f0100ee
+			public const int MaterialTextFieldLabelColorPrimary = 2130772206;
 			
-			// aapt resource value: 0x7f0100df
-			public const int MaterialTextHintColor = 2130772191;
+			// aapt resource value: 0x7f0100e9
+			public const int MaterialTextHintColor = 2130772201;
 			
-			// aapt resource value: 0x7f0100de
-			public const int MaterialTextSecondaryColor = 2130772190;
+			// aapt resource value: 0x7f0100e8
+			public const int MaterialTextSecondaryColor = 2130772200;
 			
 			// aapt resource value: 0x7f01006e
 			public const int actionBarDivider = 2130772078;
@@ -1696,8 +1696,8 @@ namespace App.Android
 			// aapt resource value: 0x7f010010
 			public const int displayOptions = 2130771984;
 			
-			// aapt resource value: 0x7f0100d9
-			public const int display_type = 2130772185;
+			// aapt resource value: 0x7f0100e3
+			public const int display_type = 2130772195;
 			
 			// aapt resource value: 0x7f010016
 			public const int divider = 2130771990;
@@ -1735,8 +1735,8 @@ namespace App.Android
 			// aapt resource value: 0x7f010025
 			public const int elevation = 2130772005;
 			
-			// aapt resource value: 0x7f0100db
-			public const int error_enabled = 2130772187;
+			// aapt resource value: 0x7f0100e5
+			public const int error_enabled = 2130772197;
 			
 			// aapt resource value: 0x7f010029
 			public const int expandActivityOverflowButtonDrawable = 2130772009;
@@ -1750,8 +1750,8 @@ namespace App.Android
 			// aapt resource value: 0x7f01000c
 			public const int height = 2130771980;
 			
-			// aapt resource value: 0x7f0100dc
-			public const int helper_text = 2130772188;
+			// aapt resource value: 0x7f0100e6
+			public const int helper_text = 2130772198;
 			
 			// aapt resource value: 0x7f010020
 			public const int hideOnContentScroll = 2130772000;
@@ -1785,6 +1785,36 @@ namespace App.Android
 			
 			// aapt resource value: 0x7f010045
 			public const int layout = 2130772037;
+			
+			// aapt resource value: 0x7f0100e2
+			public const int layout_aspectRatio = 2130772194;
+			
+			// aapt resource value: 0x7f0100da
+			public const int layout_heightPercent = 2130772186;
+			
+			// aapt resource value: 0x7f0100df
+			public const int layout_marginBottomPercent = 2130772191;
+			
+			// aapt resource value: 0x7f0100e1
+			public const int layout_marginEndPercent = 2130772193;
+			
+			// aapt resource value: 0x7f0100dc
+			public const int layout_marginLeftPercent = 2130772188;
+			
+			// aapt resource value: 0x7f0100db
+			public const int layout_marginPercent = 2130772187;
+			
+			// aapt resource value: 0x7f0100de
+			public const int layout_marginRightPercent = 2130772190;
+			
+			// aapt resource value: 0x7f0100e0
+			public const int layout_marginStartPercent = 2130772192;
+			
+			// aapt resource value: 0x7f0100dd
+			public const int layout_marginTopPercent = 2130772189;
+			
+			// aapt resource value: 0x7f0100d9
+			public const int layout_widthPercent = 2130772185;
 			
 			// aapt resource value: 0x7f0100a8
 			public const int listChoiceBackgroundIndicator = 2130772136;
@@ -1822,8 +1852,8 @@ namespace App.Android
 			// aapt resource value: 0x7f0100d1
 			public const int logoDescription = 2130772177;
 			
-			// aapt resource value: 0x7f0100da
-			public const int material_font = 2130772186;
+			// aapt resource value: 0x7f0100e4
+			public const int material_font = 2130772196;
 			
 			// aapt resource value: 0x7f0100cc
 			public const int maxButtonHeight = 2130772172;
@@ -3123,9 +3153,6 @@ namespace App.Android
 			// aapt resource value: 0x7f0b0086
 			public const int info = 2131427462;
 			
-			// aapt resource value: 0x7f0b0075
-			public const int iv_menu_profile_bg = 2131427445;
-			
 			// aapt resource value: 0x7f0b005e
 			public const int layout_content = 2131427422;
 			
@@ -3143,6 +3170,9 @@ namespace App.Android
 			
 			// aapt resource value: 0x7f0b006c
 			public const int layout_login_username = 2131427436;
+			
+			// aapt resource value: 0x7f0b0075
+			public const int layout_menu_info = 2131427445;
 			
 			// aapt resource value: 0x7f0b0060
 			public const int layout_right_drawer = 2131427424;
@@ -4795,7 +4825,7 @@ namespace App.Android
 			public const int ButtonBarLayout_allowStacking = 0;
 			
 			public static int[] CardStyle = new int[] {
-					2130772197};
+					2130772207};
 			
 			// aapt resource value: 0
 			public const int CardStyle_CardStyle = 0;
@@ -4961,8 +4991,8 @@ namespace App.Android
 			public const int ListPopupWindow_android_dropDownVerticalOffset = 1;
 			
 			public static int[] MaterialLabel = new int[] {
-					2130772185,
-					2130772186};
+					2130772195,
+					2130772196};
 			
 			// aapt resource value: 0
 			public const int MaterialLabel_display_type = 0;
@@ -4971,14 +5001,14 @@ namespace App.Android
 			public const int MaterialLabel_material_font = 1;
 			
 			public static int[] MaterialThemeAttribute = new int[] {
-					2130772189,
-					2130772190,
-					2130772191,
-					2130772192,
-					2130772193,
-					2130772194,
-					2130772195,
-					2130772196};
+					2130772199,
+					2130772200,
+					2130772201,
+					2130772202,
+					2130772203,
+					2130772204,
+					2130772205,
+					2130772206};
 			
 			// aapt resource value: 4
 			public const int MaterialThemeAttribute_MaterialDividerColor = 4;
@@ -5134,6 +5164,48 @@ namespace App.Android
 			// aapt resource value: 7
 			public const int MenuView_preserveIconSpacing = 7;
 			
+			public static int[] PercentLayout_Layout = new int[] {
+					2130772185,
+					2130772186,
+					2130772187,
+					2130772188,
+					2130772189,
+					2130772190,
+					2130772191,
+					2130772192,
+					2130772193,
+					2130772194};
+			
+			// aapt resource value: 9
+			public const int PercentLayout_Layout_layout_aspectRatio = 9;
+			
+			// aapt resource value: 1
+			public const int PercentLayout_Layout_layout_heightPercent = 1;
+			
+			// aapt resource value: 6
+			public const int PercentLayout_Layout_layout_marginBottomPercent = 6;
+			
+			// aapt resource value: 8
+			public const int PercentLayout_Layout_layout_marginEndPercent = 8;
+			
+			// aapt resource value: 3
+			public const int PercentLayout_Layout_layout_marginLeftPercent = 3;
+			
+			// aapt resource value: 2
+			public const int PercentLayout_Layout_layout_marginPercent = 2;
+			
+			// aapt resource value: 5
+			public const int PercentLayout_Layout_layout_marginRightPercent = 5;
+			
+			// aapt resource value: 7
+			public const int PercentLayout_Layout_layout_marginStartPercent = 7;
+			
+			// aapt resource value: 4
+			public const int PercentLayout_Layout_layout_marginTopPercent = 4;
+			
+			// aapt resource value: 0
+			public const int PercentLayout_Layout_layout_widthPercent = 0;
+			
 			public static int[] PopupWindow = new int[] {
 					16843126,
 					2130772035};
@@ -5221,8 +5293,8 @@ namespace App.Android
 			public const int SearchView_voiceIcon = 12;
 			
 			public static int[] SingleLineTextField = new int[] {
-					2130772187,
-					2130772188};
+					2130772197,
+					2130772198};
 			
 			// aapt resource value: 0
 			public const int SingleLineTextField_error_enabled = 0;
