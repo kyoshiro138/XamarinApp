@@ -3,6 +3,7 @@
 	<style name="LightTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
 		<!-- Android Theme -->
 		<item name="colorPrimary">@color/c_primary_color500</item>
+		<item name="colorPrimaryDark">@color/c_primary_color700</item>
 		<item name="colorAccent">@color/c_primary_color500</item>
 		<item name="alertDialogTheme">@style/DialogLightTheme</item>
 		<item name="android:textColorPrimary">@color/c_text_black_87</item>
@@ -23,6 +24,7 @@
 	<style name="DarkTheme" parent="@style/Theme.AppCompat.NoActionBar">
 		<!-- Android Theme -->
 		<item name="colorPrimary">@color/c_primary_color500</item>
+		<item name="colorPrimaryDark">@color/c_primary_color700</item>
 		<item name="colorAccent">@color/c_primary_color500</item>
 		<item name="alertDialogTheme">@style/DialogLightTheme</item>
 		<item name="android:textColorPrimary">@color/c_text_white</item>
@@ -42,7 +44,6 @@
 
 	<style name="DialogLightTheme" parent="@style/Theme.AppCompat.Light.Dialog">
 		<item name="colorPrimary">@color/c_primary_color500</item>
-	    <item name="colorPrimaryDark">@color/c_debug_solid_red</item>
 	    <item name="colorAccent">@color/c_primary_color500</item>
 	</style>
 </resources>

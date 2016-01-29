@@ -117,6 +117,8 @@
     <AndroidResource Include="Resources\layout\fragment_login.axml" />
     <AndroidResource Include="Resources\drawable-hdpi\img_default_avatar.png" />
     <AndroidResource Include="Resources\layout-v21\fragment_login.axml" />
+    <AndroidResource Include="Resources\layout-v21\activity_navigation_drawer.axml" />
+    <AndroidResource Include="Resources\layout-v21\fragment_menu.axml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Xamarin.Core.Android\Xamarin.Core.Android.csproj">

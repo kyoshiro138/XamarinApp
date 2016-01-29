@@ -37,7 +37,6 @@ namespace App.Android
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-//            Window.SetFlags(WindowManagerFlags.TranslucentStatus, WindowManagerFlags.TranslucentStatus);
             Navigator = new AndroidNavigator(FragmentContainerId, SupportFragmentManager);
             Toolbar = FindViewById<SystemSupportToolbar>(Resource.Id.toolbar);
 

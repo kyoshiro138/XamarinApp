@@ -2,6 +2,8 @@
 using Android.OS;
 using App.Shared;
 using Xamarin.Core.Android;
+using Android.Views;
+using Android.Graphics;
 
 namespace App.Android
 {
@@ -14,6 +16,7 @@ namespace App.Android
         {
             ApplyTheme();
             base.OnCreate(savedInstanceState);
+            Window.SetFlags(WindowManagerFlags.TranslucentStatus, WindowManagerFlags.TranslucentStatus);
 
             MenuFragment = new MenuFragment();
 
