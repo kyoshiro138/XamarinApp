@@ -85,6 +85,7 @@
     <Compile Include="Dialog\progress\SystemProgressDialog.cs" />
     <Compile Include="Storage\ApplicationPreferences.cs" />
     <Compile Include="Utils\NetworkUtil.cs" />
+    <Compile Include="Controls\Label\SystemLabel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

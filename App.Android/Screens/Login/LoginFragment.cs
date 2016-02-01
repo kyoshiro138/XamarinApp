@@ -7,7 +7,6 @@ using Xamarin.Core;
 using Xamarin.Core.Android;
 using System.Threading.Tasks;
 using Android.Provider;
-using Android.Support.V7.Widget;
 
 namespace App.Android
 {
@@ -18,11 +17,11 @@ namespace App.Android
         private View LayoutLoginPassword;
 
         private ImageView imgAvatar;
-        private MaterialLabel lblCreateAccount;
-        private MaterialLabel lblUsername;
-        private MaterialButton btnNext;
-        private MaterialButton btnSignIn;
-        private MaterialButton btnBack;
+        private SystemLabel lblCreateAccount;
+        private SystemLabel lblUsername;
+        private SystemButton btnNext;
+        private SystemButton btnSignIn;
+        private SystemButton btnBack;
         private SinglelineTextField tfUsername;
         private SinglelineTextField tfPassword;
 
@@ -54,11 +53,11 @@ namespace App.Android
             LayoutLoginPassword = rootView.FindViewById(Resource.Id.layout_login_password);
 
             imgAvatar = rootView.FindViewById<ImageView>(Resource.Id.img_login_avatar);
-            lblCreateAccount = rootView.FindViewById<MaterialLabel>(Resource.Id.lbl_login_create_account);
-            lblUsername = rootView.FindViewById<MaterialLabel>(Resource.Id.lbl_login_username);
-            btnNext = rootView.FindViewById<MaterialButton>(Resource.Id.btn_login_next);
-            btnSignIn = rootView.FindViewById<MaterialButton>(Resource.Id.btn_login_sign_in);
-            btnBack = rootView.FindViewById<MaterialButton>(Resource.Id.btn_login_back);
+            lblCreateAccount = rootView.FindViewById<SystemLabel>(Resource.Id.lbl_login_create_account);
+            lblUsername = rootView.FindViewById<SystemLabel>(Resource.Id.lbl_login_username);
+            btnNext = rootView.FindViewById<SystemButton>(Resource.Id.btn_login_next);
+            btnSignIn = rootView.FindViewById<SystemButton>(Resource.Id.btn_login_sign_in);
+            btnBack = rootView.FindViewById<SystemButton>(Resource.Id.btn_login_back);
 
             tfUsername = rootView.FindViewById<SinglelineTextField>(Resource.Id.tf_login_username);
             tfPassword = rootView.FindViewById<SinglelineTextField>(Resource.Id.tf_login_password);

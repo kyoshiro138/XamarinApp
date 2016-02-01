@@ -4,13 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/colorPrimary">
-    <Xamarin.Core.Android.MaterialLabel
+    <Xamarin.Core.Android.SystemLabel
         android:id="@+id/lbl_intro_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        app:display_type="title" />
-    <Xamarin.Core.Android.MaterialLabel
+        android:textSize="32sp" />
+    <Xamarin.Core.Android.SystemLabel
         android:id="@+id/lbl_intro_db_version"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

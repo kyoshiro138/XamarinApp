@@ -12,17 +12,15 @@ namespace Xamarin.Core.Android
 {
     public class SinglelineTextField : RelativeLayout, ITextField
     {
-        private const float INPUT_FONT_SIZE = 16f;
-        private const float LABEL_FONT_SIZE = 12f;
-        private const float ERROR_FONT_SIZE = 12f;
-        private const float HELPER_FONT_SIZE = 12f;
+        private const float InputTextSize = 16f;
+        private const float LabelTextSize = 12f;
+        private const float ErrorTextSize = 12f;
+        private const float HelperTextSize = 12f;
 
-        private const int STATE_NORMAL = 0;
-        private const int STATE_DISABLE = 1;
-        private const int STATE_FOCUSED = 2;
-        private const int STATE_ERROR = 3;
-
-        private const string FONT_PATH = "Fonts/roboto_regular.ttf";
+        private const int StateNormal = 0;
+        private const int StateDisable = 1;
+        private const int StateFocused = 2;
+        private const int StateError = 3;
 
         private ResourceUtil ResUtil;
         private PixelConverter PixelConverter;
@@ -40,6 +38,8 @@ namespace Xamarin.Core.Android
         {
             get { return Resource.Layout.control_text_field_singleline; }
         }
+
+        protected bool IsCondensed { get; set; }
 
         public bool IsVisible
         {
@@ -61,11 +61,11 @@ namespace Xamarin.Core.Android
 
                 if (value)
                 {
-                    ChangeColorByState(STATE_NORMAL);
+                    ChangeColorByState(StateNormal);
                 }
                 else
                 {
-                    ChangeColorByState(STATE_DISABLE);
+                    ChangeColorByState(StateDisable);
                     Error = string.Empty;
                 }
             }
@@ -118,7 +118,7 @@ namespace Xamarin.Core.Android
                     {
                         if (!InputView.IsFocused && Enabled)
                         {
-                            ChangeColorByState(STATE_NORMAL);
+                            ChangeColorByState(StateNormal);
                             if (!string.IsNullOrEmpty(Helper))
                             {
                                 Helper = HelperView.Text;    
@@ -127,7 +127,7 @@ namespace Xamarin.Core.Android
                     }
                     else
                     {
-                        ChangeColorByState(STATE_ERROR);
+                        ChangeColorByState(StateError);
                     }
                 }
                 ErrorView.Text = value;
@@ -164,22 +164,22 @@ namespace Xamarin.Core.Android
         public SinglelineTextField(Context context)
             : base(context)
         {
-            Initialize(context);
+            InitTextField(context);
         }
 
         public SinglelineTextField(Context context, IAttributeSet attrs)
             : base(context, attrs)
         {
-            Initialize(context);
+            InitTextField(context, attrs);
         }
 
         public SinglelineTextField(Context context, IAttributeSet attrs, int defStyleAttr)
             : base(context, attrs, defStyleAttr)
         {
-            Initialize(context);
+            InitTextField(context, attrs);
         }
 
-        protected virtual void Initialize(Context context)
+        protected virtual void InitTextField(Context context, IAttributeSet attrs = null)
         {
             Inflate(context, TextFieldLayoutResId, this);
             ResUtil = new ResourceUtil(context);
@@ -192,19 +192,29 @@ namespace Xamarin.Core.Android
 
             DividerView = FindViewById(Resource.Id.text_field_divider);
 
-            InputView.SetTypeface(FontUtil.LoadFont(context, FONT_PATH), TypefaceStyle.Normal);
-            InputView.SetTextSize(ComplexUnitType.Sp, INPUT_FONT_SIZE);
+            IsCondensed = true;
+            if (IsCondensed)
+            {
+                InputView.Typeface = FontUtil.LoadSystemFont(FontUtil.FontRobotoCondensedRegular);
+                LabelView.Typeface = FontUtil.LoadSystemFont(FontUtil.FontRobotoCondensedRegular);
+                ErrorView.Typeface = FontUtil.LoadSystemFont(FontUtil.FontRobotoCondensedRegular);
+                HelperView.Typeface = FontUtil.LoadSystemFont(FontUtil.FontRobotoCondensedRegular);
+            }
+            else
+            {
+                InputView.Typeface = FontUtil.LoadSystemFont(FontUtil.FontRobotoRegular);
+                LabelView.Typeface = FontUtil.LoadSystemFont(FontUtil.FontRobotoRegular);
+                ErrorView.Typeface = FontUtil.LoadSystemFont(FontUtil.FontRobotoRegular);
+                HelperView.Typeface = FontUtil.LoadSystemFont(FontUtil.FontRobotoRegular);
+            }
+
+            InputView.SetTextSize(ComplexUnitType.Sp, InputTextSize);
+            LabelView.SetTextSize(ComplexUnitType.Sp, LabelTextSize);
+            ErrorView.SetTextSize(ComplexUnitType.Sp, ErrorTextSize);
+            HelperView.SetTextSize(ComplexUnitType.Sp, HelperTextSize);
+
             InputView.FocusChange += OnFocusChanged;
             InputView.TextChanged += OnTextChanged;
-
-            LabelView.SetTypeface(FontUtil.LoadFont(context, FONT_PATH), TypefaceStyle.Normal);
-            LabelView.SetTextSize(ComplexUnitType.Sp, LABEL_FONT_SIZE);
-
-            ErrorView.SetTypeface(FontUtil.LoadFont(context, FONT_PATH), TypefaceStyle.Normal);
-            ErrorView.SetTextSize(ComplexUnitType.Sp, ERROR_FONT_SIZE);
-
-            HelperView.SetTypeface(FontUtil.LoadFont(context, FONT_PATH), TypefaceStyle.Normal);
-            HelperView.SetTextSize(ComplexUnitType.Sp, HELPER_FONT_SIZE);
 
             Enabled = true;
         }
@@ -224,11 +234,11 @@ namespace Xamarin.Core.Android
             {
                 if (e.HasFocus)
                 {
-                    ChangeColorByState(STATE_FOCUSED);
+                    ChangeColorByState(StateFocused);
                 }
                 else
                 {
-                    ChangeColorByState(STATE_NORMAL);
+                    ChangeColorByState(StateNormal);
                 }
             }
         }
@@ -237,11 +247,11 @@ namespace Xamarin.Core.Android
         {
             if (InputView.IsFocused)
             {
-                ChangeColorByState(STATE_FOCUSED);
+                ChangeColorByState(StateFocused);
             }
             else
             {
-                ChangeColorByState(STATE_NORMAL);
+                ChangeColorByState(StateNormal);
             }
             Error = string.Empty;
         }
@@ -250,7 +260,7 @@ namespace Xamarin.Core.Android
         {
             switch (state)
             {
-                case STATE_NORMAL:
+                case StateNormal:
                     if (!string.IsNullOrEmpty(Label))
                     {
                         LabelView.SetTextColor(ResUtil.GetColorFromAttribute(Resource.Attribute.MaterialTextFieldLabelColor));
@@ -268,7 +278,7 @@ namespace Xamarin.Core.Android
                         drawable.SetColor(ResUtil.GetColorFromAttribute(Resource.Attribute.MaterialDividerColor).DefaultColor);
                     }
                     break;
-                case STATE_DISABLE:
+                case StateDisable:
                     if (!string.IsNullOrEmpty(Label))
                     {
                         LabelView.SetTextColor(ResUtil.GetColorFromAttribute(Resource.Attribute.MaterialTextFieldLabelColor));
@@ -286,7 +296,7 @@ namespace Xamarin.Core.Android
                         drawable.SetColor(ResUtil.GetColorFromAttribute(Resource.Attribute.MaterialDividerColor).DefaultColor);
                     }
                     break;
-                case STATE_FOCUSED:
+                case StateFocused:
                     if (!string.IsNullOrEmpty(Label))
                     {
                         LabelView.SetTextColor(ResUtil.GetColorFromAttribute(Resource.Attribute.MaterialTextFieldLabelColorPrimary));
@@ -303,7 +313,7 @@ namespace Xamarin.Core.Android
                         drawable.SetColor(ResUtil.GetColorFromAttribute(Resource.Attribute.MaterialTextFieldLabelColorPrimary).DefaultColor);
                     }
                     break;
-                case STATE_ERROR:
+                case StateError:
                     if (!string.IsNullOrEmpty(Label))
                     {
                         LabelView.SetTextColor(ResUtil.GetColorFromAttribute(Resource.Attribute.MaterialTextFieldLabelColorError));

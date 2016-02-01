@@ -1,59 +1,45 @@
 ﻿using System;
-using Android.Widget;
 using Android.Content;
-using Android.Views;
 using Android.Util;
 using Android.Graphics;
 
 namespace Xamarin.Core.Android
 {
-    public class MaterialLabel : TextView, ILabel
+    public class MaterialLabel : SystemLabel
     {
-        private const int DISPLAY_TYPE_DISPLAY_4 = 1;
-        private const int DISPLAY_TYPE_DISPLAY_3 = 2;
-        private const int DISPLAY_TYPE_DISPLAY_2 = 3;
-        private const int DISPLAY_TYPE_DISPLAY_1 = 4;
-        private const int DISPLAY_TYPE_HEADLINE = 5;
-        private const int DISPLAY_TYPE_TITLE = 6;
-        private const int DISPLAY_TYPE_SUBHEAD = 7;
-        private const int DISPLAY_TYPE_BODY_2 = 8;
-        private const int DISPLAY_TYPE_BODY_1 = 9;
-        private const int DISPLAY_TYPE_CAPTION = 10;
+        private const int DisplayTypeDisplay4 = 1;
+        private const int DisplayTypeDisplay3 = 2;
+        private const int DisplayTypeDisplay2 = 3;
+        private const int DisplayTypeDisplay1 = 4;
+        private const int DisplayTypeHeadline = 5;
+        private const int DisplayTypeTitle = 6;
+        private const int DisplayTypeSubhead = 7;
+        private const int DisplayTypeBody2 = 8;
+        private const int DisplayTypeBody1 = 9;
+        private const int DisplayTypeCaption = 10;
 
-        private const int FONT_TYPE_ROBOTO_LIGHT = 1;
-        private const int FONT_TYPE_ROBOTO_REGULAR = 2;
-        private const int FONT_TYPE_ROBOTO_MEDIUM = 3;
-
-        private const string FONT_PATH_ROBOTO_LIGHT = "Fonts/roboto_light.ttf";
-        private const string FONT_PATH_ROBOTO_MEDIUM = "Fonts/roboto_medium.ttf";
-        private const string FONT_PATH_ROBOTO_REGULAR = "Fonts/roboto_regular.ttf";
-
-        public bool IsVisible
-        {
-            get { return (Visibility == ViewStates.Visible); }
-            set { Visibility = (value ? ViewStates.Visible : ViewStates.Gone); }
-        }
+        private const int FontTypeRobotoLight = 1;
+        private const int FontTypeRobotoRegular = 2;
+        private const int FontTypeRobotoMedium = 3;
 
         public MaterialLabel(Context context)
             : base(context)
         {
-            InitView(context);
         }
 
         public MaterialLabel(Context context, IAttributeSet attrs)
             : base(context, attrs)
         {
-            InitView(context, attrs);
         }
 
         public MaterialLabel(Context context, IAttributeSet attrs, int defStyle)
             : base(context, attrs, defStyle)
         {
-            InitView(context, attrs);
         }
 
-        private void InitView(Context context, IAttributeSet attrs = null)
+        protected override void InitLabel(Context context, IAttributeSet attrs = null)
         {
+            base.InitLabel(context, attrs);
             if (attrs != null)
             {
                 var styledAttributes = context.ObtainStyledAttributes(attrs, Resource.Styleable.MaterialLabel);
@@ -77,28 +63,98 @@ namespace Xamarin.Core.Android
         {
             switch (displayType)
             {
-                case DISPLAY_TYPE_DISPLAY_4:
-                    return FontUtil.LoadFont(Context, FONT_PATH_ROBOTO_LIGHT);
-                case DISPLAY_TYPE_DISPLAY_3:
-                    return FontUtil.LoadFont(Context, FONT_PATH_ROBOTO_REGULAR);
-                case DISPLAY_TYPE_DISPLAY_2:
-                    return FontUtil.LoadFont(Context, FONT_PATH_ROBOTO_REGULAR);
-                case DISPLAY_TYPE_DISPLAY_1:
-                    return FontUtil.LoadFont(Context, FONT_PATH_ROBOTO_REGULAR);
-                case DISPLAY_TYPE_HEADLINE:
-                    return FontUtil.LoadFont(Context, FONT_PATH_ROBOTO_REGULAR);
-                case DISPLAY_TYPE_TITLE:
-                    return FontUtil.LoadFont(Context, FONT_PATH_ROBOTO_MEDIUM);
-                case DISPLAY_TYPE_SUBHEAD:
-                    return FontUtil.LoadFont(Context, FONT_PATH_ROBOTO_REGULAR);
-                case DISPLAY_TYPE_BODY_2:
-                    return FontUtil.LoadFont(Context, FONT_PATH_ROBOTO_MEDIUM);
-                case DISPLAY_TYPE_BODY_1:
-                    return FontUtil.LoadFont(Context, FONT_PATH_ROBOTO_REGULAR);
-                case DISPLAY_TYPE_CAPTION:
-                    return FontUtil.LoadFont(Context, FONT_PATH_ROBOTO_REGULAR);
+                case DisplayTypeDisplay4:
+                    if (IsCondensed)
+                    {
+                        return FontUtil.LoadSystemFont(FontUtil.FontRobotoCondensedLight);
+                    }
+                    else
+                    {
+                        return FontUtil.LoadSystemFont(FontUtil.FontRobotoLight);
+                    }
+                case DisplayTypeDisplay3:
+                    if (IsCondensed)
+                    {
+                        return FontUtil.LoadSystemFont(FontUtil.FontRobotoCondensedRegular);
+                    }
+                    else
+                    {
+                        return FontUtil.LoadSystemFont(FontUtil.FontRobotoRegular);
+                    }
+                case DisplayTypeDisplay2:
+                    if (IsCondensed)
+                    {
+                        return FontUtil.LoadSystemFont(FontUtil.FontRobotoCondensedRegular);
+                    }
+                    else
+                    {
+                        return FontUtil.LoadSystemFont(FontUtil.FontRobotoRegular);
+                    }
+                case DisplayTypeDisplay1:
+                    if (IsCondensed)
+                    {
+                        return FontUtil.LoadSystemFont(FontUtil.FontRobotoCondensedRegular);
+                    }
+                    else
+                    {
+                        return FontUtil.LoadSystemFont(FontUtil.FontRobotoRegular);
+                    }
+                case DisplayTypeHeadline:
+                    if (IsCondensed)
+                    {
+                        return FontUtil.LoadSystemFont(FontUtil.FontRobotoCondensedRegular);
+                    }
+                    else
+                    {
+                        return FontUtil.LoadSystemFont(FontUtil.FontRobotoRegular);
+                    }
+                case DisplayTypeTitle:
+                    return FontUtil.LoadSystemFont(FontUtil.FontRobotoMedium);
+                case DisplayTypeSubhead:
+                    if (IsCondensed)
+                    {
+                        return FontUtil.LoadSystemFont(FontUtil.FontRobotoCondensedRegular);
+                    }
+                    else
+                    {
+                        return FontUtil.LoadSystemFont(FontUtil.FontRobotoRegular);
+                    }
+                case DisplayTypeBody2:
+                    if (IsCondensed)
+                    {
+                        return FontUtil.LoadSystemFont(FontUtil.FontRobotoCondensedRegular, TypefaceStyle.Bold);
+                    }
+                    else
+                    {
+                        return FontUtil.LoadSystemFont(FontUtil.FontRobotoMedium);
+                    }
+                case DisplayTypeBody1:
+                    if (IsCondensed)
+                    {
+                        return FontUtil.LoadSystemFont(FontUtil.FontRobotoCondensedRegular);
+                    }
+                    else
+                    {
+                        return FontUtil.LoadSystemFont(FontUtil.FontRobotoRegular);
+                    }
+                case DisplayTypeCaption:
+                    if (IsCondensed)
+                    {
+                        return FontUtil.LoadSystemFont(FontUtil.FontRobotoCondensedRegular);
+                    }
+                    else
+                    {
+                        return FontUtil.LoadSystemFont(FontUtil.FontRobotoRegular);
+                    }
                 default:
-                    return FontUtil.LoadFont(Context, FONT_PATH_ROBOTO_REGULAR);
+                    if (IsCondensed)
+                    {
+                        return FontUtil.LoadSystemFont(FontUtil.FontRobotoCondensedRegular);
+                    }
+                    else
+                    {
+                        return FontUtil.LoadSystemFont(FontUtil.FontRobotoRegular);
+                    }
             }
         }
 
@@ -106,25 +162,25 @@ namespace Xamarin.Core.Android
         {
             switch (displayType)
             {
-                case DISPLAY_TYPE_DISPLAY_4:
+                case DisplayTypeDisplay4:
                     return 112f;
-                case DISPLAY_TYPE_DISPLAY_3:
+                case DisplayTypeDisplay3:
                     return 56f;
-                case DISPLAY_TYPE_DISPLAY_2:
+                case DisplayTypeDisplay2:
                     return 45f;
-                case DISPLAY_TYPE_DISPLAY_1:
+                case DisplayTypeDisplay1:
                     return 34f;
-                case DISPLAY_TYPE_HEADLINE:
+                case DisplayTypeHeadline:
                     return 24f;
-                case DISPLAY_TYPE_TITLE:
+                case DisplayTypeTitle:
                     return 20f;
-                case DISPLAY_TYPE_SUBHEAD:
+                case DisplayTypeSubhead:
                     return 16f;
-                case DISPLAY_TYPE_BODY_2:
+                case DisplayTypeBody2:
                     return 14f;
-                case DISPLAY_TYPE_BODY_1:
+                case DisplayTypeBody1:
                     return 14f;
-                case DISPLAY_TYPE_CAPTION:
+                case DisplayTypeCaption:
                     return 12f;
                 default:
                     return 14f;
@@ -135,14 +191,14 @@ namespace Xamarin.Core.Android
         {
             switch (fontType)
             {
-                case FONT_TYPE_ROBOTO_LIGHT:
-                    return FontUtil.LoadFont(Context, FONT_PATH_ROBOTO_LIGHT);
-                case FONT_TYPE_ROBOTO_REGULAR:
-                    return FontUtil.LoadFont(Context, FONT_PATH_ROBOTO_REGULAR);
-                case FONT_TYPE_ROBOTO_MEDIUM:
-                    return FontUtil.LoadFont(Context, FONT_PATH_ROBOTO_MEDIUM);
+                case FontTypeRobotoLight:
+                    return FontUtil.LoadSystemFont(FontUtil.FontRobotoLight);
+                case FontTypeRobotoRegular:
+                    return FontUtil.LoadSystemFont(FontUtil.FontRobotoRegular);
+                case FontTypeRobotoMedium:
+                    return FontUtil.LoadSystemFont(FontUtil.FontRobotoMedium);
                 default:
-                    return FontUtil.LoadFont(Context, FONT_PATH_ROBOTO_REGULAR);
+                    return FontUtil.LoadSystemFont(FontUtil.FontRobotoRegular);
             }
         }
     }

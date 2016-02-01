@@ -10,8 +10,6 @@ namespace Xamarin.Core.Android
         private const float ERROR_FONT_SIZE = 12f;
         private const float HELPER_FONT_SIZE = 12f;
 
-        private const string FONT_PATH = "Fonts/roboto_regular.ttf";
-
         protected override int TextFieldLayoutResId
         {
             get { return Resource.Layout.control_text_field_singleline_dense; }
@@ -32,9 +30,9 @@ namespace Xamarin.Core.Android
         {
         }
 
-        protected override void Initialize(Context context)
+        protected override void InitTextField(Context context, IAttributeSet attrs = null)
         {
-            base.Initialize(context);
+            base.InitTextField(context);
 
             InputView.SetTextSize(ComplexUnitType.Sp, INPUT_FONT_SIZE);
             LabelView.SetTextSize(ComplexUnitType.Sp, LABEL_FONT_SIZE);

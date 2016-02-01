@@ -119,6 +119,7 @@
     <AndroidResource Include="Resources\layout-v21\fragment_login.axml" />
     <AndroidResource Include="Resources\layout-v21\activity_navigation_drawer.axml" />
     <AndroidResource Include="Resources\layout-v21\fragment_menu.axml" />
+    <AndroidResource Include="Resources\layout-v21\fragment_intro.axml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Xamarin.Core.Android\Xamarin.Core.Android.csproj">

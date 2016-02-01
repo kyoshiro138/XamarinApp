@@ -8,8 +8,8 @@ namespace App.Android
 {
     public class IntroFragment : AppFragment, IIntroScreen
     {
-        private MaterialLabel lblTitle;
-        private MaterialLabel lblDBVersion;
+        private ILabel lblTitle;
+        private ILabel lblDBVersion;
         private IntroScreenLogic introSL;
         private AppAndroidDatabaseManager database;
 
@@ -22,8 +22,8 @@ namespace App.Android
 
         protected override void BindControls(View rootView)
         {
-            lblTitle = rootView.FindViewById<MaterialLabel>(Resource.Id.lbl_intro_title);
-            lblDBVersion = rootView.FindViewById<MaterialLabel>(Resource.Id.lbl_intro_db_version);
+            lblTitle = rootView.FindViewById<SystemLabel>(Resource.Id.lbl_intro_title);
+            lblDBVersion = rootView.FindViewById<SystemLabel>(Resource.Id.lbl_intro_db_version);
         }
 
         protected override void LoadData()
