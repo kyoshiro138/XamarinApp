@@ -9,7 +9,7 @@ namespace App.Shared
     {
         private const string KeyUserId = "user_id";
         private const string KeyUsername = "username";
-        private const string KeyUserType = "user_type";
+        private const string KeyUserType = "role";
         private const string KeyFirstName = "first_name";
         private const string KeyLastName = "last_name";
         private const string KeyAvatarUrl = "avatar_url";
@@ -31,7 +31,7 @@ namespace App.Shared
 
         [JsonProperty(KeyUserType)]
         [Column(KeyUserType)]
-        public int UserType { get; set; }
+        public int Role { get; set; }
 
         [JsonProperty(KeyFirstName)]
         [Column(KeyFirstName)]
@@ -74,6 +74,18 @@ namespace App.Shared
                 return GenderFemale;
             }
             return GenderUndefined;
+        }
+
+        public enum GenderType
+        {
+            Male = 0,
+            Female = 1
+        }
+
+        public enum RoleType
+        {
+            Guest = 0,
+            Member = 1
         }
     }
 }

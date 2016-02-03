@@ -110,7 +110,7 @@ namespace Xamarin.Core.Android
 
         protected bool CheckServiceConnected(string tag)
         {
-            bool isNetworkConnected = NetworkUtil.IsWifiConnected();
+            bool isNetworkConnected = NetworkUtil.IsWifiConnected() || NetworkUtil.IsMobileNetworkConnected();
             if (isNetworkConnected)
             {
                 return true;

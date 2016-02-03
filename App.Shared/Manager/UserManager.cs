@@ -6,7 +6,7 @@ namespace App.Shared
 {
     public class UserManager
     {
-        public IAppService Service { get; private set; }
+        private IAppService Service { get; set; }
 
         private IDatabase Database { get; set; }
 
@@ -19,7 +19,7 @@ namespace App.Shared
             AppStorage = appStorage;
         }
 
-        public async Task StartGetBasicInfo(string username)
+        public async Task RequestUserBasicInfo(string username)
         {
             if (Service != null)
             {
@@ -28,7 +28,7 @@ namespace App.Shared
             }
         }
 
-        public async Task Authenticate(User user, string password)
+        public async Task RequestAuthentication(User user, string password)
         {
             if (Service != null)
             {
@@ -37,7 +37,7 @@ namespace App.Shared
             }
         }
 
-        public async Task GetProfile(int userId)
+        public async Task RequestProfile(int userId)
         {
             if (AppStorage != null && Service != null)
             {

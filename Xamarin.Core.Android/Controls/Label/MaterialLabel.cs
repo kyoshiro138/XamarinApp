@@ -109,7 +109,14 @@ namespace Xamarin.Core.Android
                         return FontUtil.LoadSystemFont(FontUtil.FontRobotoRegular);
                     }
                 case DisplayTypeTitle:
-                    return FontUtil.LoadSystemFont(FontUtil.FontRobotoMedium);
+                    if (IsCondensed)
+                    {
+                        return FontUtil.LoadSystemFont(FontUtil.FontRobotoCondensedRegular, TypefaceStyle.Bold);
+                    }
+                    else
+                    {
+                        return FontUtil.LoadSystemFont(FontUtil.FontRobotoMedium);
+                    }
                 case DisplayTypeSubhead:
                     if (IsCondensed)
                     {

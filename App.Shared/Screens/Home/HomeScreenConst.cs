@@ -2,6 +2,8 @@
 {
     public class HomeScreenConst
     {
+        public const string ServiceGetTravelData = "ServiceGetTravelData";
+
     }
 }
 

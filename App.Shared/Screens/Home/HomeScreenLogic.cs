@@ -1,4 +1,6 @@
-﻿namespace App.Shared
+﻿using System.Threading.Tasks;
+
+namespace App.Shared
 {
     public class HomeScreenLogic
     {
@@ -11,12 +13,12 @@
 
         public void InitializeScreen()
         {
-            
         }
 
-        public void RequestUserProfile()
+        public async Task RequestTravelData()
         {
-            
+            User currentUser = await homeScreen.UserManager.GetCurrentUser();
+            await homeScreen.TravelManager.RequestTravelData(currentUser.Role);
         }
     }
 }

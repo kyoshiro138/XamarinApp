@@ -6,9 +6,12 @@ namespace App.Shared
     {
         public const int ServiceTimeout = 30 * 1000; // 30 seconds
 
+        public const string UrlGetTravelDataAsGuest = "http://smartboox.getsandbox.com/guest/getTravelDataAsGuest";
+
         public const string UrlGetLoginInfo = "http://smartboox.getsandbox.com/user/getLoginInfo";
         public const string UrlAuthentication = "http://smartboox.getsandbox.com/user/authenticate";
         public const string UrlGetProfile = "http://smartboox.getsandbox.com/user/getProfile";
+
         public const string UrlGetTravelData = "http://smartboox.getsandbox.com/travel/getTravelData";
 
         public const int ErrorCodeUserNotExisted = 1001;

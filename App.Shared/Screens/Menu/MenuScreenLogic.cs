@@ -14,7 +14,7 @@ namespace App.Shared
             menuScreen = screen;
         }
 
-        public async void LoadMenu()
+        public async Task LoadMenu()
         {
             User currentUser = await menuScreen.UserManager.GetCurrentUser();
             List<MenuItem> menuList = new List<MenuItem>();

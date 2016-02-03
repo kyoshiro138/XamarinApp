@@ -3,7 +3,7 @@ using Android.OS;
 using App.Shared;
 using Xamarin.Core.Android;
 using Android.Views;
-using Android.Graphics;
+using System.Threading.Tasks;
 
 namespace App.Android
 {
@@ -24,9 +24,9 @@ namespace App.Android
             SetLeftDrawerFragment(MenuFragment);
         }
 
-        public void LoadMenu()
+        public async void LoadMenu()
         {
-            MenuFragment.LoadMenu();
+            await MenuFragment.LoadMenu();
         }
 
         private void ApplyTheme()

@@ -4,6 +4,7 @@ using Xamarin.Core;
 using App.Shared;
 using System.Collections.Generic;
 using System;
+using System.Threading.Tasks;
 
 namespace App.Android
 {
@@ -83,9 +84,9 @@ namespace App.Android
             return adapter;
         }
 
-        public void LoadMenu()
+        public async Task LoadMenu()
         {
-            menuSL.LoadMenu();
+            await menuSL.LoadMenu();
         }
     }
 }
