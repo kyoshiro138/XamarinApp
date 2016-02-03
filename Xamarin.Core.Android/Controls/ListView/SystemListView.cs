@@ -5,7 +5,7 @@ using Android.Widget;
 
 namespace Xamarin.Core.Android
 {
-    public class XamarinListView : ListView, IListView
+    public class SystemListView : ListView, IListView
     {
         public bool IsVisible
         {
@@ -13,19 +13,19 @@ namespace Xamarin.Core.Android
             set { Visibility = value ? ViewStates.Visible : ViewStates.Gone; }
         }
 
-        public XamarinListView(Context context)
+        public SystemListView(Context context)
             : base(context)
         {
             Initialize();
         }
 
-        public XamarinListView(Context context, IAttributeSet attrs)
+        public SystemListView(Context context, IAttributeSet attrs)
             : base(context, attrs)
         {
             Initialize();
         }
 
-        public XamarinListView(Context context, IAttributeSet attrs, int defStyle)
+        public SystemListView(Context context, IAttributeSet attrs, int defStyle)
             : base(context, attrs, defStyle)
         {
             Initialize();

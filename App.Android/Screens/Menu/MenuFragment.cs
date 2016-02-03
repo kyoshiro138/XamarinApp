@@ -10,7 +10,7 @@ namespace App.Android
 {
     public class MenuFragment : AppFragment, IMenuScreen
     {
-        private XamarinListView menuList;
+        private SystemListView menuList;
         private MenuScreenLogic menuSL;
 
         protected override int FragmentLayoutResId
@@ -22,7 +22,7 @@ namespace App.Android
 
         protected override void BindControls(View rootView)
         {
-            menuList = rootView.FindViewById<XamarinListView>(Resource.Id.list_menu);
+            menuList = rootView.FindViewById<SystemListView>(Resource.Id.list_menu);
         }
 
         protected override void LoadData()

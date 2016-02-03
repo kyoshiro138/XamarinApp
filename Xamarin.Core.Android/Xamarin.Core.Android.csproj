@@ -55,7 +55,6 @@
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Activity\BaseFragmentActivity.cs" />
     <Compile Include="Activity\NavigationDrawer\BaseDrawerActivity.cs" />
-    <Compile Include="Controls\ListView\XamarinListView.cs" />
     <Compile Include="Utils\PixelConverter.cs" />
     <Compile Include="Controls\Label\MaterialLabel.cs" />
     <Compile Include="Controls\ListView\BaseListAdapter.cs" />
@@ -86,6 +85,7 @@
     <Compile Include="Storage\ApplicationPreferences.cs" />
     <Compile Include="Utils\NetworkUtil.cs" />
     <Compile Include="Controls\Label\SystemLabel.cs" />
+    <Compile Include="Controls\ListView\SystemListView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -131,6 +131,7 @@
     <Folder Include="Dialog\progress\" />
     <Folder Include="Storage\" />
     <Folder Include="Resources\drawable-v21\" />
+    <Folder Include="Controls\GridView\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Xamarin.Core\Xamarin.Core.csproj">
