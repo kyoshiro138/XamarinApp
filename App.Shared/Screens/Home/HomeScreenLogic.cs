@@ -1,4 +1,6 @@
 ﻿using System.Threading.Tasks;
+using Xamarin.Core;
+using System.Collections.Generic;
 
 namespace App.Shared
 {
@@ -13,6 +15,12 @@ namespace App.Shared
 
         public void InitializeScreen()
         {
+        }
+
+        public void DisplayPlaceList(List<TravelPlace> places)
+        {
+            var gridView = homeScreen.GetControlByTag(HomeScreenConst.ControlPlaceGrid) as IGridView;
+            gridView.SetDataSource(homeScreen.GetPlaceGridDataSource(places));
         }
 
         public async Task RequestTravelData()

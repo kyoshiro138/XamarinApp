@@ -1,4 +1,5 @@
 ﻿using Xamarin.Core;
+using System.Collections.Generic;
 
 namespace App.Shared
 {
@@ -7,6 +8,8 @@ namespace App.Shared
         UserManager UserManager { get; }
 
         TravelManager TravelManager { get; }
+
+        IGridDataSource<TravelPlace> GetPlaceGridDataSource(List<TravelPlace> places);
     }
 }
 

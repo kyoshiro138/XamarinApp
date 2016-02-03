@@ -1,25 +1,28 @@
-﻿using Android.Widget;
+﻿using System;
 using Android.Content;
-using System;
 using Android.Runtime;
+using Android.Widget;
 
 namespace Xamarin.Core.Android
 {
-    public abstract class BaseListItemView<T> : RelativeLayout where T : class
+    public abstract class BaseGridItemView<T> : RelativeLayout where T : class
     {
         public T ItemData { get; private set; }
 
         public bool IsSelected { get; set; }
 
-        protected BaseListItemView(Context context)
+        protected BaseGridItemView(Context context)
             : base(context)
         {
+            InflateItemView(context);
         }
 
-        protected BaseListItemView(IntPtr javaReference, JniHandleOwnership transfer)
+        protected BaseGridItemView(IntPtr javaReference, JniHandleOwnership transfer)
             : base(javaReference, transfer)
         {
         }
+
+        protected abstract void InflateItemView(Context context);
 
         public virtual void LoadItemData(T data)
         {

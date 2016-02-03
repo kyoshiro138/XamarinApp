@@ -4,6 +4,7 @@
     {
         public const string ServiceGetTravelData = "ServiceGetTravelData";
 
+        public const string ControlPlaceGrid = "ControlPlaceGrid";
     }
 }
 

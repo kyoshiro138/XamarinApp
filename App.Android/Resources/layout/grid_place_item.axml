@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/c_debug_alpha_green">
+    <ImageView
+        android:id="@+id/iv_place_image"
+        app:layout_widthPercent="100%"
+        app:layout_aspectRatio="100%" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="#6000">
+        <ImageButton
+            android:id="@+id/btn_place_map"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentRight="true"
+            android:background="@null"
+            android:src="@drawable/ic_map" />
+        <Xamarin.Core.Android.MaterialLabel
+            android:id="@+id/lbl_place_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:layout_toLeftOf="@id/btn_place_map" />
+    </RelativeLayout>
+</android.support.percent.PercentFrameLayout>

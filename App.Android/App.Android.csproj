@@ -91,6 +91,8 @@
     <Compile Include="Implementation\Toolbar\AndroidToolbar.cs" />
     <Compile Include="Implementation\Service\AppService.cs" />
     <Compile Include="Implementation\Storage\AppAndroidDatabaseManager.cs" />
+    <Compile Include="Screens\Home\PlaceItemView.cs" />
+    <Compile Include="Screens\Home\PlaceGridAdapter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -120,6 +122,13 @@
     <AndroidResource Include="Resources\layout-v21\activity_navigation_drawer.axml" />
     <AndroidResource Include="Resources\layout-v21\fragment_menu.axml" />
     <AndroidResource Include="Resources\layout-v21\fragment_intro.axml" />
+    <AndroidResource Include="Resources\layout\fragment_home.axml" />
+    <AndroidResource Include="Resources\layout\grid_place_item.axml" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_map.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_map.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_map.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_map.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_map.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Xamarin.Core.Android\Xamarin.Core.Android.csproj">

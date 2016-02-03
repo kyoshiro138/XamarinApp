@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-    <android.support.percent.PercentRelativeLayout
+    <android.support.percent.PercentFrameLayout
         android:id="@+id/layout_menu_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -12,7 +12,7 @@
             app:layout_widthPercent="100%"
             app:layout_aspectRatio="178%"
             android:background="@drawable/bg_menu" />
-    </android.support.percent.PercentRelativeLayout>
+    </android.support.percent.PercentFrameLayout>
     <Xamarin.Core.Android.SystemListView
         android:id="@+id/list_menu"
         android:layout_width="match_parent"

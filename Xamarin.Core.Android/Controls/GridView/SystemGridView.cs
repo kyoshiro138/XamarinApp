@@ -1,11 +1,11 @@
-﻿using Android.Content;
+﻿using Android.Widget;
+using Android.Content;
 using Android.Util;
 using Android.Views;
-using Android.Widget;
 
 namespace Xamarin.Core.Android
 {
-    public class SystemListView : ListView, IListView
+    public class SystemGridView : GridView, IGridView
     {
         public bool IsVisible
         {
@@ -13,29 +13,29 @@ namespace Xamarin.Core.Android
             set { Visibility = value ? ViewStates.Visible : ViewStates.Gone; }
         }
 
-        public SystemListView(Context context)
+        public SystemGridView(Context context)
             : base(context)
         {
-            InitListView();
+            InitGridView();
         }
 
-        public SystemListView(Context context, IAttributeSet attrs)
+        public SystemGridView(Context context, IAttributeSet attrs)
             : base(context, attrs)
         {
-            InitListView();
+            InitGridView();
         }
 
-        public SystemListView(Context context, IAttributeSet attrs, int defStyle)
+        public SystemGridView(Context context, IAttributeSet attrs, int defStyle)
             : base(context, attrs, defStyle)
         {
-            InitListView();
+            InitGridView();
         }
 
-        protected virtual void InitListView()
+        protected virtual void InitGridView()
         {
         }
 
-        public void SetDataSource<T>(IListDataSource<T> dataSource) where T : class
+        public void SetDataSource<T>(IGridDataSource<T> dataSource) where T : class
         {
             var dataAdapter = dataSource as BaseAdapter;
             if (dataAdapter != null)

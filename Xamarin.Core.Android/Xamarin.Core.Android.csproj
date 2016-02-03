@@ -86,6 +86,9 @@
     <Compile Include="Utils\NetworkUtil.cs" />
     <Compile Include="Controls\Label\SystemLabel.cs" />
     <Compile Include="Controls\ListView\SystemListView.cs" />
+    <Compile Include="Controls\GridView\SystemGridView.cs" />
+    <Compile Include="Controls\GridView\BaseGridAdapter.cs" />
+    <Compile Include="Controls\GridView\BaseGridItemView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

@@ -1,17 +1,23 @@
 ﻿using System;
 using SQLite.Net.Attributes;
+using Newtonsoft.Json;
 
 namespace App.Shared
 {
     [Table("travel_place")]
     public class TravelPlace
     {
-        [PrimaryKey, AutoIncrement]
-        [Column("place_id")]
+        private const string KeyPlaceId = "place_id";
+        private const string KeyPlaceName = "place_name";
+
+        [PrimaryKey]
+        [Column(KeyPlaceId)]
+        [JsonProperty(KeyPlaceId)]
         public int PlaceId { get; set; }
 
         [NotNull]
-        [Column("place_name")]
+        [Column(KeyPlaceName)]
+        [JsonProperty(KeyPlaceName)]
         public string PlaceName { get; set; }
     }
 }
