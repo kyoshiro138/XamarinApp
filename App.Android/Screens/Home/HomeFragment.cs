@@ -11,7 +11,7 @@ namespace App.Android
 {
     public class HomeFragment : AppFragment, IHomeScreen
     {
-        private IGridView PlaceGrid;
+        private AnimationGridView PlaceGrid;
 
         private HomeScreenLogic homeSL;
         private DialogBuilder dialogBuilder;
@@ -32,7 +32,8 @@ namespace App.Android
 
         protected override void BindControls(View rootView)
         {
-            PlaceGrid = rootView.FindViewById<SystemGridView>(Resource.Id.grid_places);
+            PlaceGrid = rootView.FindViewById<AnimationGridView>(Resource.Id.grid_places);
+            PlaceGrid.SetAnimation(Resource.Animation.anim_grid_enter, Resource.Animation.anim_grid_exit);
         }
 
         protected override void LoadData()

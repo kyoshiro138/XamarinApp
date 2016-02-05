@@ -89,6 +89,7 @@
     <Compile Include="Controls\GridView\SystemGridView.cs" />
     <Compile Include="Controls\GridView\BaseGridAdapter.cs" />
     <Compile Include="Controls\GridView\BaseGridItemView.cs" />
+    <Compile Include="Controls\GridView\AnimationGridView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

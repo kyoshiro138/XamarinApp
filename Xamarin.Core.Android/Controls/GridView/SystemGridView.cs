@@ -2,6 +2,8 @@
 using Android.Content;
 using Android.Util;
 using Android.Views;
+using System;
+using Android.Runtime;
 
 namespace Xamarin.Core.Android
 {
@@ -27,6 +29,12 @@ namespace Xamarin.Core.Android
 
         public SystemGridView(Context context, IAttributeSet attrs, int defStyle)
             : base(context, attrs, defStyle)
+        {
+            InitGridView();
+        }
+
+        public SystemGridView(IntPtr javaReference, JniHandleOwnership transfer)
+            : base(javaReference, transfer)
         {
             InitGridView();
         }

@@ -2,6 +2,7 @@
 using App.Shared;
 using Xamarin.Core.Android;
 using Android.Graphics;
+using Android.Util;
 
 namespace App.Android
 {
@@ -19,9 +20,8 @@ namespace App.Android
             Inflate(context, Resource.Layout.grid_place_item, this);
 
             lblPlaceName = FindViewById<SystemLabel>(Resource.Id.lbl_place_name);
-            lblPlaceName.SetTypeface(FontUtil.LoadSystemFont(FontUtil.FontRobotoCondensedRegular), global::Android.Graphics.TypefaceStyle.Bold);
-            lblPlaceName.SetTextSize(global::Android.Util.ComplexUnitType.Sp, 16f);
-            lblPlaceName.SetTextColor(Color.White);
+            lblPlaceName.SetTypeface(FontUtil.LoadSystemFont(FontUtil.FontRobotoCondensedRegular), TypefaceStyle.Bold);
+            lblPlaceName.SetTextSize(ComplexUnitType.Sp, 16f);
         }
 
         public override void LoadItemData(TravelPlace data)
