@@ -9,7 +9,6 @@ namespace App.Android
     public class IntroFragment : AppFragment, IIntroScreen
     {
         private ILabel lblTitle;
-        private ILabel lblDBVersion;
         private IntroScreenLogic introSL;
         private AppAndroidDatabaseManager database;
 
@@ -18,12 +17,9 @@ namespace App.Android
             get { return Resource.Layout.fragment_intro; }
         }
 
-        public UserManager UserManager { get; private set; }
-
         protected override void BindControls(View rootView)
         {
             lblTitle = rootView.FindViewById<SystemLabel>(Resource.Id.lbl_intro_title);
-            lblDBVersion = rootView.FindViewById<SystemLabel>(Resource.Id.lbl_intro_db_version);
         }
 
         protected override void LoadData()
@@ -63,8 +59,6 @@ namespace App.Android
             {
                 case IntroScreenConst.ControlLabelTitle:
                     return lblTitle;
-                case IntroScreenConst.ControlLabelDBVersion:
-                    return lblDBVersion;
                 default:
                     return null;
             }

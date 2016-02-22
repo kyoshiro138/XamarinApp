@@ -64,104 +64,27 @@ namespace Xamarin.Core.Android
             switch (displayType)
             {
                 case DisplayTypeDisplay4:
-                    if (IsCondensed)
-                    {
-                        return FontUtil.LoadSystemFont(FontUtil.FontRobotoCondensedLight);
-                    }
-                    else
-                    {
-                        return FontUtil.LoadSystemFont(FontUtil.FontRobotoLight);
-                    }
+                    return FontUtil.LoadSystemFont(FontUtil.FontRobotoLight);
                 case DisplayTypeDisplay3:
-                    if (IsCondensed)
-                    {
-                        return FontUtil.LoadSystemFont(FontUtil.FontRobotoCondensedRegular);
-                    }
-                    else
-                    {
-                        return FontUtil.LoadSystemFont(FontUtil.FontRobotoRegular);
-                    }
+                    return FontUtil.LoadSystemFont(FontUtil.FontRobotoRegular);
                 case DisplayTypeDisplay2:
-                    if (IsCondensed)
-                    {
-                        return FontUtil.LoadSystemFont(FontUtil.FontRobotoCondensedRegular);
-                    }
-                    else
-                    {
-                        return FontUtil.LoadSystemFont(FontUtil.FontRobotoRegular);
-                    }
+                    return FontUtil.LoadSystemFont(FontUtil.FontRobotoRegular);
                 case DisplayTypeDisplay1:
-                    if (IsCondensed)
-                    {
-                        return FontUtil.LoadSystemFont(FontUtil.FontRobotoCondensedRegular);
-                    }
-                    else
-                    {
-                        return FontUtil.LoadSystemFont(FontUtil.FontRobotoRegular);
-                    }
+                    return FontUtil.LoadSystemFont(FontUtil.FontRobotoRegular);
                 case DisplayTypeHeadline:
-                    if (IsCondensed)
-                    {
-                        return FontUtil.LoadSystemFont(FontUtil.FontRobotoCondensedRegular);
-                    }
-                    else
-                    {
-                        return FontUtil.LoadSystemFont(FontUtil.FontRobotoRegular);
-                    }
+                    return FontUtil.LoadSystemFont(FontUtil.FontRobotoRegular);
                 case DisplayTypeTitle:
-                    if (IsCondensed)
-                    {
-                        return FontUtil.LoadSystemFont(FontUtil.FontRobotoCondensedRegular, TypefaceStyle.Bold);
-                    }
-                    else
-                    {
-                        return FontUtil.LoadSystemFont(FontUtil.FontRobotoMedium);
-                    }
+                    return FontUtil.LoadSystemFont(FontUtil.FontRobotoMedium);
                 case DisplayTypeSubhead:
-                    if (IsCondensed)
-                    {
-                        return FontUtil.LoadSystemFont(FontUtil.FontRobotoCondensedRegular);
-                    }
-                    else
-                    {
-                        return FontUtil.LoadSystemFont(FontUtil.FontRobotoRegular);
-                    }
+                    return FontUtil.LoadSystemFont(FontUtil.FontRobotoRegular);
                 case DisplayTypeBody2:
-                    if (IsCondensed)
-                    {
-                        return FontUtil.LoadSystemFont(FontUtil.FontRobotoCondensedRegular, TypefaceStyle.Bold);
-                    }
-                    else
-                    {
-                        return FontUtil.LoadSystemFont(FontUtil.FontRobotoMedium);
-                    }
+                    return FontUtil.LoadSystemFont(FontUtil.FontRobotoMedium);
                 case DisplayTypeBody1:
-                    if (IsCondensed)
-                    {
-                        return FontUtil.LoadSystemFont(FontUtil.FontRobotoCondensedRegular);
-                    }
-                    else
-                    {
-                        return FontUtil.LoadSystemFont(FontUtil.FontRobotoRegular);
-                    }
+                    return FontUtil.LoadSystemFont(FontUtil.FontRobotoRegular);
                 case DisplayTypeCaption:
-                    if (IsCondensed)
-                    {
-                        return FontUtil.LoadSystemFont(FontUtil.FontRobotoCondensedRegular);
-                    }
-                    else
-                    {
-                        return FontUtil.LoadSystemFont(FontUtil.FontRobotoRegular);
-                    }
+                    return FontUtil.LoadSystemFont(FontUtil.FontRobotoRegular);
                 default:
-                    if (IsCondensed)
-                    {
-                        return FontUtil.LoadSystemFont(FontUtil.FontRobotoCondensedRegular);
-                    }
-                    else
-                    {
-                        return FontUtil.LoadSystemFont(FontUtil.FontRobotoRegular);
-                    }
+                    return FontUtil.LoadSystemFont(FontUtil.FontRobotoRegular);
             }
         }
 

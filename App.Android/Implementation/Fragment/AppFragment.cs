@@ -9,6 +9,10 @@ namespace App.Android
     {
         protected AppDrawerActivity DrawerActivity { get; private set; }
 
+        public App.Shared.UserManager UserManager { get; protected set; }
+
+        public App.Shared.TravelManager TravelManager { get; protected set; }
+
         public INavigator Navigator
         {
             get
@@ -44,11 +48,11 @@ namespace App.Android
         }
     }
 
-    public abstract class AppFragment<TParam> : AppFragment, IParamReceive where TParam : class
+    public abstract class AppFragment<TParam> : AppFragment, IParamReceive<TParam> where TParam : class
     {
         protected TParam ReceivedParam { get; private set; }
 
-        public abstract object ReceiveParamObject(Bundle param, string tag);
+        public abstract TParam ReceiveParamObject(Bundle param, string tag);
 
         public override void OnActivityCreated(Bundle savedInstanceState)
         {
@@ -60,7 +64,7 @@ namespace App.Android
                 string paramTag = arg.GetString(AndroidNavigator.PARAM_TAG);
                 if (!string.IsNullOrEmpty(paramTag))
                 {
-                    ReceivedParam = ReceiveParamObject(arg, paramTag) as TParam;
+                    ReceivedParam = ReceiveParamObject(arg, paramTag);
                 }
             }
         }

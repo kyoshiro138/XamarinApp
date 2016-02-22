@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/colorPrimary">
-    <Xamarin.Core.Android.MaterialLabel
+    <Xamarin.Core.Android.SystemLabel
         android:id="@+id/lbl_intro_title"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        app:display_type="title" />
-    <Xamarin.Core.Android.MaterialLabel
-        android:id="@+id/lbl_intro_db_version"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|right" />
+        android:layout_gravity="center" />
 </FrameLayout>

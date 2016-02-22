@@ -17,6 +17,7 @@
         android:minHeight="16dp"
         android:layout_marginTop="4dp"
         android:layout_marginBottom="4dp"
+        android:textSize="12sp"
         android:textColor="?attr/MaterialTextFieldLabelColor"
         android:visibility="gone" />
     <EditText
@@ -25,6 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/text_field_label"
         android:minHeight="24dp"
+        android:textSize="16sp"
         android:textColorHint="?attr/MaterialTextHintColor"
         android:textCursorDrawable="@drawable/bg_text_field_cursor"
         android:background="@null" />
@@ -43,6 +45,7 @@
         android:layout_height="wrap_content"
         android:minHeight="16dp"
         android:layout_below="@id/text_field_divider"
+        android:textSize="12sp"
         android:textColor="?attr/MaterialTextFieldLabelColorError"
         android:visibility="gone" />
     <TextView
@@ -51,6 +54,7 @@
         android:layout_height="wrap_content"
         android:minHeight="16dp"
         android:layout_below="@id/text_field_divider"
+        android:textSize="12sp"
         android:textColor="?attr/MaterialTextHintColor"
         android:visibility="gone" />
 </RelativeLayout>

@@ -1,29 +1,41 @@
 ﻿using System;
 using SQLite.Net.Attributes;
+using Newtonsoft.Json;
 
 namespace App.Shared
 {
     [Table("place_location")]
-    public class PlaceLocation
+    public class PlaceLocation : BaseModel
     {
-        [PrimaryKey, AutoIncrement]
-        [Column("location_id")]
+        private const string KeyLocationId = "location_id";
+        private const string KeyLocationName = "location_name";
+        private const string KeyLocationDescription = "location_description";
+        private const string KeyPlaceId = "place_id";
+        private const string KeyLatitude = "latitude";
+        private const string KeyLongitude = "longitude";
+
+        [Column(KeyLocationId)]
+        [JsonProperty(KeyLocationId)]
         public int LocationId { get; set; }
 
-        [NotNull]
-        [Column("location_name")]
+        [Column(KeyLocationName)]
+        [JsonProperty(KeyLocationName)]
         public string LocationName { get; set; }
 
-        [NotNull]
-        [Column("place_id")]
+        [Column(KeyLocationDescription)]
+        [JsonProperty(KeyLocationDescription)]
+        public string LocationDescription { get; set; }
+
+        [Column(KeyPlaceId)]
+        [JsonProperty(KeyPlaceId)]
         public int PlaceId { get; set; }
 
-        [NotNull]
-        [Column("location_lat")]
+        [Column(KeyLatitude)]
+        [JsonProperty(KeyLatitude)]
         public long LocationLatitude { get; set; }
 
-        [NotNull]
-        [Column("location_lng")]
+        [Column(KeyLongitude)]
+        [JsonProperty(KeyLongitude)]
         public long LocationLongitude { get; set; }
     }
 }

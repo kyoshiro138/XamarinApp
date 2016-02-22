@@ -7,6 +7,8 @@ namespace Xamarin.Core.Android
 {
     public abstract class BaseGridItemView<T> : RelativeLayout where T : class
     {
+        protected abstract int GridItemLayoutResId { get; }
+
         public T ItemData { get; private set; }
 
         public bool IsSelected { get; set; }
@@ -22,7 +24,17 @@ namespace Xamarin.Core.Android
         {
         }
 
-        protected abstract void InflateItemView(Context context);
+        private void InflateItemView(Context context)
+        {
+            Inflate(context, GridItemLayoutResId, this);
+
+            BindControls();
+        }
+
+        protected virtual void BindControls()
+        {
+            
+        }
 
         public virtual void LoadItemData(T data)
         {

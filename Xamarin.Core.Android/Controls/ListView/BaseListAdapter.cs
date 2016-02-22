@@ -68,6 +68,10 @@ namespace Xamarin.Core.Android
             if (convertView == null)
             {
                 convertView = (TItemView)Activator.CreateInstance(typeof(TItemView), Context);
+                if (convertView is ViewGroup)
+                {
+                    ((ViewGroup)convertView).DescendantFocusability = DescendantFocusability.BlockDescendants;
+                }
             }
 
             TItemView itemView = (TItemView)convertView;

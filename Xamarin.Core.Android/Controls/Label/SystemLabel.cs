@@ -7,8 +7,6 @@ namespace Xamarin.Core.Android
 {
     public class SystemLabel : TextView, ILabel
     {
-        protected bool IsCondensed { get; set; }
-
         public bool IsVisible
         {
             get { return (Visibility == ViewStates.Visible); }
@@ -35,15 +33,7 @@ namespace Xamarin.Core.Android
 
         protected virtual void InitLabel(Context context, IAttributeSet attrs = null)
         {
-            IsCondensed = true;
-            if (IsCondensed)
-            {
-                Typeface = FontUtil.LoadSystemFont(FontUtil.FontRobotoCondensedRegular);
-            }
-            else
-            {
-                Typeface = FontUtil.LoadSystemFont(FontUtil.FontRobotoRegular);
-            }
+           
         }
     }
 }

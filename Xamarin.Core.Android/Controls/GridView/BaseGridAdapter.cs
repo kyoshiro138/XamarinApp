@@ -43,14 +43,14 @@ namespace Xamarin.Core.Android
             }
         }
 
-        public BaseGridAdapter(Context context, List<TItemData> data)
+        protected BaseGridAdapter(Context context, List<TItemData> data)
             : base()
         {
             Context = context;
             DataSource = data;
         }
 
-        public BaseGridAdapter(IntPtr javaReference, JniHandleOwnership transfer)
+        protected BaseGridAdapter(IntPtr javaReference, JniHandleOwnership transfer)
             : base(javaReference, transfer)
         {
         }
@@ -70,6 +70,10 @@ namespace Xamarin.Core.Android
             if (convertView == null)
             {
                 convertView = (TItemView)Activator.CreateInstance(typeof(TItemView), Context);
+                if (convertView is ViewGroup)
+                {
+                    ((ViewGroup)convertView).DescendantFocusability = DescendantFocusability.BlockDescendants;
+                }
             }
 
             TItemView itemView = (TItemView)convertView;

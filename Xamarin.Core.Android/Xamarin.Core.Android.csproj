@@ -90,6 +90,7 @@
     <Compile Include="Controls\GridView\BaseGridAdapter.cs" />
     <Compile Include="Controls\GridView\BaseGridItemView.cs" />
     <Compile Include="Controls\GridView\AnimationGridView.cs" />
+    <Compile Include="Utils\DeviceUtil.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -113,6 +114,8 @@
     <AndroidResource Include="Resources\drawable-v21\bg_text_field_divider_disabled.xml" />
     <AndroidResource Include="Resources\drawable-v21\bg_text_field_divider_error.xml" />
     <AndroidResource Include="Resources\drawable-v21\bg_text_field_divider_focused.xml" />
+    <AndroidResource Include="Resources\drawable\bg_btn_default_mtrl_shape_light.xml" />
+    <AndroidResource Include="Resources\drawable\bg_btn_default_mtrl_shape_dark.xml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controls\" />

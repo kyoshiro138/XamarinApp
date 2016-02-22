@@ -44,8 +44,6 @@ namespace App.Android
             get { return Resource.Layout.fragment_login; }
         }
 
-        public UserManager UserManager { get; private set; }
-
         protected override void BindControls(View rootView)
         {
             LayoutLogin = rootView.FindViewById(Resource.Id.card_login);

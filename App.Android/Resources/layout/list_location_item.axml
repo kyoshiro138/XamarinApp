@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="?attr/CardStyle"
+    android:id="@+id/card_location_item"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <View
+            android:id="@+id/iv_location_image"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@color/c_debug_solid_green" />
+        <Xamarin.Core.Android.SystemLabel
+            android:id="@+id/lbl_location_title"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@id/iv_location_image"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/lbl_location_title"
+            android:layout_toLeftOf="@id/iv_location_image"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@color/c_debug_solid_blue" />
+        <Xamarin.Core.Android.SystemLabel
+            android:id="@+id/lbl_location_description"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_location_image"
+            android:layout_margin="16dp" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lbl_location_description"
+            android:padding="8dp">
+            <Xamarin.Core.Android.SystemButton
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:id="@+id/btn_location_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <Xamarin.Core.Android.SystemButton
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:id="@+id/btn_location_map"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp" />
+        </LinearLayout>
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

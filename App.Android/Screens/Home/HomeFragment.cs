@@ -6,12 +6,14 @@ using Xamarin.Core.Android;
 using System;
 using SQLite.Net.Platform.XamarinAndroid;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using Android.Widget;
 
 namespace App.Android
 {
     public class HomeFragment : AppFragment, IHomeScreen
     {
-        private AnimationGridView PlaceGrid;
+        private AnimationGridView gridPlaces;
 
         private HomeScreenLogic homeSL;
         private DialogBuilder dialogBuilder;
@@ -21,19 +23,10 @@ namespace App.Android
             get { return Resource.Layout.fragment_home; }
         }
 
-        public UserManager UserManager { get; private set; }
-
-        public TravelManager TravelManager { get; private set; }
-
-        public override void OnAttach(Context context)
-        {
-            base.OnAttach(context);
-        }
-
         protected override void BindControls(View rootView)
         {
-            PlaceGrid = rootView.FindViewById<AnimationGridView>(Resource.Id.grid_places);
-            PlaceGrid.SetAnimation(Resource.Animation.anim_grid_enter, Resource.Animation.anim_grid_exit);
+            gridPlaces = rootView.FindViewById<AnimationGridView>(Resource.Id.grid_places);
+            gridPlaces.SetAnimation(Resource.Animation.anim_grid_enter, Resource.Animation.anim_grid_exit);
         }
 
         protected override void LoadData()
@@ -52,7 +45,6 @@ namespace App.Android
             TravelManager = new TravelManager(service, database, appPref);
 
             homeSL = new HomeScreenLogic(this);
-            homeSL.InitializeScreen();
         }
 
         public override async void OnResume()
@@ -61,13 +53,22 @@ namespace App.Android
             DrawerActivity.SetDrawersEnabled(true);
             Toolbar.Show();
 
+            gridPlaces.ItemClick += GridPlaces_ItemClick;
+
             MainActivity activity = DrawerActivity as MainActivity;
             if (activity != null)
             {
                 activity.LoadMenu();
             }
 
-            await homeSL.RequestTravelData();
+            await homeSL.InitializeScreen();
+        }
+
+        public override void OnPause()
+        {
+            base.OnPause();
+
+            gridPlaces.ItemClick -= GridPlaces_ItemClick;
         }
 
         public IControl GetControlByTag(string tag)
@@ -75,18 +76,18 @@ namespace App.Android
             switch (tag)
             {
                 case HomeScreenConst.ControlPlaceGrid:
-                    return PlaceGrid;
+                    return gridPlaces;
                 default:
                     return null;
             }
         }
 
-        private void Service_OnResponseSuccess(object sender, ServiceResponseEventArgs<AppResponseObject> e)
+        private async void Service_OnResponseSuccess(object sender, ServiceResponseEventArgs<AppResponseObject> e)
         {
             switch (e.RequestTag)
             {
                 case HomeScreenConst.ServiceGetTravelData:
-                    HandleGetTravelDataResponse((GetTravelDataResponse)e.ResponseObject);
+                    await HandleGetTravelDataResponse((GetTravelDataResponse)e.ResponseObject);
                     break;
             }
         }
@@ -102,13 +103,22 @@ namespace App.Android
             return adapter;
         }
 
-        private void HandleGetTravelDataResponse(GetTravelDataResponse response)
+        private async Task HandleGetTravelDataResponse(GetTravelDataResponse response)
         {
             bool isSucceess = response.Status.Equals(true);
             if (isSucceess)
             {
-                homeSL.DisplayPlaceList(response.Data.Places);
+                await homeSL.SaveTravelData(response.Data.Places);
+                List<TravelPlace> places = await homeSL.GetLocalPlaceList();
+                homeSL.DisplayPlaceList(places);
             }
+        }
+
+        private void GridPlaces_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
+        {
+            AnimationGridView gridView = e.Parent as AnimationGridView;
+            IGridDataSource<TravelPlace> adapter = gridView.Adapter as IGridDataSource<TravelPlace>;
+            homeSL.HandlePlaceItemSelection(adapter, e.Position, new LocationListFragment());
         }
     }
 }

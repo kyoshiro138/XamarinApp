@@ -9,18 +9,26 @@ namespace App.Android
 {
     public class MenuItemView : BaseListItemView<MenuItem>
     {
-        private readonly ImageView imgIcon;
-        private readonly TextView txtTitle;
+        private ImageView imgIcon;
+        private TextView txtTitle;
+
+        protected override int ListItemLayoutResId
+        {
+            get { return Resource.Layout.list_item_signle_line; }
+        }
 
         public MenuItemView(Context context)
             : base(context)
         {
-            Inflate(context, Resource.Layout.list_item_signle_line, this);
+        }
+
+        protected override void BindControls()
+        {
+            base.BindControls();
 
             imgIcon = FindViewById<ImageView>(Resource.Id.list_item_single_line_image);
             txtTitle = FindViewById<TextView>(Resource.Id.list_item_single_line_text);
         }
-
 
         public override void LoadItemData(MenuItem data)
         {

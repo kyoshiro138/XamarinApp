@@ -1521,28 +1521,34 @@ namespace Xamarin.Core.Android
 			public static int abc_textfield_search_material = 2130837571;
 			
 			// aapt resource value: 0x7f020044
-			public static int bg_ratio16x9 = 2130837572;
+			public static int bg_btn_default_mtrl_shape_dark = 2130837572;
 			
 			// aapt resource value: 0x7f020045
-			public static int bg_ratio1x1 = 2130837573;
+			public static int bg_btn_default_mtrl_shape_light = 2130837573;
 			
 			// aapt resource value: 0x7f020046
-			public static int bg_text_field_cursor = 2130837574;
+			public static int bg_ratio16x9 = 2130837574;
 			
 			// aapt resource value: 0x7f020047
-			public static int bg_text_field_divider_default = 2130837575;
+			public static int bg_ratio1x1 = 2130837575;
 			
 			// aapt resource value: 0x7f020048
-			public static int bg_text_field_divider_disabled = 2130837576;
+			public static int bg_text_field_cursor = 2130837576;
 			
 			// aapt resource value: 0x7f020049
-			public static int bg_text_field_divider_error = 2130837577;
+			public static int bg_text_field_divider_default = 2130837577;
 			
 			// aapt resource value: 0x7f02004a
-			public static int bg_text_field_divider_focused = 2130837578;
+			public static int bg_text_field_divider_disabled = 2130837578;
 			
 			// aapt resource value: 0x7f02004b
-			public static int notification_template_icon_bg = 2130837579;
+			public static int bg_text_field_divider_error = 2130837579;
+			
+			// aapt resource value: 0x7f02004c
+			public static int bg_text_field_divider_focused = 2130837580;
+			
+			// aapt resource value: 0x7f02004d
+			public static int notification_template_icon_bg = 2130837581;
 			
 			static Drawable()
 			{
@@ -2565,6 +2571,9 @@ namespace Xamarin.Core.Android
 			
 			// aapt resource value: 0x7f080073
 			public static int Base_Widget_AppCompat_Toolbar_Button_Navigation = 2131230835;
+			
+			// aapt resource value: 0x7f080134
+			public static int CustomButtonStyle = 2131231028;
 			
 			// aapt resource value: 0x7f080132
 			public static int DarkTheme = 2131231026;

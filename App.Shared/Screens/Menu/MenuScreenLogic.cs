@@ -31,7 +31,7 @@ namespace App.Shared
                 menuList.Add(new MenuItem() { MenuTitle = MenuScreenConst.StringMenuSignOut, MenuId = MenuScreenConst.MenuSignOut });
             }
 
-            IListView menuListView = menuScreen.GetControlByTag(MenuScreenConst.ControlListView) as IListView;
+            IListView menuListView = menuScreen.GetControlByTag(MenuScreenConst.ControlListMenu) as IListView;
             menuListView.SetDataSource(menuScreen.GetMenuListDataSource(menuList));
         }
 

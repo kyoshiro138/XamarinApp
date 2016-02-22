@@ -17,6 +17,8 @@ namespace Xamarin.Core
         Task<int> Delete<T>(int id) where T : new();
 
         Task<int> Insert<T>(T record) where T : new();
+
+        Task<int> InsertAll<T>(IEnumerable<T> record) where T : new();
     }
 }
 

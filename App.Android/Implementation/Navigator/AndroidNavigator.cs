@@ -3,6 +3,7 @@ using Xamarin.Core.Android;
 using Android.Support.V4.App;
 using Newtonsoft.Json;
 using Android.OS;
+using App.Shared;
 
 namespace App.Android
 {
@@ -28,7 +29,7 @@ namespace App.Android
 
             switch(tag)
             {
-                case "TEST":
+                case HomeScreenConst.ParamLocationList:
                     string paramString = JsonConvert.SerializeObject(param);
                     bundle.PutString(tag, paramString);
                     break;

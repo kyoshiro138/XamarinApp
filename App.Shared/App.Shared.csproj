@@ -58,6 +58,10 @@
     <Compile Include="Screens\Home\HomeScreenLogic.cs" />
     <Compile Include="Manager\TravelManager.cs" />
     <Compile Include="Service\Response\GetTravelDataResponse.cs" />
+    <Compile Include="Screens\Location\ILocationListScreen.cs" />
+    <Compile Include="Screens\Location\LocationListScreenLogic.cs" />
+    <Compile Include="Screens\Location\LocationListScreenConst.cs" />
+    <Compile Include="Models\BaseModel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ItemGroup>
@@ -71,6 +75,7 @@
     <Folder Include="Service\Response\" />
     <Folder Include="Storage\" />
     <Folder Include="Screens\Home\" />
+    <Folder Include="Screens\Location\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Xamarin.Core\Xamarin.Core.csproj">

@@ -5,7 +5,7 @@ using SQLite.Net.Attributes;
 namespace App.Shared
 {
     [Table("user")]
-    public class User
+    public class User : BaseModel
     {
         private const string KeyUserId = "user_id";
         private const string KeyUsername = "username";
@@ -22,7 +22,6 @@ namespace App.Shared
 
         [JsonProperty(KeyUserId)]
         [Column(KeyUserId)]
-        [PrimaryKey]
         public int UserId { get; set; }
 
         [JsonProperty(KeyUsername)]

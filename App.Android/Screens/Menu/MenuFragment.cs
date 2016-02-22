@@ -18,8 +18,6 @@ namespace App.Android
             get { return Resource.Layout.fragment_menu; }
         }
 
-        public UserManager UserManager { get; private set; }
-
         protected override void BindControls(View rootView)
         {
             menuList = rootView.FindViewById<SystemListView>(Resource.Id.list_menu);
@@ -41,7 +39,7 @@ namespace App.Android
             {
                 switch (tag)
                 {
-                    case MenuScreenConst.ControlListView:
+                    case MenuScreenConst.ControlListMenu:
                         return menuList;
                     default:
                         return null;

@@ -2,21 +2,14 @@
 using Android.Content;
 using Android.Util;
 using Android.Views;
-using Android.Graphics;
 using Android.Text;
 using Android.Graphics.Drawables;
-using Android.Graphics.Drawables.Shapes;
 using Android.OS;
 
 namespace Xamarin.Core.Android
 {
     public class SinglelineTextField : RelativeLayout, ITextField
     {
-        private const float InputTextSize = 16f;
-        private const float LabelTextSize = 12f;
-        private const float ErrorTextSize = 12f;
-        private const float HelperTextSize = 12f;
-
         private const int StateNormal = 0;
         private const int StateDisable = 1;
         private const int StateFocused = 2;
@@ -38,8 +31,6 @@ namespace Xamarin.Core.Android
         {
             get { return Resource.Layout.control_text_field_singleline; }
         }
-
-        protected bool IsCondensed { get; set; }
 
         public bool IsVisible
         {
@@ -191,27 +182,6 @@ namespace Xamarin.Core.Android
             HelperView = FindViewById<TextView>(Resource.Id.text_field_helper);
 
             DividerView = FindViewById(Resource.Id.text_field_divider);
-
-            IsCondensed = true;
-            if (IsCondensed)
-            {
-                InputView.Typeface = FontUtil.LoadSystemFont(FontUtil.FontRobotoCondensedRegular);
-                LabelView.Typeface = FontUtil.LoadSystemFont(FontUtil.FontRobotoCondensedRegular);
-                ErrorView.Typeface = FontUtil.LoadSystemFont(FontUtil.FontRobotoCondensedRegular);
-                HelperView.Typeface = FontUtil.LoadSystemFont(FontUtil.FontRobotoCondensedRegular);
-            }
-            else
-            {
-                InputView.Typeface = FontUtil.LoadSystemFont(FontUtil.FontRobotoRegular);
-                LabelView.Typeface = FontUtil.LoadSystemFont(FontUtil.FontRobotoRegular);
-                ErrorView.Typeface = FontUtil.LoadSystemFont(FontUtil.FontRobotoRegular);
-                HelperView.Typeface = FontUtil.LoadSystemFont(FontUtil.FontRobotoRegular);
-            }
-
-            InputView.SetTextSize(ComplexUnitType.Sp, InputTextSize);
-            LabelView.SetTextSize(ComplexUnitType.Sp, LabelTextSize);
-            ErrorView.SetTextSize(ComplexUnitType.Sp, ErrorTextSize);
-            HelperView.SetTextSize(ComplexUnitType.Sp, HelperTextSize);
 
             InputView.FocusChange += OnFocusChanged;
             InputView.TextChanged += OnTextChanged;

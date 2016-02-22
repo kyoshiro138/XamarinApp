@@ -2,9 +2,9 @@
 
 namespace Xamarin.Core.Android
 {
-    public interface IParamReceive
+    public interface IParamReceive<TParam>
     {
-        object ReceiveParamObject(Bundle param, string tag);
+        TParam ReceiveParamObject(Bundle param, string tag);
     }
 }
 

@@ -8,7 +8,7 @@
         public const string StringMenuSettings = "Settings";
         public const string StringMenuSignOut = "Sign out";
 
-        public const string ControlListView = "ControlListView";
+        public const string ControlListMenu = "ControlListMenu";
     }
 }
 

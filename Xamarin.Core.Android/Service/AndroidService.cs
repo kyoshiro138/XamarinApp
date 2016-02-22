@@ -31,7 +31,8 @@ namespace Xamarin.Core.Android
         {
             Console.WriteLine("[REQUEST {0}] [URL {1}]", tag, url);
             bool isServiceConnected = CheckServiceConnected(tag);
-            if (isServiceConnected)
+            bool isEmulator = DeviceUtil.IsEmulator();
+            if (isEmulator || isServiceConnected)
             {
                 ShowProgressDialog();
 
@@ -61,7 +62,8 @@ namespace Xamarin.Core.Android
         {
             Console.WriteLine("[REQUEST {0}] [URL {1}]", tag, url);
             bool isServiceConnected = CheckServiceConnected(tag);
-            if (isServiceConnected)
+            bool isEmulator = DeviceUtil.IsEmulator();
+            if (isEmulator || isServiceConnected)
             {
                 ShowProgressDialog();
 

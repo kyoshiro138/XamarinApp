@@ -20,7 +20,7 @@
             android:layout_alignParentRight="true"
             android:background="@null"
             android:src="@drawable/ic_map" />
-        <Xamarin.Core.Android.MaterialLabel
+        <Xamarin.Core.Android.SystemLabel
             android:id="@+id/lbl_place_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -93,6 +93,9 @@
     <Compile Include="Implementation\Storage\AppAndroidDatabaseManager.cs" />
     <Compile Include="Screens\Home\PlaceItemView.cs" />
     <Compile Include="Screens\Home\PlaceGridAdapter.cs" />
+    <Compile Include="Screens\Location\LocationListFragment.cs" />
+    <Compile Include="Screens\Location\LocationListAdapter.cs" />
+    <Compile Include="Screens\Location\LocationItemView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -118,10 +121,8 @@
     <AndroidResource Include="Resources\layout\fragment_intro.axml" />
     <AndroidResource Include="Resources\layout\fragment_login.axml" />
     <AndroidResource Include="Resources\drawable-hdpi\img_default_avatar.png" />
-    <AndroidResource Include="Resources\layout-v21\fragment_login.axml" />
     <AndroidResource Include="Resources\layout-v21\activity_navigation_drawer.axml" />
     <AndroidResource Include="Resources\layout-v21\fragment_menu.axml" />
-    <AndroidResource Include="Resources\layout-v21\fragment_intro.axml" />
     <AndroidResource Include="Resources\layout\fragment_home.axml" />
     <AndroidResource Include="Resources\layout\grid_place_item.axml" />
     <AndroidResource Include="Resources\drawable-mdpi\ic_map.png" />
@@ -131,6 +132,9 @@
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_map.png" />
     <AndroidResource Include="Resources\anim\anim_grid_enter.xml" />
     <AndroidResource Include="Resources\anim\anim_grid_exit.xml" />
+    <AndroidResource Include="Resources\layout\fragment_location_list.axml" />
+    <AndroidResource Include="Resources\layout\list_location_item.axml" />
+    <AndroidResource Include="Resources\layout-v21\fragment_login.axml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Xamarin.Core.Android\Xamarin.Core.Android.csproj">
@@ -163,6 +167,7 @@
     <Folder Include="Implementation\Storage\" />
     <Folder Include="Resources\layout-v21\" />
     <Folder Include="Resources\anim\" />
+    <Folder Include="Screens\Location\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

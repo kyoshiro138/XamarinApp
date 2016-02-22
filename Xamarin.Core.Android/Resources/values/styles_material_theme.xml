@@ -48,4 +48,12 @@
 		<item name="colorPrimary">@color/c_primary_color500</item>
 	    <item name="colorAccent">@color/c_primary_color500</item>
 	</style>
+	<style name="CustomButtonStyle" parent="android:Widget">
+		<item name="android:textAppearance">?android:attr/textAppearanceButton</item>
+	    <item name="android:minHeight">48dp</item>
+	    <item name="android:minWidth">88dp</item>
+	    <item name="android:focusable">true</item>
+	    <item name="android:clickable">true</item>
+	    <item name="android:gravity">center_vertical|center_horizontal</item>
+	</style>
 </resources>

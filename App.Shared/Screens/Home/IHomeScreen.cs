@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace App.Shared
 {
-    public interface IHomeScreen : IScreen
+    public interface IHomeScreen : IScreen, INavigationScreen, IToolbarScreen
     {
         UserManager UserManager { get; }
 

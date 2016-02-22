@@ -25,6 +25,10 @@ namespace Xamarin.Core.Android
             var mobileNetworkInfo = ConnectivityManager.GetNetworkInfo(ConnectivityType.Mobile);
             return mobileNetworkInfo.IsRoaming && mobileNetworkInfo.IsConnected;
         }
+
+        public NetworkInfo GetCurrentActiveNetworkInfo() {
+            return ConnectivityManager.ActiveNetworkInfo;
+        }
     }
 }
 

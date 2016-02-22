@@ -8,6 +8,11 @@ namespace App.Android
 {
     public class PlaceItemView : BaseGridItemView<TravelPlace>
     {
+        protected override int GridItemLayoutResId
+        {
+            get { return Resource.Layout.grid_place_item; }
+        }
+
         private SystemLabel lblPlaceName;
 
         public PlaceItemView(Context context)
@@ -15,12 +20,12 @@ namespace App.Android
         {
         }
 
-        protected override void InflateItemView(Context context)
+        protected override void BindControls()
         {
-            Inflate(context, Resource.Layout.grid_place_item, this);
+            base.BindControls();
 
             lblPlaceName = FindViewById<SystemLabel>(Resource.Id.lbl_place_name);
-            lblPlaceName.SetTypeface(FontUtil.LoadSystemFont(FontUtil.FontRobotoCondensedRegular), TypefaceStyle.Bold);
+            lblPlaceName.SetTypeface(FontUtil.LoadSystemFont(FontUtil.FontRobotoRegular), TypefaceStyle.Bold);
             lblPlaceName.SetTextSize(ComplexUnitType.Sp, 16f);
         }
 
