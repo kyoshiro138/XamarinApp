@@ -112,7 +112,6 @@
     <AndroidResource Include="Resources\layout\fragment_menu.axml" />
     <AndroidResource Include="Resources\layout\activity_navigation_drawer.axml" />
     <AndroidResource Include="Resources\values\styles_app.xml" />
-    <AndroidResource Include="Resources\layout\fragment_content.axml" />
     <AndroidResource Include="Resources\drawable-hdpi\bg_menu.jpg" />
     <AndroidResource Include="Resources\drawable-xxhdpi\bg_menu.jpg" />
     <AndroidResource Include="Resources\values\dimens_screen.xml" />
@@ -134,7 +133,6 @@
     <AndroidResource Include="Resources\anim\anim_grid_exit.xml" />
     <AndroidResource Include="Resources\layout\fragment_location_list.axml" />
     <AndroidResource Include="Resources\layout\list_location_item.axml" />
-    <AndroidResource Include="Resources\layout-v21\fragment_login.axml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Xamarin.Core.Android\Xamarin.Core.Android.csproj">

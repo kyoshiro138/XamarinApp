@@ -10,7 +10,7 @@ namespace App.Android
     public class MenuItemView : BaseListItemView<MenuItem>
     {
         private ImageView imgIcon;
-        private TextView txtTitle;
+        private MaterialLabel txtTitle;
 
         protected override int ListItemLayoutResId
         {
@@ -27,7 +27,9 @@ namespace App.Android
             base.BindControls();
 
             imgIcon = FindViewById<ImageView>(Resource.Id.list_item_single_line_image);
-            txtTitle = FindViewById<TextView>(Resource.Id.list_item_single_line_text);
+            txtTitle = FindViewById<MaterialLabel>(Resource.Id.list_item_single_line_text);
+
+            txtTitle.ApplyTextFontAndSizeByType(MaterialLabelType.Body2);
         }
 
         public override void LoadItemData(MenuItem data)

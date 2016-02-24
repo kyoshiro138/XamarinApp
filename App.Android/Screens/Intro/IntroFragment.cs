@@ -8,7 +8,7 @@ namespace App.Android
 {
     public class IntroFragment : AppFragment, IIntroScreen
     {
-        private ILabel lblTitle;
+        private MaterialLabel lblTitle;
         private IntroScreenLogic introSL;
         private AppAndroidDatabaseManager database;
 
@@ -19,7 +19,9 @@ namespace App.Android
 
         protected override void BindControls(View rootView)
         {
-            lblTitle = rootView.FindViewById<SystemLabel>(Resource.Id.lbl_intro_title);
+            lblTitle = rootView.FindViewById<MaterialLabel>(Resource.Id.lbl_intro_title);
+
+            lblTitle.ApplyTextFontAndSizeByType(MaterialLabelType.Title);
         }
 
         protected override void LoadData()

@@ -70,29 +70,29 @@ namespace Xamarin.Core.Android
 		public partial class Attribute
 		{
 			
-			// aapt resource value: 0x7f0100d6
-			public static int MaterialDividerColor = 2130772182;
-			
 			// aapt resource value: 0x7f0100d2
-			public static int MaterialTextColor = 2130772178;
+			public static int MaterialDividerColor = 2130772178;
 			
-			// aapt resource value: 0x7f0100d5
-			public static int MaterialTextDisabledColor = 2130772181;
+			// aapt resource value: 0x7f0100ce
+			public static int MaterialTextColor = 2130772174;
 			
-			// aapt resource value: 0x7f0100d7
-			public static int MaterialTextFieldLabelColor = 2130772183;
-			
-			// aapt resource value: 0x7f0100d8
-			public static int MaterialTextFieldLabelColorError = 2130772184;
-			
-			// aapt resource value: 0x7f0100d9
-			public static int MaterialTextFieldLabelColorPrimary = 2130772185;
-			
-			// aapt resource value: 0x7f0100d4
-			public static int MaterialTextHintColor = 2130772180;
+			// aapt resource value: 0x7f0100d1
+			public static int MaterialTextDisabledColor = 2130772177;
 			
 			// aapt resource value: 0x7f0100d3
-			public static int MaterialTextSecondaryColor = 2130772179;
+			public static int MaterialTextFieldLabelColor = 2130772179;
+			
+			// aapt resource value: 0x7f0100d4
+			public static int MaterialTextFieldLabelColorError = 2130772180;
+			
+			// aapt resource value: 0x7f0100d5
+			public static int MaterialTextFieldLabelColorPrimary = 2130772181;
+			
+			// aapt resource value: 0x7f0100d0
+			public static int MaterialTextHintColor = 2130772176;
+			
+			// aapt resource value: 0x7f0100cf
+			public static int MaterialTextSecondaryColor = 2130772175;
 			
 			// aapt resource value: 0x7f010063
 			public static int actionBarDivider = 2130772067;
@@ -349,9 +349,6 @@ namespace Xamarin.Core.Android
 			// aapt resource value: 0x7f010005
 			public static int displayOptions = 2130771973;
 			
-			// aapt resource value: 0x7f0100ce
-			public static int display_type = 2130772174;
-			
 			// aapt resource value: 0x7f01000b
 			public static int divider = 2130771979;
 			
@@ -388,9 +385,6 @@ namespace Xamarin.Core.Android
 			// aapt resource value: 0x7f01001a
 			public static int elevation = 2130771994;
 			
-			// aapt resource value: 0x7f0100d0
-			public static int error_enabled = 2130772176;
-			
 			// aapt resource value: 0x7f01001e
 			public static int expandActivityOverflowButtonDrawable = 2130771998;
 			
@@ -402,9 +396,6 @@ namespace Xamarin.Core.Android
 			
 			// aapt resource value: 0x7f010001
 			public static int height = 2130771969;
-			
-			// aapt resource value: 0x7f0100d1
-			public static int helper_text = 2130772177;
 			
 			// aapt resource value: 0x7f010015
 			public static int hideOnContentScroll = 2130771989;
@@ -474,9 +465,6 @@ namespace Xamarin.Core.Android
 			
 			// aapt resource value: 0x7f0100c6
 			public static int logoDescription = 2130772166;
-			
-			// aapt resource value: 0x7f0100cf
-			public static int material_font = 2130772175;
 			
 			// aapt resource value: 0x7f0100c1
 			public static int maxButtonHeight = 2130772161;
@@ -1563,35 +1551,35 @@ namespace Xamarin.Core.Android
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f0b0063
-			public static int action0 = 2131427427;
+			// aapt resource value: 0x7f0b0057
+			public static int action0 = 2131427415;
 			
-			// aapt resource value: 0x7f0b004d
-			public static int action_bar = 2131427405;
+			// aapt resource value: 0x7f0b0041
+			public static int action_bar = 2131427393;
 			
 			// aapt resource value: 0x7f0b0000
 			public static int action_bar_activity_content = 2131427328;
 			
-			// aapt resource value: 0x7f0b004c
-			public static int action_bar_container = 2131427404;
+			// aapt resource value: 0x7f0b0040
+			public static int action_bar_container = 2131427392;
 			
-			// aapt resource value: 0x7f0b0048
-			public static int action_bar_root = 2131427400;
+			// aapt resource value: 0x7f0b003c
+			public static int action_bar_root = 2131427388;
 			
 			// aapt resource value: 0x7f0b0001
 			public static int action_bar_spinner = 2131427329;
 			
-			// aapt resource value: 0x7f0b002f
-			public static int action_bar_subtitle = 2131427375;
+			// aapt resource value: 0x7f0b0022
+			public static int action_bar_subtitle = 2131427362;
 			
-			// aapt resource value: 0x7f0b002e
-			public static int action_bar_title = 2131427374;
+			// aapt resource value: 0x7f0b0021
+			public static int action_bar_title = 2131427361;
 			
-			// aapt resource value: 0x7f0b004e
-			public static int action_context_bar = 2131427406;
+			// aapt resource value: 0x7f0b0042
+			public static int action_context_bar = 2131427394;
 			
-			// aapt resource value: 0x7f0b0067
-			public static int action_divider = 2131427431;
+			// aapt resource value: 0x7f0b005b
+			public static int action_divider = 2131427419;
 			
 			// aapt resource value: 0x7f0b0002
 			public static int action_menu_divider = 2131427330;
@@ -1599,20 +1587,20 @@ namespace Xamarin.Core.Android
 			// aapt resource value: 0x7f0b0003
 			public static int action_menu_presenter = 2131427331;
 			
-			// aapt resource value: 0x7f0b004a
-			public static int action_mode_bar = 2131427402;
+			// aapt resource value: 0x7f0b003e
+			public static int action_mode_bar = 2131427390;
 			
-			// aapt resource value: 0x7f0b0049
-			public static int action_mode_bar_stub = 2131427401;
+			// aapt resource value: 0x7f0b003d
+			public static int action_mode_bar_stub = 2131427389;
+			
+			// aapt resource value: 0x7f0b0023
+			public static int action_mode_close_button = 2131427363;
+			
+			// aapt resource value: 0x7f0b0024
+			public static int activity_chooser_view_content = 2131427364;
 			
 			// aapt resource value: 0x7f0b0030
-			public static int action_mode_close_button = 2131427376;
-			
-			// aapt resource value: 0x7f0b0031
-			public static int activity_chooser_view_content = 2131427377;
-			
-			// aapt resource value: 0x7f0b003c
-			public static int alertTitle = 2131427388;
+			public static int alertTitle = 2131427376;
 			
 			// aapt resource value: 0x7f0b001b
 			public static int always = 2131427355;
@@ -1620,77 +1608,53 @@ namespace Xamarin.Core.Android
 			// aapt resource value: 0x7f0b0018
 			public static int beginning = 2131427352;
 			
-			// aapt resource value: 0x7f0b0021
-			public static int body1 = 2131427361;
+			// aapt resource value: 0x7f0b002b
+			public static int buttonPanel = 2131427371;
 			
-			// aapt resource value: 0x7f0b0022
-			public static int body2 = 2131427362;
+			// aapt resource value: 0x7f0b0058
+			public static int cancel_action = 2131427416;
 			
-			// aapt resource value: 0x7f0b0037
-			public static int buttonPanel = 2131427383;
+			// aapt resource value: 0x7f0b0039
+			public static int checkbox = 2131427385;
 			
-			// aapt resource value: 0x7f0b0064
-			public static int cancel_action = 2131427428;
-			
-			// aapt resource value: 0x7f0b0023
-			public static int caption = 2131427363;
-			
-			// aapt resource value: 0x7f0b0045
-			public static int checkbox = 2131427397;
-			
-			// aapt resource value: 0x7f0b006a
-			public static int chronometer = 2131427434;
+			// aapt resource value: 0x7f0b005e
+			public static int chronometer = 2131427422;
 			
 			// aapt resource value: 0x7f0b001c
 			public static int collapseActionView = 2131427356;
 			
-			// aapt resource value: 0x7f0b003d
-			public static int contentPanel = 2131427389;
+			// aapt resource value: 0x7f0b0031
+			public static int contentPanel = 2131427377;
 			
-			// aapt resource value: 0x7f0b0043
-			public static int custom = 2131427395;
+			// aapt resource value: 0x7f0b0037
+			public static int custom = 2131427383;
 			
-			// aapt resource value: 0x7f0b0042
-			public static int customPanel = 2131427394;
+			// aapt resource value: 0x7f0b0036
+			public static int customPanel = 2131427382;
 			
-			// aapt resource value: 0x7f0b004b
-			public static int decor_content_parent = 2131427403;
+			// aapt resource value: 0x7f0b003f
+			public static int decor_content_parent = 2131427391;
 			
-			// aapt resource value: 0x7f0b0034
-			public static int default_activity_button = 2131427380;
+			// aapt resource value: 0x7f0b0027
+			public static int default_activity_button = 2131427367;
 			
 			// aapt resource value: 0x7f0b000c
 			public static int disableHome = 2131427340;
 			
-			// aapt resource value: 0x7f0b0024
-			public static int display1 = 2131427364;
-			
-			// aapt resource value: 0x7f0b0025
-			public static int display2 = 2131427365;
-			
-			// aapt resource value: 0x7f0b0026
-			public static int display3 = 2131427366;
-			
-			// aapt resource value: 0x7f0b0027
-			public static int display4 = 2131427367;
-			
-			// aapt resource value: 0x7f0b004f
-			public static int edit_query = 2131427407;
+			// aapt resource value: 0x7f0b0043
+			public static int edit_query = 2131427395;
 			
 			// aapt resource value: 0x7f0b0019
 			public static int end = 2131427353;
 			
-			// aapt resource value: 0x7f0b006f
-			public static int end_padder = 2131427439;
+			// aapt resource value: 0x7f0b0063
+			public static int end_padder = 2131427427;
 			
-			// aapt resource value: 0x7f0b0032
-			public static int expand_activities_button = 2131427378;
+			// aapt resource value: 0x7f0b0025
+			public static int expand_activities_button = 2131427365;
 			
-			// aapt resource value: 0x7f0b0044
-			public static int expanded_menu = 2131427396;
-			
-			// aapt resource value: 0x7f0b0028
-			public static int headline = 2131427368;
+			// aapt resource value: 0x7f0b0038
+			public static int expanded_menu = 2131427384;
 			
 			// aapt resource value: 0x7f0b0004
 			public static int home = 2131427332;
@@ -1698,38 +1662,38 @@ namespace Xamarin.Core.Android
 			// aapt resource value: 0x7f0b000d
 			public static int homeAsUp = 2131427341;
 			
-			// aapt resource value: 0x7f0b0036
-			public static int icon = 2131427382;
+			// aapt resource value: 0x7f0b0029
+			public static int icon = 2131427369;
 			
 			// aapt resource value: 0x7f0b001d
 			public static int ifRoom = 2131427357;
 			
-			// aapt resource value: 0x7f0b0033
-			public static int image = 2131427379;
+			// aapt resource value: 0x7f0b0026
+			public static int image = 2131427366;
 			
-			// aapt resource value: 0x7f0b006e
-			public static int info = 2131427438;
+			// aapt resource value: 0x7f0b0062
+			public static int info = 2131427426;
 			
-			// aapt resource value: 0x7f0b0068
-			public static int line1 = 2131427432;
+			// aapt resource value: 0x7f0b005c
+			public static int line1 = 2131427420;
 			
-			// aapt resource value: 0x7f0b006c
-			public static int line3 = 2131427436;
+			// aapt resource value: 0x7f0b0060
+			public static int line3 = 2131427424;
 			
 			// aapt resource value: 0x7f0b0009
 			public static int listMode = 2131427337;
 			
-			// aapt resource value: 0x7f0b0035
-			public static int list_item = 2131427381;
+			// aapt resource value: 0x7f0b0028
+			public static int list_item = 2131427368;
 			
-			// aapt resource value: 0x7f0b0061
-			public static int list_item_single_line_image = 2131427425;
+			// aapt resource value: 0x7f0b0055
+			public static int list_item_single_line_image = 2131427413;
 			
-			// aapt resource value: 0x7f0b0062
-			public static int list_item_single_line_text = 2131427426;
+			// aapt resource value: 0x7f0b0056
+			public static int list_item_single_line_text = 2131427414;
 			
-			// aapt resource value: 0x7f0b0066
-			public static int media_actions = 2131427430;
+			// aapt resource value: 0x7f0b005a
+			public static int media_actions = 2131427418;
 			
 			// aapt resource value: 0x7f0b001a
 			public static int middle = 2131427354;
@@ -1746,8 +1710,8 @@ namespace Xamarin.Core.Android
 			// aapt resource value: 0x7f0b000a
 			public static int normal = 2131427338;
 			
-			// aapt resource value: 0x7f0b0039
-			public static int parentPanel = 2131427385;
+			// aapt resource value: 0x7f0b002d
+			public static int parentPanel = 2131427373;
 			
 			// aapt resource value: 0x7f0b0005
 			public static int progress_circular = 2131427333;
@@ -1755,65 +1719,56 @@ namespace Xamarin.Core.Android
 			// aapt resource value: 0x7f0b0006
 			public static int progress_horizontal = 2131427334;
 			
-			// aapt resource value: 0x7f0b0047
-			public static int radio = 2131427399;
-			
-			// aapt resource value: 0x7f0b002b
-			public static int roboto_light = 2131427371;
-			
-			// aapt resource value: 0x7f0b002c
-			public static int roboto_medium = 2131427372;
-			
-			// aapt resource value: 0x7f0b002d
-			public static int roboto_regular = 2131427373;
+			// aapt resource value: 0x7f0b003b
+			public static int radio = 2131427387;
 			
 			// aapt resource value: 0x7f0b0014
 			public static int screen = 2131427348;
 			
-			// aapt resource value: 0x7f0b0041
-			public static int scrollIndicatorDown = 2131427393;
+			// aapt resource value: 0x7f0b0035
+			public static int scrollIndicatorDown = 2131427381;
 			
-			// aapt resource value: 0x7f0b003e
-			public static int scrollIndicatorUp = 2131427390;
+			// aapt resource value: 0x7f0b0032
+			public static int scrollIndicatorUp = 2131427378;
 			
-			// aapt resource value: 0x7f0b003f
-			public static int scrollView = 2131427391;
+			// aapt resource value: 0x7f0b0033
+			public static int scrollView = 2131427379;
 			
-			// aapt resource value: 0x7f0b0051
-			public static int search_badge = 2131427409;
+			// aapt resource value: 0x7f0b0045
+			public static int search_badge = 2131427397;
 			
-			// aapt resource value: 0x7f0b0050
-			public static int search_bar = 2131427408;
-			
-			// aapt resource value: 0x7f0b0052
-			public static int search_button = 2131427410;
-			
-			// aapt resource value: 0x7f0b0057
-			public static int search_close_btn = 2131427415;
-			
-			// aapt resource value: 0x7f0b0053
-			public static int search_edit_frame = 2131427411;
-			
-			// aapt resource value: 0x7f0b0059
-			public static int search_go_btn = 2131427417;
-			
-			// aapt resource value: 0x7f0b0054
-			public static int search_mag_icon = 2131427412;
-			
-			// aapt resource value: 0x7f0b0055
-			public static int search_plate = 2131427413;
-			
-			// aapt resource value: 0x7f0b0056
-			public static int search_src_text = 2131427414;
-			
-			// aapt resource value: 0x7f0b005a
-			public static int search_voice_btn = 2131427418;
-			
-			// aapt resource value: 0x7f0b005b
-			public static int select_dialog_listview = 2131427419;
+			// aapt resource value: 0x7f0b0044
+			public static int search_bar = 2131427396;
 			
 			// aapt resource value: 0x7f0b0046
-			public static int shortcut = 2131427398;
+			public static int search_button = 2131427398;
+			
+			// aapt resource value: 0x7f0b004b
+			public static int search_close_btn = 2131427403;
+			
+			// aapt resource value: 0x7f0b0047
+			public static int search_edit_frame = 2131427399;
+			
+			// aapt resource value: 0x7f0b004d
+			public static int search_go_btn = 2131427405;
+			
+			// aapt resource value: 0x7f0b0048
+			public static int search_mag_icon = 2131427400;
+			
+			// aapt resource value: 0x7f0b0049
+			public static int search_plate = 2131427401;
+			
+			// aapt resource value: 0x7f0b004a
+			public static int search_src_text = 2131427402;
+			
+			// aapt resource value: 0x7f0b004e
+			public static int search_voice_btn = 2131427406;
+			
+			// aapt resource value: 0x7f0b004f
+			public static int select_dialog_listview = 2131427407;
+			
+			// aapt resource value: 0x7f0b003a
+			public static int shortcut = 2131427386;
 			
 			// aapt resource value: 0x7f0b000f
 			public static int showCustom = 2131427343;
@@ -1824,8 +1779,8 @@ namespace Xamarin.Core.Android
 			// aapt resource value: 0x7f0b0011
 			public static int showTitle = 2131427345;
 			
-			// aapt resource value: 0x7f0b0038
-			public static int spacer = 2131427384;
+			// aapt resource value: 0x7f0b002c
+			public static int spacer = 2131427372;
 			
 			// aapt resource value: 0x7f0b0007
 			public static int split_action_bar = 2131427335;
@@ -1839,53 +1794,50 @@ namespace Xamarin.Core.Android
 			// aapt resource value: 0x7f0b0017
 			public static int src_over = 2131427351;
 			
-			// aapt resource value: 0x7f0b0065
-			public static int status_bar_latest_event_content = 2131427429;
+			// aapt resource value: 0x7f0b0059
+			public static int status_bar_latest_event_content = 2131427417;
 			
-			// aapt resource value: 0x7f0b0029
-			public static int subhead = 2131427369;
-			
-			// aapt resource value: 0x7f0b0058
-			public static int submit_area = 2131427416;
+			// aapt resource value: 0x7f0b004c
+			public static int submit_area = 2131427404;
 			
 			// aapt resource value: 0x7f0b000b
 			public static int tabMode = 2131427339;
 			
-			// aapt resource value: 0x7f0b006d
-			public static int text = 2131427437;
-			
-			// aapt resource value: 0x7f0b006b
-			public static int text2 = 2131427435;
-			
-			// aapt resource value: 0x7f0b0040
-			public static int textSpacerNoButtons = 2131427392;
-			
-			// aapt resource value: 0x7f0b005e
-			public static int text_field_divider = 2131427422;
+			// aapt resource value: 0x7f0b0061
+			public static int text = 2131427425;
 			
 			// aapt resource value: 0x7f0b005f
-			public static int text_field_error = 2131427423;
+			public static int text2 = 2131427423;
 			
-			// aapt resource value: 0x7f0b0060
-			public static int text_field_helper = 2131427424;
+			// aapt resource value: 0x7f0b0034
+			public static int textSpacerNoButtons = 2131427380;
+			
+			// aapt resource value: 0x7f0b0052
+			public static int text_field_divider = 2131427410;
+			
+			// aapt resource value: 0x7f0b0053
+			public static int text_field_error = 2131427411;
+			
+			// aapt resource value: 0x7f0b0054
+			public static int text_field_helper = 2131427412;
+			
+			// aapt resource value: 0x7f0b0051
+			public static int text_field_input = 2131427409;
+			
+			// aapt resource value: 0x7f0b0050
+			public static int text_field_label = 2131427408;
 			
 			// aapt resource value: 0x7f0b005d
-			public static int text_field_input = 2131427421;
-			
-			// aapt resource value: 0x7f0b005c
-			public static int text_field_label = 2131427420;
-			
-			// aapt resource value: 0x7f0b0069
-			public static int time = 2131427433;
+			public static int time = 2131427421;
 			
 			// aapt resource value: 0x7f0b002a
 			public static int title = 2131427370;
 			
-			// aapt resource value: 0x7f0b003b
-			public static int title_template = 2131427387;
+			// aapt resource value: 0x7f0b002f
+			public static int title_template = 2131427375;
 			
-			// aapt resource value: 0x7f0b003a
-			public static int topPanel = 2131427386;
+			// aapt resource value: 0x7f0b002e
+			public static int topPanel = 2131427374;
 			
 			// aapt resource value: 0x7f0b0008
 			public static int up = 2131427336;
@@ -3402,25 +3354,15 @@ namespace Xamarin.Core.Android
 			// aapt resource value: 1
 			public static int ListPopupWindow_android_dropDownVerticalOffset = 1;
 			
-			public static int[] MaterialLabel = new int[] {
-					2130772174,
-					2130772175};
-			
-			// aapt resource value: 0
-			public static int MaterialLabel_display_type = 0;
-			
-			// aapt resource value: 1
-			public static int MaterialLabel_material_font = 1;
-			
 			public static int[] MaterialThemeAttribute = new int[] {
+					2130772174,
+					2130772175,
+					2130772176,
+					2130772177,
 					2130772178,
 					2130772179,
 					2130772180,
-					2130772181,
-					2130772182,
-					2130772183,
-					2130772184,
-					2130772185};
+					2130772181};
 			
 			// aapt resource value: 4
 			public static int MaterialThemeAttribute_MaterialDividerColor = 4;
@@ -3661,16 +3603,6 @@ namespace Xamarin.Core.Android
 			
 			// aapt resource value: 12
 			public static int SearchView_voiceIcon = 12;
-			
-			public static int[] SingleLineTextField = new int[] {
-					2130772176,
-					2130772177};
-			
-			// aapt resource value: 0
-			public static int SingleLineTextField_error_enabled = 0;
-			
-			// aapt resource value: 1
-			public static int SingleLineTextField_helper_text = 1;
 			
 			public static int[] Spinner = new int[] {
 					16843126,

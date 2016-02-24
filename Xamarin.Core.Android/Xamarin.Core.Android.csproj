@@ -91,6 +91,7 @@
     <Compile Include="Controls\GridView\BaseGridItemView.cs" />
     <Compile Include="Controls\GridView\AnimationGridView.cs" />
     <Compile Include="Utils\DeviceUtil.cs" />
+    <Compile Include="Controls\Label\MaterialLabelType.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -100,7 +101,6 @@
     <AndroidResource Include="Resources\values\colors_debug.xml" />
     <AndroidResource Include="Resources\values\colors_material_primary.xml" />
     <AndroidResource Include="Resources\values\colors_material_text.xml" />
-    <AndroidResource Include="Resources\values\attrs_material.xml" />
     <AndroidResource Include="Resources\drawable\bg_ratio1x1.xml" />
     <AndroidResource Include="Resources\drawable\bg_ratio16x9.xml" />
     <AndroidResource Include="Resources\drawable\bg_text_field_cursor.xml" />

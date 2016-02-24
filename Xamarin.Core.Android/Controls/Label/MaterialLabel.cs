@@ -7,21 +7,6 @@ namespace Xamarin.Core.Android
 {
     public class MaterialLabel : SystemLabel
     {
-        private const int DisplayTypeDisplay4 = 1;
-        private const int DisplayTypeDisplay3 = 2;
-        private const int DisplayTypeDisplay2 = 3;
-        private const int DisplayTypeDisplay1 = 4;
-        private const int DisplayTypeHeadline = 5;
-        private const int DisplayTypeTitle = 6;
-        private const int DisplayTypeSubhead = 7;
-        private const int DisplayTypeBody2 = 8;
-        private const int DisplayTypeBody1 = 9;
-        private const int DisplayTypeCaption = 10;
-
-        private const int FontTypeRobotoLight = 1;
-        private const int FontTypeRobotoRegular = 2;
-        private const int FontTypeRobotoMedium = 3;
-
         public MaterialLabel(Context context)
             : base(context)
         {
@@ -40,95 +25,57 @@ namespace Xamarin.Core.Android
         protected override void InitLabel(Context context, IAttributeSet attrs = null)
         {
             base.InitLabel(context, attrs);
-            if (attrs != null)
-            {
-                var styledAttributes = context.ObtainStyledAttributes(attrs, Resource.Styleable.MaterialLabel);
-                var displayType = styledAttributes.GetInt(Resource.Styleable.MaterialLabel_display_type, 0);
-                var fontType = styledAttributes.GetInt(Resource.Styleable.MaterialLabel_material_font, 0);
-                styledAttributes.Recycle();
-
-                if (displayType > 0)
-                {
-                    SetTypeface(getFontByDisplayType(displayType), TypefaceStyle.Normal);
-                    SetTextSize(ComplexUnitType.Sp, getFontSizeByDisplayType(displayType));
-                }
-                if (fontType > 0)
-                {
-                    SetTypeface(getFont(fontType), TypefaceStyle.Normal);
-                }
-            }
+            ApplyTextFontAndSizeByType(MaterialLabelType.UnSpecified);
         }
 
-        private Typeface getFontByDisplayType(int displayType)
+        public void ApplyTextFontAndSizeByType(MaterialLabelType labelType)
         {
-            switch (displayType)
+            switch (labelType)
             {
-                case DisplayTypeDisplay4:
-                    return FontUtil.LoadSystemFont(FontUtil.FontRobotoLight);
-                case DisplayTypeDisplay3:
-                    return FontUtil.LoadSystemFont(FontUtil.FontRobotoRegular);
-                case DisplayTypeDisplay2:
-                    return FontUtil.LoadSystemFont(FontUtil.FontRobotoRegular);
-                case DisplayTypeDisplay1:
-                    return FontUtil.LoadSystemFont(FontUtil.FontRobotoRegular);
-                case DisplayTypeHeadline:
-                    return FontUtil.LoadSystemFont(FontUtil.FontRobotoRegular);
-                case DisplayTypeTitle:
-                    return FontUtil.LoadSystemFont(FontUtil.FontRobotoMedium);
-                case DisplayTypeSubhead:
-                    return FontUtil.LoadSystemFont(FontUtil.FontRobotoRegular);
-                case DisplayTypeBody2:
-                    return FontUtil.LoadSystemFont(FontUtil.FontRobotoMedium);
-                case DisplayTypeBody1:
-                    return FontUtil.LoadSystemFont(FontUtil.FontRobotoRegular);
-                case DisplayTypeCaption:
-                    return FontUtil.LoadSystemFont(FontUtil.FontRobotoRegular);
-                default:
-                    return FontUtil.LoadSystemFont(FontUtil.FontRobotoRegular);
-            }
-        }
-
-        private float getFontSizeByDisplayType(int displayType)
-        {
-            switch (displayType)
-            {
-                case DisplayTypeDisplay4:
-                    return 112f;
-                case DisplayTypeDisplay3:
-                    return 56f;
-                case DisplayTypeDisplay2:
-                    return 45f;
-                case DisplayTypeDisplay1:
-                    return 34f;
-                case DisplayTypeHeadline:
-                    return 24f;
-                case DisplayTypeTitle:
-                    return 20f;
-                case DisplayTypeSubhead:
-                    return 16f;
-                case DisplayTypeBody2:
-                    return 14f;
-                case DisplayTypeBody1:
-                    return 14f;
-                case DisplayTypeCaption:
-                    return 12f;
-                default:
-                    return 14f;
-            }
-        }
-
-        private Typeface getFont(int fontType)
-        {
-            switch (fontType)
-            {
-                case FontTypeRobotoLight:
-                    return FontUtil.LoadSystemFont(FontUtil.FontRobotoLight);
-                case FontTypeRobotoRegular:
-                    return FontUtil.LoadSystemFont(FontUtil.FontRobotoRegular);
-                case FontTypeRobotoMedium:
-                    return FontUtil.LoadSystemFont(FontUtil.FontRobotoMedium);
-                default:
-                    return FontUtil.LoadSystemFont(FontUtil.FontRobotoRegular);
+                case MaterialLabelType.Caption:
+                    SetTextAppearance(Context, Resource.Style.TextAppearance_AppCompat_Caption);
+                    SetTypeface(FontUtil.LoadSystemFont(FontUtil.FontRobotoRegular), TypefaceStyle.Normal);
+                    break;
+                case MaterialLabelType.Body1:
+                    SetTextAppearance(Context, Resource.Style.TextAppearance_AppCompat_Body1);
+                    SetTypeface(FontUtil.LoadSystemFont(FontUtil.FontRobotoRegular), TypefaceStyle.Normal);
+                    break;
+                case MaterialLabelType.Body2:
+                    SetTextAppearance(Context, Resource.Style.TextAppearance_AppCompat_Body2);
+                    SetTypeface(FontUtil.LoadSystemFont(FontUtil.FontRobotoMedium), TypefaceStyle.Normal);
+                    break;
+                case MaterialLabelType.Subhead:
+                    SetTextAppearance(Context, Resource.Style.TextAppearance_AppCompat_Subhead);
+                    SetTypeface(FontUtil.LoadSystemFont(FontUtil.FontRobotoRegular), TypefaceStyle.Normal);
+                    break;
+                case MaterialLabelType.Title:
+                    SetTextAppearance(Context, Resource.Style.TextAppearance_AppCompat_Title);
+                    SetTypeface(FontUtil.LoadSystemFont(FontUtil.FontRobotoMedium), TypefaceStyle.Normal);
+                    break;
+                case MaterialLabelType.Headline:
+                    SetTextAppearance(Context, Resource.Style.TextAppearance_AppCompat_Headline);
+                    SetTypeface(FontUtil.LoadSystemFont(FontUtil.FontRobotoRegular), TypefaceStyle.Normal);
+                    break;
+                case MaterialLabelType.Display1:
+                    SetTextAppearance(Context, Resource.Style.TextAppearance_AppCompat_Display1);
+                    SetTypeface(FontUtil.LoadSystemFont(FontUtil.FontRobotoRegular), TypefaceStyle.Normal);
+                    break;
+                case MaterialLabelType.Display2:
+                    SetTextAppearance(Context, Resource.Style.TextAppearance_AppCompat_Display2);
+                    SetTypeface(FontUtil.LoadSystemFont(FontUtil.FontRobotoRegular), TypefaceStyle.Normal);
+                    break;
+                case MaterialLabelType.Display3:
+                    SetTextAppearance(Context, Resource.Style.TextAppearance_AppCompat_Display3);
+                    SetTypeface(FontUtil.LoadSystemFont(FontUtil.FontRobotoRegular), TypefaceStyle.Normal);
+                    break;
+                case MaterialLabelType.Display4:
+                    SetTextAppearance(Context, Resource.Style.TextAppearance_AppCompat_Display4);
+                    SetTypeface(FontUtil.LoadSystemFont(FontUtil.FontRobotoLight), TypefaceStyle.Normal);
+                    break;
+                case MaterialLabelType.UnSpecified:
+                    SetTextAppearance(Context, Resource.Style.TextAppearance_AppCompat_Body1);
+                    SetTypeface(FontUtil.LoadSystemFont(FontUtil.FontRobotoRegular), TypefaceStyle.Normal);
+                    break;
             }
         }
     }

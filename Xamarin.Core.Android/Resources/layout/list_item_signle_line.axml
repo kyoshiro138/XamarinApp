@@ -17,6 +17,5 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_toRightOf="@id/list_item_single_line_image"
-        android:textColor="?attr/MaterialTextColor"
-        app:display_type="body2" />
+        android:textColor="?attr/MaterialTextColor" />
 </RelativeLayout>

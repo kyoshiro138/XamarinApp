@@ -1,19 +1,19 @@
 ﻿using Android.Content;
 using Android.Util;
+using Android.OS;
+using Android.Graphics;
 
 namespace Xamarin.Core.Android
 {
     public class MaterialButton : SystemButton
     {
-        private const float ButtonTextSize = 14f;
-
         public MaterialButton(Context context)
-            : base(context)
+            : base(context, null, Resource.Style.Widget_AppCompat_Button)
         {
         }
 
         public MaterialButton(Context context, IAttributeSet attrs)
-            : base(context, attrs)
+            : base(context, attrs, Resource.Style.Widget_AppCompat_Button)
         {
         }
 
@@ -26,13 +26,15 @@ namespace Xamarin.Core.Android
         {
             base.InitButton(context, attrs);
 
-            if (attrs != null)
-            {
-                // TODO: set custom style for material button
-            }
 
-            SetTextSize(ComplexUnitType.Sp, ButtonTextSize);
-            SetAllCaps(true);
+            if (Build.VERSION.SdkInt < BuildVersionCodes.Lollipop)
+            {
+                PixelConverter converter = new PixelConverter(context);
+
+                SetTextAppearance(context, Resource.Style.TextAppearance_AppCompat_Button);
+                SetTypeface(FontUtil.LoadSystemFont(FontUtil.FontRobotoRegular), TypefaceStyle.Normal);
+                SetMinimumWidth((int)converter.FromDp(88));
+            }
         }
     }
 }

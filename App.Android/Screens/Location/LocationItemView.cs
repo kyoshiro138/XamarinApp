@@ -1,16 +1,13 @@
-﻿using System;
-using Xamarin.Core.Android;
+﻿using Xamarin.Core.Android;
 using App.Shared;
 using Android.Content;
-using Android.Graphics;
-using Android.Util;
 
 namespace App.Android
 {
     public class LocationItemView : BaseListItemView<PlaceLocation>
     {
-        private SystemLabel lblTitle;
-        private SystemLabel lblDescription;
+        private MaterialLabel lblTitle;
+        private MaterialLabel lblDescription;
         private SystemButton btnDetail;
         private SystemButton btnMap;
 
@@ -28,10 +25,13 @@ namespace App.Android
         {
             base.BindControls();
 
-            lblTitle = FindViewById<SystemLabel>(Resource.Id.lbl_location_title);
-            lblDescription = FindViewById<SystemLabel>(Resource.Id.lbl_location_description);
+            lblTitle = FindViewById<MaterialLabel>(Resource.Id.lbl_location_title);
+            lblDescription = FindViewById<MaterialLabel>(Resource.Id.lbl_location_description);
             btnDetail = FindViewById<SystemButton>(Resource.Id.btn_location_detail);
             btnMap = FindViewById<SystemButton>(Resource.Id.btn_location_map);
+
+            lblTitle.ApplyTextFontAndSizeByType(MaterialLabelType.Title);
+            lblDescription.ApplyTextFontAndSizeByType(MaterialLabelType.Body1);
         }
 
         public override void LoadItemData(PlaceLocation data)
