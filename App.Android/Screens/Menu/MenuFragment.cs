@@ -5,11 +5,15 @@ using App.Shared;
 using System.Collections.Generic;
 using System;
 using System.Threading.Tasks;
+using Android.Graphics;
+using Android.Util;
 
 namespace App.Android
 {
     public class MenuFragment : AppFragment, IMenuScreen
     {
+        private SystemLabel lblUserEmail;
+        private SystemLabel lblUserName;
         private SystemListView menuList;
         private MenuScreenLogic menuSL;
 
@@ -20,7 +24,14 @@ namespace App.Android
 
         protected override void BindControls(View rootView)
         {
+            lblUserEmail = rootView.FindViewById<SystemLabel>(Resource.Id.lbl_menu_user_email);
+            lblUserName = rootView.FindViewById<SystemLabel>(Resource.Id.lbl_menu_user_name);
             menuList = rootView.FindViewById<SystemListView>(Resource.Id.list_menu);
+
+            lblUserEmail.SetTypeface(FontUtil.LoadSystemFont(FontUtil.FontRobotoRegular), TypefaceStyle.Normal);
+            lblUserEmail.SetTextSize(ComplexUnitType.Sp, 14);
+            lblUserName.SetTypeface(FontUtil.LoadSystemFont(FontUtil.FontRobotoMedium), TypefaceStyle.Bold);
+            lblUserName.SetTextSize(ComplexUnitType.Sp, 14);
         }
 
         protected override void LoadData()
@@ -41,6 +52,10 @@ namespace App.Android
                 {
                     case MenuScreenConst.ControlListMenu:
                         return menuList;
+                    case MenuScreenConst.ControlLabelUserEmail:
+                        return lblUserEmail;
+                    case MenuScreenConst.ControlLabelUserName:
+                        return lblUserName;
                     default:
                         return null;
                 }

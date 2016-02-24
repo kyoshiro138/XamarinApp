@@ -62,17 +62,22 @@ namespace App.Shared
             return null;
         }
 
-        public string GetGenderByString()
+        public string GetGenderString()
         {
-            if (Gender == 0)
+            if (Gender == (int)GenderType.Male)
             {
                 return GenderMale;
             }
-            else if (Gender == 1)
+            else if (Gender == (int)GenderType.Female)
             {
                 return GenderFemale;
             }
             return GenderUndefined;
+        }
+
+        public bool IsEmailUsername()
+        {
+            return Username.Contains("@");
         }
 
         public enum GenderType

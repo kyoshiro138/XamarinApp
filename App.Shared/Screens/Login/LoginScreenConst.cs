@@ -26,7 +26,7 @@
         public const string StringButtonSettings = "SETTINGS";
 
         public const string StringCreateAccount = "Create Account";
-        public const string StringLabelUsername = "Username";
+        public const string StringLabelUsername = "Username/Email";
         public const string StringLabelPassword = "Password";
 
         public const string ErrorUsernameEmpty = "Username can not be empty";

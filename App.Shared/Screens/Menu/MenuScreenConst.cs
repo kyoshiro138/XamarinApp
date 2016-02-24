@@ -9,6 +9,8 @@
         public const string StringMenuSignOut = "Sign out";
 
         public const string ControlListMenu = "ControlListMenu";
+        public const string ControlLabelUserEmail = "ControlLabelUserEmail";
+        public const string ControlLabelUserName = "ControlLabelUserName";
     }
 }
 

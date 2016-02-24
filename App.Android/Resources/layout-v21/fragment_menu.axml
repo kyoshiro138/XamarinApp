@@ -12,6 +12,26 @@
             app:layout_widthPercent="100%"
             app:layout_aspectRatio="178%"
             android:background="@drawable/bg_menu" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginBottom="8dp"
+            android:layout_gravity="bottom"
+            android:gravity="bottom"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingBottom="8dp">
+            <Xamarin.Core.Android.MaterialLabel
+                android:id="@+id/lbl_menu_user_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true" />
+            <Xamarin.Core.Android.MaterialLabel
+                android:id="@+id/lbl_menu_user_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/lbl_menu_user_email" />
+        </RelativeLayout>
     </android.support.percent.PercentFrameLayout>
     <Xamarin.Core.Android.SystemListView
         android:id="@+id/list_menu"
