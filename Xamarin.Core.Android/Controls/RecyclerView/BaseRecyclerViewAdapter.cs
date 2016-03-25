@@ -5,7 +5,7 @@ using Android.Views;
 
 namespace Xamarin.Core.Android
 {
-    public abstract class BaseRecyclerViewAdapter<TItemViewHolder, TItemData> : RecyclerView.Adapter
+    public abstract class BaseRecyclerViewAdapter<TItemViewHolder, TItemData> : RecyclerView.Adapter, IListDataSource<TItemData>
         where TItemViewHolder : BaseViewHolder<TItemData>
         where TItemData : class
     {

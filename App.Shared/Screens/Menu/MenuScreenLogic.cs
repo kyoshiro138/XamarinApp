@@ -62,6 +62,12 @@ namespace App.Shared
         {
             menuScreen.Navigator.NavigateTo(loginScreen, true);
         }
+
+        public void ShowSignOutConfirmationDialog()
+        {
+            IDialog dialog = menuScreen.BuildSignOutConfirmationDialog();
+            dialog.Show();
+        }
     }
 }
 

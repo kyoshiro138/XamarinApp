@@ -3293,13 +3293,22 @@ namespace App.Android
 			public const int ic_map = 2130837584;
 			
 			// aapt resource value: 0x7f020051
-			public const int Icon = 2130837585;
+			public const int ic_menu = 2130837585;
 			
 			// aapt resource value: 0x7f020052
-			public const int img_default_avatar = 2130837586;
+			public const int ic_settings = 2130837586;
 			
 			// aapt resource value: 0x7f020053
-			public const int notification_template_icon_bg = 2130837587;
+			public const int ic_sign_out = 2130837587;
+			
+			// aapt resource value: 0x7f020054
+			public const int Icon = 2130837588;
+			
+			// aapt resource value: 0x7f020055
+			public const int img_default_avatar = 2130837589;
+			
+			// aapt resource value: 0x7f020056
+			public const int notification_template_icon_bg = 2130837590;
 			
 			static Drawable()
 			{

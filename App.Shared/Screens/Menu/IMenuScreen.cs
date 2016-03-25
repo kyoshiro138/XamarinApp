@@ -8,6 +8,8 @@ namespace App.Shared
         UserManager UserManager { get; }
 
         IListDataSource<MenuItem> GetMenuListDataSource(List<MenuItem> data);
+
+        IDialog BuildSignOutConfirmationDialog();
     }
 }
 

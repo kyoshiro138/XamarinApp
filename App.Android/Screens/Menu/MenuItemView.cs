@@ -38,10 +38,10 @@ namespace App.Android
             switch (data.MenuId)
             {
                 case MenuScreenConst.MenuSignOut:
-                    imgIcon.SetBackgroundColor(Color.Red);
+                    imgIcon.SetImageResource(Resource.Drawable.ic_sign_out);
                     break;
                 case MenuScreenConst.MenuSettings:
-                    imgIcon.Visibility = global::Android.Views.ViewStates.Gone;
+                    imgIcon.SetImageResource(Resource.Drawable.ic_settings);
                     break;
             }
             txtTitle.Text = data.MenuTitle;

@@ -108,6 +108,7 @@
     <Compile Include="Screens\Location\LocationListFragment.cs" />
     <Compile Include="Screens\Location\LocationListAdapter.cs" />
     <Compile Include="Screens\Location\LocationItemView.cs" />
+    <Compile Include="Screens\Settings\SettingsFragment.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -145,6 +146,17 @@
     <AndroidResource Include="Resources\anim\anim_grid_exit.xml" />
     <AndroidResource Include="Resources\layout\fragment_location_list.axml" />
     <AndroidResource Include="Resources\layout\list_location_item.axml" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_settings.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_sign_out.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_settings.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_sign_out.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_settings.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_sign_out.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_settings.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_sign_out.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_settings.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_sign_out.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_menu.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Xamarin.Core.Android\Xamarin.Core.Android.csproj">
@@ -178,6 +190,7 @@
     <Folder Include="Resources\layout-v21\" />
     <Folder Include="Resources\anim\" />
     <Folder Include="Screens\Location\" />
+    <Folder Include="Screens\Settings\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

@@ -7,6 +7,7 @@ using System;
 using System.Threading.Tasks;
 using Android.Graphics;
 using Android.Util;
+using Android.Content;
 
 namespace App.Android
 {
@@ -16,6 +17,7 @@ namespace App.Android
         private SystemLabel lblUserName;
         private SystemListView menuList;
         private MenuScreenLogic menuSL;
+        private DialogBuilder dialogBuilder;
 
         protected override int FragmentLayoutResId
         {
@@ -36,6 +38,8 @@ namespace App.Android
 
         protected override void LoadData()
         {
+            dialogBuilder = new DialogBuilder(Context);
+
             var database = new AppAndroidDatabaseManager(new SQLite.Net.Platform.XamarinAndroid.SQLitePlatformAndroid(), Environment.GetFolderPath(Environment.SpecialFolder.Personal));
             var appPref = new ApplicationPreferences();
 
@@ -77,16 +81,18 @@ namespace App.Android
             menuList.ItemClick -= MenuItemClick;
         }
 
-        private async void MenuItemClick(object sender, global::Android.Widget.AdapterView.ItemClickEventArgs e)
+        private void MenuItemClick(object sender, global::Android.Widget.AdapterView.ItemClickEventArgs e)
         {
             MenuListAdapter adapter = menuList.Adapter as MenuListAdapter;
             if (adapter != null)
             {
                 MenuItem item = adapter.DataSource[e.Position];
-                if (item.MenuId.Equals(MenuScreenConst.MenuSignOut))
-                {
-                    await menuSL.SignOut();
-                    menuSL.NavigateToLogin(new LoginFragment());
+                switch(item.MenuId) {
+                    case MenuScreenConst.MenuSettings:
+                        break;
+                    case MenuScreenConst.MenuSignOut:
+                        menuSL.ShowSignOutConfirmationDialog();
+                        break;
                 }
             }
         }
@@ -100,6 +106,24 @@ namespace App.Android
         public async Task LoadMenu()
         {
             await menuSL.LoadMenu();
+        }
+
+        public IDialog BuildSignOutConfirmationDialog()
+        {
+            var dialog = dialogBuilder.BuildSystemAlertDialog(MenuScreenConst.DialogSignOutConfirmation, string.Empty, MenuScreenConst.StringSignOutConfirmation) as SystemAlertDialog;
+            dialog.SetButton((int)DialogButtonType.Positive, CommonScreenConst.StringButtonYes);
+            dialog.SetButton((int)DialogButtonType.Negative, CommonScreenConst.StringButtonNo);
+            dialog.OnButtonClicked += Dialog_OnButtonClicked;
+
+            return dialog;
+        }
+
+        private async void Dialog_OnButtonClicked(object sender, OnDialogButtonClickEventArgs e)
+        {
+            if(e.DialogTag == MenuScreenConst.DialogSignOutConfirmation && e.ButtonId == (int)DialogButtonType.Positive) {
+                await menuSL.SignOut();
+                menuSL.NavigateToLogin(new LoginFragment());
+            }
         }
     }
 }
