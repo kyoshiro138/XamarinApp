@@ -53,6 +53,7 @@
     <Compile Include="Storage\AppStorage\IAppStorage.cs" />
     <Compile Include="Interface\UI\GridView\IGridDataSource.cs" />
     <Compile Include="Interface\UI\GridView\IGridView.cs" />
+    <Compile Include="Interface\UI\TextField\InputType.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ItemGroup>

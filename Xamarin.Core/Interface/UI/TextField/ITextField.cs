@@ -8,6 +8,7 @@
         string Helper {get;set;}
         string Error {get;set;}
         bool ErrorEnabled {get;set;}
+        InputType InputType {set;}
     }
 }
 

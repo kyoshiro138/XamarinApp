@@ -152,6 +152,31 @@ namespace Xamarin.Core.Android
             get { return base.IsFocused || InputView.IsFocused; }
         }
 
+        public InputType InputType
+        {
+            set
+            {
+                if (InputView != null)
+                {
+                    switch (value)
+                    {
+                        case InputType.Text:
+                            InputView.InputType = InputTypes.ClassText;
+                            break;
+                        case InputType.TextEmail:
+                            InputView.InputType = InputTypes.ClassText | InputTypes.TextVariationEmailAddress;
+                            break;
+                        case InputType.TextPassword:
+                            InputView.InputType = InputTypes.ClassText | InputTypes.TextVariationPassword;
+                            break;
+                        case InputType.Number:
+                            InputView.InputType = InputTypes.ClassNumber;
+                            break;
+                    }
+                }
+            }
+        }
+
         public SinglelineTextField(Context context)
             : base(context)
         {
@@ -183,6 +208,7 @@ namespace Xamarin.Core.Android
 
             DividerView = FindViewById(Resource.Id.text_field_divider);
 
+            InputView.SetSingleLine(true);
             InputView.FocusChange += OnFocusChanged;
             InputView.TextChanged += OnTextChanged;
 

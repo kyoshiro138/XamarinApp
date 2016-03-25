@@ -50,6 +50,9 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.RecyclerView">
+      <HintPath>..\packages\Xamarin.Android.Support.v7.RecyclerView.23.1.1.0\lib\MonoAndroid403\Xamarin.Android.Support.v7.RecyclerView.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Resources\Resource.designer.cs" />
@@ -92,6 +95,9 @@
     <Compile Include="Controls\GridView\AnimationGridView.cs" />
     <Compile Include="Utils\DeviceUtil.cs" />
     <Compile Include="Controls\Label\MaterialLabelType.cs" />
+    <Compile Include="Controls\RecyclerView\SystemRecyclerView.cs" />
+    <Compile Include="Controls\RecyclerView\BaseRecyclerViewAdapter.cs" />
+    <Compile Include="Controls\RecyclerView\BaseViewHolder.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -139,6 +145,7 @@
     <Folder Include="Storage\" />
     <Folder Include="Resources\drawable-v21\" />
     <Folder Include="Controls\GridView\" />
+    <Folder Include="Controls\RecyclerView\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Xamarin.Core\Xamarin.Core.csproj">

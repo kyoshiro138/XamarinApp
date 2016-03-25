@@ -31,9 +31,11 @@ namespace App.Shared
 
             tfUsername.ErrorEnabled = true;
             tfUsername.Label = LoginScreenConst.StringLabelUsername;
+            tfUsername.InputType = InputType.TextEmail;
 
             tfPassword.ErrorEnabled = true;
             tfPassword.Label = LoginScreenConst.StringLabelPassword;
+            tfPassword.InputType = InputType.TextPassword;
         }
 
         public async Task HandleNextButton()
