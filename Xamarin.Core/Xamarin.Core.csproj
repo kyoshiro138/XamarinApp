@@ -54,6 +54,8 @@
     <Compile Include="Interface\UI\GridView\IGridDataSource.cs" />
     <Compile Include="Interface\UI\GridView\IGridView.cs" />
     <Compile Include="Interface\UI\TextField\InputType.cs" />
+    <Compile Include="Interface\UI\ImageView\IImageView.cs" />
+    <Compile Include="Interface\UI\ImageView\IUrlImageView.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ItemGroup>
@@ -71,6 +73,7 @@
     <Folder Include="Storage\Database\" />
     <Folder Include="Storage\AppStorage\" />
     <Folder Include="Interface\UI\GridView\" />
+    <Folder Include="Interface\UI\ImageView\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="SQLite.Net">

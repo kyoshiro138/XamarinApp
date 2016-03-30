@@ -26,7 +26,6 @@ namespace Xamarin.Core.Android
         {
             base.InitButton(context, attrs);
 
-
             if (Build.VERSION.SdkInt < BuildVersionCodes.Lollipop)
             {
                 PixelConverter converter = new PixelConverter(context);

@@ -16,16 +16,7 @@ namespace App.Shared
         public async Task InitializeScreen()
         {
             homeScreen.Toolbar.Title = HomeScreenConst.StringScreenTitle;
-
-            List<TravelPlace> places = await GetLocalPlaceList();
-            if (places != null && places.Count > 0)
-            {
-                DisplayPlaceList(places);
-            }
-            else
-            {
-                await RequestTravelData();
-            }
+            await RequestTravelData();
         }
 
         public async Task SaveTravelData(List<TravelPlace> data)

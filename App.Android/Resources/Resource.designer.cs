@@ -3305,10 +3305,16 @@ namespace App.Android
 			public const int Icon = 2130837588;
 			
 			// aapt resource value: 0x7f020055
-			public const int img_default_avatar = 2130837589;
+			public const int img_avatar_place_holder = 2130837589;
 			
 			// aapt resource value: 0x7f020056
-			public const int notification_template_icon_bg = 2130837590;
+			public const int img_default_avatar = 2130837590;
+			
+			// aapt resource value: 0x7f020057
+			public const int img_place_holder = 2130837591;
+			
+			// aapt resource value: 0x7f020058
+			public const int notification_template_icon_bg = 2130837592;
 			
 			static Drawable()
 			{

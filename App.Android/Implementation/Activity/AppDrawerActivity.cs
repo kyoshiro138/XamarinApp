@@ -1,5 +1,9 @@
 ﻿using Xamarin.Core.Android;
 using Android.OS;
+using FFImageLoading;
+using System.Net.Http;
+using ModernHttpClient;
+using FFImageLoading.Config;
 
 namespace App.Android
 {
@@ -39,10 +43,18 @@ namespace App.Android
             base.OnCreate(savedInstanceState);
             Navigator = new AndroidNavigator(FragmentContainerId, SupportFragmentManager);
             Toolbar = FindViewById<SystemSupportToolbar>(Resource.Id.toolbar);
+            InitImageLoadingConfig();
 
             ExitAppOnBack = false;
             SetSupportActionBar(Toolbar);
             SupportActionBar.Hide();
+        }
+
+        private void InitImageLoadingConfig()
+        {
+            Configuration config = new Configuration();
+            config.HttpClient = new HttpClient(new NativeMessageHandler());
+            ImageService.Initialize(config);
         }
     }
 }

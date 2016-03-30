@@ -53,6 +53,15 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="UrlImageViewHelper">
+      <HintPath>..\Components\urlimageviewhelper-1.0.4.1\lib\android\UrlImageViewHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading">
+      <HintPath>..\packages\Xamarin.FFImageLoading.2.0.7.1\lib\MonoAndroid10\FFImageLoading.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Droid">
+      <HintPath>..\packages\Xamarin.FFImageLoading.2.0.7.1\lib\MonoAndroid10\FFImageLoading.Droid.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Resources\Resource.designer.cs" />
@@ -98,6 +107,11 @@
     <Compile Include="Controls\RecyclerView\SystemRecyclerView.cs" />
     <Compile Include="Controls\RecyclerView\BaseRecyclerViewAdapter.cs" />
     <Compile Include="Controls\RecyclerView\BaseViewHolder.cs" />
+    <Compile Include="Controls\ImageView\SystemImageView.cs" />
+    <Compile Include="Controls\Button\BaseButton.cs" />
+    <Compile Include="Controls\ImageView\BaseImageView.cs" />
+    <Compile Include="Controls\ImageView\UrlImageView.cs" />
+    <Compile Include="Controls\ImageView\FFImageLoadingView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -146,6 +160,7 @@
     <Folder Include="Resources\drawable-v21\" />
     <Folder Include="Controls\GridView\" />
     <Folder Include="Controls\RecyclerView\" />
+    <Folder Include="Controls\ImageView\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Xamarin.Core\Xamarin.Core.csproj">
@@ -159,4 +174,10 @@
     <AndroidAsset Include="Assets\Fonts\roboto_regular.ttf" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  <ItemGroup>
+    <XamarinComponentReference Include="urlimageviewhelper">
+      <Version>1.0.4.1</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+  </ItemGroup>
 </Project>

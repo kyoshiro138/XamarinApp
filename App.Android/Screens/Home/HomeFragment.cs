@@ -92,9 +92,13 @@ namespace App.Android
             }
         }
 
-        private void Service_OnResponseFailed(object sender, ServiceResponseEventArgs<AppResponseObject> e)
+        private async void Service_OnResponseFailed(object sender, ServiceResponseEventArgs<AppResponseObject> e)
         {
-            
+            List<TravelPlace> places = await homeSL.GetLocalPlaceList();
+            if (places != null && places.Count > 0)
+            {
+                homeSL.DisplayPlaceList(places);
+            }
         }
 
         public IGridDataSource<TravelPlace> GetPlaceGridDataSource(List<TravelPlace> places)

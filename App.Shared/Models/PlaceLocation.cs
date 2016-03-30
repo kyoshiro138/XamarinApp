@@ -13,6 +13,7 @@ namespace App.Shared
         private const string KeyPlaceId = "place_id";
         private const string KeyLatitude = "latitude";
         private const string KeyLongitude = "longitude";
+        private const string KeyLocationCoverUrl = "location_cover_url";
 
         [Column(KeyLocationId)]
         [JsonProperty(KeyLocationId)]
@@ -37,6 +38,10 @@ namespace App.Shared
         [Column(KeyLongitude)]
         [JsonProperty(KeyLongitude)]
         public long LocationLongitude { get; set; }
+
+        [Column(KeyLocationCoverUrl)]
+        [JsonProperty(KeyLocationCoverUrl)]
+        public string LocationCoverUrl { get; set; }
     }
 }
 

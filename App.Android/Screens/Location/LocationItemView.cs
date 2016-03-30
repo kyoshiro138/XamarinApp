@@ -10,6 +10,7 @@ namespace App.Android
         private MaterialLabel lblDescription;
         private SystemButton btnDetail;
         private SystemButton btnMap;
+        private FFImageLoadingView ivCover;
 
         protected override int ListItemLayoutResId
         {
@@ -26,12 +27,19 @@ namespace App.Android
             base.BindControls();
 
             lblTitle = FindViewById<MaterialLabel>(Resource.Id.lbl_location_title);
-            lblDescription = FindViewById<MaterialLabel>(Resource.Id.lbl_location_description);
-            btnDetail = FindViewById<SystemButton>(Resource.Id.btn_location_detail);
-            btnMap = FindViewById<SystemButton>(Resource.Id.btn_location_map);
-
             lblTitle.ApplyTextFontAndSizeByType(MaterialLabelType.Title);
+
+            lblDescription = FindViewById<MaterialLabel>(Resource.Id.lbl_location_description);
             lblDescription.ApplyTextFontAndSizeByType(MaterialLabelType.Body1);
+
+            ivCover = FindViewById<FFImageLoadingView>(Resource.Id.iv_location_image);
+            ivCover.DefaultPlaceHolderPath = "Images/img_place_holder.jpg";
+
+            btnDetail = FindViewById<SystemButton>(Resource.Id.btn_location_detail);
+            btnDetail.Text = LocationListScreenConst.StringButtonDetails;
+
+            btnMap = FindViewById<SystemButton>(Resource.Id.btn_location_map);
+            btnMap.Text = LocationListScreenConst.StringButtonMap;
         }
 
         public override void LoadItemData(PlaceLocation data)
@@ -40,8 +48,7 @@ namespace App.Android
 
             lblTitle.Text = data.LocationName;
             lblDescription.Text = data.LocationName;
-            btnDetail.Text = LocationListScreenConst.StringButtonDetails;
-            btnMap.Text = LocationListScreenConst.StringButtonMap;
+            ivCover.LoadImageFromUrl(data.LocationCoverUrl);
         }
     }
 }

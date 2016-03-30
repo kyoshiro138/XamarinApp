@@ -10,6 +10,7 @@ namespace App.Shared
     {
         private const string KeyPlaceId = "place_id";
         private const string KeyPlaceName = "place_name";
+        private const string KeyPlaceCoverUrl = "place_cover_url";
         private const string KeyLocations = "locations";
 
         [Column(KeyPlaceId)]
@@ -19,6 +20,10 @@ namespace App.Shared
         [Column(KeyPlaceName)]
         [JsonProperty(KeyPlaceName)]
         public string PlaceName { get; set; }
+
+        [Column(KeyPlaceCoverUrl)]
+        [JsonProperty(KeyPlaceCoverUrl)]
+        public string PlaceCoverUrl { get; set; }
 
         [Ignore]
         [JsonProperty(KeyLocations)]
