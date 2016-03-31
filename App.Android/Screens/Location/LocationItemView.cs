@@ -33,7 +33,7 @@ namespace App.Android
             lblDescription.ApplyTextFontAndSizeByType(MaterialLabelType.Body1);
 
             ivCover = FindViewById<FFImageLoadingView>(Resource.Id.iv_location_image);
-            ivCover.DefaultPlaceHolderPath = "Images/img_place_holder.jpg";
+            ivCover.DefaultPlaceHolderPath = "Images/img_place_holder.png";
 
             btnDetail = FindViewById<SystemButton>(Resource.Id.btn_location_detail);
             btnDetail.Text = LocationListScreenConst.StringButtonDetails;

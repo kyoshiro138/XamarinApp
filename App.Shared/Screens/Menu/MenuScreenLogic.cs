@@ -41,7 +41,7 @@ namespace App.Shared
                     lblUserName.Text = currentUser.Username;
                 }
 
-                ivAvatar.DefaultPlaceHolderPath = "Images/img_avatar_place_holder.jpg";
+                ivAvatar.DefaultPlaceHolderPath = "Images/img_avatar_place_holder.png";
                 ivAvatar.LoadImageFromUrl(currentUser.AvatarUrl);
             }
             else

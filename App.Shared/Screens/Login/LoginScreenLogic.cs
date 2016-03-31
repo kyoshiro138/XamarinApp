@@ -85,7 +85,21 @@ namespace App.Shared
             CurrentLoginUser = user;
 
             ILabel lblUsername = loginScreen.GetControlByTag(LoginScreenConst.ControlLabelUsername) as ILabel;
+            IUrlImageView imgAvatar = loginScreen.GetControlByTag(LoginScreenConst.ControlImageAvatar) as IUrlImageView;
+
             lblUsername.Text = user.Username;
+            imgAvatar.DefaultPlaceHolderPath = "Images/img_avatar_place_holder.png";
+            imgAvatar.LoadImageFromUrl(user.AvatarUrl);
+        }
+
+        public void ClearUserBasicInfo()
+        {
+            ILabel lblUsername = loginScreen.GetControlByTag(LoginScreenConst.ControlLabelUsername) as ILabel;
+            IUrlImageView imgAvatar = loginScreen.GetControlByTag(LoginScreenConst.ControlImageAvatar) as IUrlImageView;
+
+            lblUsername.Text = string.Empty;
+            imgAvatar.DefaultPlaceHolderPath = "Images/img_avatar_place_holder.png";
+            imgAvatar.LoadImageFromUrl(null);
         }
 
         public async Task SaveAuthenticationKey(string key)

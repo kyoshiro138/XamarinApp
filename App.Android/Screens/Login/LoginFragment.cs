@@ -16,7 +16,7 @@ namespace App.Android
         private View LayoutLoginUsername;
         private View LayoutLoginPassword;
 
-        private ImageView imgAvatar;
+        private FFImageLoadingCircleView imgAvatar;
         private MaterialLabel lblCreateAccount;
         private MaterialLabel lblUsername;
         private MaterialButton btnNext;
@@ -50,7 +50,7 @@ namespace App.Android
             LayoutLoginUsername = rootView.FindViewById(Resource.Id.layout_login_username);
             LayoutLoginPassword = rootView.FindViewById(Resource.Id.layout_login_password);
 
-            imgAvatar = rootView.FindViewById<ImageView>(Resource.Id.img_login_avatar);
+            imgAvatar = rootView.FindViewById<FFImageLoadingCircleView>(Resource.Id.img_login_avatar);
             lblCreateAccount = rootView.FindViewById<MaterialLabel>(Resource.Id.lbl_login_create_account);
             lblUsername = rootView.FindViewById<MaterialLabel>(Resource.Id.lbl_login_username);
             btnNext = rootView.FindViewById<MaterialButton>(Resource.Id.btn_login_next);
@@ -85,6 +85,8 @@ namespace App.Android
         {
             switch (tag)
             {
+                case LoginScreenConst.ControlImageAvatar:
+                    return imgAvatar;
                 case LoginScreenConst.ControlLabelCreateAccount:
                     return lblCreateAccount;
                 case LoginScreenConst.ControlLabelUsername:
@@ -239,6 +241,7 @@ namespace App.Android
                         tfPassword.ClearFocus();
                     }
                     ShowUsernameLayout();
+                    loginSL.ClearUserBasicInfo();
                     break;
             }
         }

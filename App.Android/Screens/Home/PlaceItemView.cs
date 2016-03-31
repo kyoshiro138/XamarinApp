@@ -31,7 +31,7 @@ namespace App.Android
             lblPlaceName.SetTextColor(Resources.GetColor(Resource.Color.c_text_white));
 
             ivPlaceCover = FindViewById<FFImageLoadingView>(Resource.Id.iv_place_image);
-            ivPlaceCover.DefaultPlaceHolderPath = "Images/img_place_holder.jpg";
+            ivPlaceCover.DefaultPlaceHolderPath = "Images/img_place_holder.png";
         }
 
         public override void LoadItemData(TravelPlace data)

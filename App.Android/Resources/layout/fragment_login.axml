@@ -20,7 +20,7 @@
             android:orientation="vertical"
             android:paddingLeft="8dp"
             android:paddingRight="8dp">
-            <ImageView
+            <Xamarin.Core.Android.FFImageLoadingCircleView
                 android:id="@+id/img_login_avatar"
                 android:layout_width="64dp"
                 android:layout_height="64dp"

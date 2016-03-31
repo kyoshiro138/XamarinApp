@@ -192,6 +192,11 @@
     <Folder Include="Resources\anim\" />
     <Folder Include="Screens\Location\" />
     <Folder Include="Screens\Settings\" />
+    <Folder Include="Assets\Images\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Images\img_avatar_place_holder.png" />
+    <AndroidAsset Include="Assets\Images\img_place_holder.png" />
+  </ItemGroup>
 </Project>

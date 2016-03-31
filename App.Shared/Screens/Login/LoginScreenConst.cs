@@ -6,6 +6,7 @@
         public const string ServiceAuthenticate = "LoginScreen_ServiceAuthenticate";
         public const string ServiceGetProfile = "LoginScreen_ServiceGetProfile";
 
+        public const string ControlImageAvatar = "ControlImageAvatar";
         public const string ControlLabelCreateAccount = "ControlLabelCreateAccount";
         public const string ControlLabelUsername = "ControlLabelUsername";
         public const string ControlButtonNext = "ControlButtonNext";

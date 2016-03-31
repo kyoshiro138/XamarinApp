@@ -54,11 +54,11 @@ namespace Xamarin.Core.Android
             var task = ImageService.LoadUrl(url);
             if (!string.IsNullOrEmpty(DefaultPlaceHolderPath))
             {
-                task = task.LoadingPlaceholder(DefaultPlaceHolderPath);
+                task = task.LoadingPlaceholder(DefaultPlaceHolderPath, FFImageLoading.Work.ImageSource.ApplicationBundle);
             }
             if (!string.IsNullOrEmpty(ErrorPlaceHolderPath))
             {
-                task = task.ErrorPlaceholder(ErrorPlaceHolderPath);
+                task = task.ErrorPlaceholder(ErrorPlaceHolderPath, FFImageLoading.Work.ImageSource.ApplicationBundle);
             }
             task.Into(this);
         }
