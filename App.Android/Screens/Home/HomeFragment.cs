@@ -1,7 +1,6 @@
 ﻿using Android.Views;
 using App.Shared;
 using Xamarin.Core;
-using Android.Content;
 using Xamarin.Core.Android;
 using System;
 using SQLite.Net.Platform.XamarinAndroid;
@@ -89,6 +88,9 @@ namespace App.Android
                 case HomeScreenConst.ServiceGetTravelData:
                     await HandleGetTravelDataResponse((GetTravelDataResponse)e.ResponseObject);
                     break;
+                case HomeScreenConst.ServiceGetProfile:
+                    await HandleGetUserProfileResponse((GetUserProfileResponse)e.ResponseObject);
+                    break;
             }
         }
 
@@ -115,6 +117,20 @@ namespace App.Android
                 await homeSL.SaveTravelData(response.Data.Places);
                 List<TravelPlace> places = await homeSL.GetLocalPlaceList();
                 homeSL.DisplayPlaceList(places);
+            }
+        }
+
+        private async Task HandleGetUserProfileResponse(GetUserProfileResponse response)
+        {
+            bool isSucceess = response.Status.Equals(true);
+            if (isSucceess)
+            {
+                await homeSL.SaveUserProfile(response.Data.User);
+                MainActivity activity = DrawerActivity as MainActivity;
+                if (activity != null)
+                {
+                    activity.LoadMenu();
+                }
             }
         }
 

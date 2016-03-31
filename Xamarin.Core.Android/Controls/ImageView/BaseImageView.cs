@@ -2,6 +2,8 @@
 using Android.Views;
 using Android.Content;
 using Android.Util;
+using System;
+using Android.Runtime;
 
 namespace Xamarin.Core.Android
 {
@@ -11,6 +13,11 @@ namespace Xamarin.Core.Android
         {
             get { return (Visibility == ViewStates.Visible); }
             set { Visibility = (value ? ViewStates.Visible : ViewStates.Gone); }
+        }
+
+        protected BaseImageView(IntPtr javaReference, JniHandleOwnership transfer)
+            : base(javaReference, transfer)
+        {
         }
 
         protected BaseImageView(Context context)

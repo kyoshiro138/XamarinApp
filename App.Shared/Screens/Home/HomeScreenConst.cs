@@ -1,8 +1,9 @@
 ﻿namespace App.Shared
 {
-    public class HomeScreenConst
+    public static class HomeScreenConst
     {
-        public const string ServiceGetTravelData = "ServiceGetTravelData";
+        public const string ServiceGetTravelData = "HomeScreen_ServiceGetTravelData";
+        public const string ServiceGetProfile = "HomeScreen_ServiceGetProfile";
 
         public const string ControlPlaceGrid = "ControlPlaceGrid";
 

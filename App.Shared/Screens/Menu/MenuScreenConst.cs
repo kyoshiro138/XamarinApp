@@ -12,6 +12,7 @@
         public const string ControlListMenu = "ControlListMenu";
         public const string ControlLabelUserEmail = "ControlLabelUserEmail";
         public const string ControlLabelUserName = "ControlLabelUserName";
+        public const string ControlImageAvatar = "ControlImageAvatar";
 
         public const string DialogSignOutConfirmation = "DialogSignOutConfirmation";
     }

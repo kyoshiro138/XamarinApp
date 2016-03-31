@@ -56,6 +56,7 @@
     <Compile Include="Interface\UI\TextField\InputType.cs" />
     <Compile Include="Interface\UI\ImageView\IImageView.cs" />
     <Compile Include="Interface\UI\ImageView\IUrlImageView.cs" />
+    <Compile Include="Interface\UI\ImageView\ICircleImageView.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ItemGroup>

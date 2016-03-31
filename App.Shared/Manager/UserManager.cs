@@ -19,31 +19,31 @@ namespace App.Shared
             AppStorage = appStorage;
         }
 
-        public async Task RequestUserBasicInfo(string username)
+        public async Task RequestUserBasicInfo(string tag, string username)
         {
             if (Service != null)
             {
                 string url = string.Format("{0}?username={1}", ServiceConstants.UrlGetLoginInfo, username);
-                await Service.ExecuteGet<GetLoginInfoResponse>(LoginScreenConst.ServiceGetBasicInfo, url);
+                await Service.ExecuteGet<GetLoginInfoResponse>(tag, url);
             }
         }
 
-        public async Task RequestAuthentication(User user, string password)
+        public async Task RequestAuthentication(string tag, User user, string password)
         {
             if (Service != null)
             {
                 string url = string.Format("{0}?username={1}&password={2}", ServiceConstants.UrlAuthentication, user.Username, password);
-                await Service.ExecuteGet<AuthenticationResponse>(LoginScreenConst.ServiceAuthenticate, url);
+                await Service.ExecuteGet<AuthenticationResponse>(tag, url);
             }
         }
 
-        public async Task RequestProfile(int userId)
+        public async Task RequestProfile(string tag, int userId)
         {
             if (AppStorage != null && Service != null)
             {
                 string key = AppStorage.LoadString(AppStorageKeys.AuthenticationKey);
                 string url = string.Format("{0}?key={1}&user_id={2}", ServiceConstants.UrlGetProfile, key, userId);
-                await Service.ExecuteGet<AuthenticationResponse>(LoginScreenConst.ServiceGetProfile, url);
+                await Service.ExecuteGet<GetUserProfileResponse>(tag, url);
             }
         }
 
@@ -72,6 +72,15 @@ namespace App.Shared
             {
                 AppStorage.Remove(AppStorageKeys.AuthenticationKey);
                 await Database.DeleteAll<User>();
+            }
+        }
+
+        public async Task UpdateUserProfile(User user)
+        {
+            if (Database != null)
+            {
+                await Database.DeleteAll<User>();
+                await Database.Insert<User>(user);
             }
         }
     }

@@ -16,7 +16,7 @@ namespace App.Shared
         public async Task InitializeScreen()
         {
             homeScreen.Toolbar.Title = HomeScreenConst.StringScreenTitle;
-            await RequestTravelData();
+            await RequestData();
         }
 
         public async Task SaveTravelData(List<TravelPlace> data)
@@ -24,6 +24,14 @@ namespace App.Shared
             if (data != null && data.Count > 0)
             {
                 await homeScreen.TravelManager.SaveTravelData(data);
+            }
+        }
+
+        public async Task SaveUserProfile(User user)
+        {
+            if (user != null)
+            {
+                await homeScreen.UserManager.UpdateUserProfile(user);
             }
         }
 
@@ -38,10 +46,11 @@ namespace App.Shared
             gridView.SetDataSource(homeScreen.GetPlaceGridDataSource(places));
         }
 
-        public async Task RequestTravelData()
+        public async Task RequestData()
         {
             User currentUser = await homeScreen.UserManager.GetCurrentUser();
-            await homeScreen.TravelManager.RequestTravelData(currentUser.Role);
+            await homeScreen.UserManager.RequestProfile(HomeScreenConst.ServiceGetProfile, currentUser.UserId);
+            await homeScreen.TravelManager.RequestTravelData(HomeScreenConst.ServiceGetTravelData, currentUser.Role);
         }
 
         public void HandlePlaceItemSelection(IGridDataSource<TravelPlace> dataSource, int position, IScreen locationListScreen)

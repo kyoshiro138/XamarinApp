@@ -2,9 +2,9 @@
 {
     public static class LoginScreenConst
     {
-        public const string ServiceGetBasicInfo = "ServiceGetBasicInfo";
-        public const string ServiceAuthenticate = "ServiceAuthenticate";
-        public const string ServiceGetProfile = "ServiceGetProfile";
+        public const string ServiceGetBasicInfo = "LoginScreen_ServiceGetBasicInfo";
+        public const string ServiceAuthenticate = "LoginScreen_ServiceAuthenticate";
+        public const string ServiceGetProfile = "LoginScreen_ServiceGetProfile";
 
         public const string ControlLabelCreateAccount = "ControlLabelCreateAccount";
         public const string ControlLabelUsername = "ControlLabelUsername";

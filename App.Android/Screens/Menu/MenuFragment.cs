@@ -15,6 +15,7 @@ namespace App.Android
     {
         private SystemLabel lblUserEmail;
         private SystemLabel lblUserName;
+        private FFImageLoadingCircleView ivAvatar;
         private SystemListView menuList;
         private MenuScreenLogic menuSL;
         private DialogBuilder dialogBuilder;
@@ -28,6 +29,7 @@ namespace App.Android
         {
             lblUserEmail = rootView.FindViewById<SystemLabel>(Resource.Id.lbl_menu_user_email);
             lblUserName = rootView.FindViewById<SystemLabel>(Resource.Id.lbl_menu_user_name);
+            ivAvatar = rootView.FindViewById<FFImageLoadingCircleView>(Resource.Id.img_menu_user_avatar);
             menuList = rootView.FindViewById<SystemListView>(Resource.Id.list_menu);
 
             lblUserEmail.SetTypeface(FontUtil.LoadSystemFont(FontUtil.FontRobotoRegular), TypefaceStyle.Normal);
@@ -60,6 +62,8 @@ namespace App.Android
                         return lblUserEmail;
                     case MenuScreenConst.ControlLabelUserName:
                         return lblUserName;
+                    case MenuScreenConst.ControlImageAvatar:
+                        return ivAvatar;
                     default:
                         return null;
                 }

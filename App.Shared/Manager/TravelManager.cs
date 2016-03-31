@@ -20,19 +20,19 @@ namespace App.Shared
             AppStorage = storage;
         }
 
-        public async Task RequestTravelData(int userRole)
+        public async Task RequestTravelData(string tag, int userRole)
         {
             if (Service != null && AppStorage != null)
             {
                 if (userRole == (int)User.RoleType.Guest)
                 {
-                    await Service.ExecuteGet<GetTravelDataResponse>(HomeScreenConst.ServiceGetTravelData, ServiceConstants.UrlGetTravelDataAsGuest);
+                    await Service.ExecuteGet<GetTravelDataResponse>(tag, ServiceConstants.UrlGetTravelDataAsGuest);
                 }
                 else
                 {
                     string key = AppStorage.LoadString(AppStorageKeys.AuthenticationKey);
                     string url = string.Format("{0}?key={1}", ServiceConstants.UrlGetTravelData, key);
-                    await Service.ExecuteGet<GetTravelDataResponse>(HomeScreenConst.ServiceGetTravelData, url);
+                    await Service.ExecuteGet<GetTravelDataResponse>(tag, url);
                 }
             }
         }

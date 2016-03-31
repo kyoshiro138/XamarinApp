@@ -3,12 +3,14 @@ using Android.Util;
 using FFImageLoading;
 using FFImageLoading.Views;
 using Android.Views;
+using System;
+using Android.Runtime;
 
 namespace Xamarin.Core.Android
 {
     public class FFImageLoadingView : ImageViewAsync, IUrlImageView
     {
-        private string imageUrl;
+        private string _imageUrl = string.Empty;
 
         public string DefaultPlaceHolderPath { get; set; }
 
@@ -22,22 +24,33 @@ namespace Xamarin.Core.Android
 
         public string ImageUrl
         {
-            get { return imageUrl; }
+            get { return _imageUrl; }
+        }
+
+        protected FFImageLoadingView(IntPtr javaReference, JniHandleOwnership transfer)
+            : base(javaReference, transfer)
+        {
         }
 
         public FFImageLoadingView(Context context)
             : base(context)
         {
+            InitImageView(context);
         }
 
         public FFImageLoadingView(Context context, IAttributeSet attrs)
             : base(context, attrs)
         {
+            InitImageView(context, attrs);
+        }
+
+        protected virtual void InitImageView(Context context, IAttributeSet attrs = null)
+        {
         }
 
         public void LoadImageFromUrl(string url)
         {
-            imageUrl = url;
+            _imageUrl = url;
             var task = ImageService.LoadUrl(url);
             if (!string.IsNullOrEmpty(DefaultPlaceHolderPath))
             {

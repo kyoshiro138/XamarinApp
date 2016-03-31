@@ -18,6 +18,7 @@ namespace App.Shared
         {
             ILabel lblUserEmail = menuScreen.GetControlByTag(MenuScreenConst.ControlLabelUserEmail) as ILabel;
             ILabel lblUserName = menuScreen.GetControlByTag(MenuScreenConst.ControlLabelUserName) as ILabel;
+            IUrlImageView ivAvatar = menuScreen.GetControlByTag(MenuScreenConst.ControlImageAvatar) as IUrlImageView;
             IListView listMenu = menuScreen.GetControlByTag(MenuScreenConst.ControlListMenu) as IListView;
 
             User currentUser = await menuScreen.UserManager.GetCurrentUser();
@@ -39,6 +40,9 @@ namespace App.Shared
                     lblUserEmail.IsVisible = false;
                     lblUserName.Text = currentUser.Username;
                 }
+
+                ivAvatar.DefaultPlaceHolderPath = "Images/img_avatar_place_holder.jpg";
+                ivAvatar.LoadImageFromUrl(currentUser.AvatarUrl);
             }
             else
             {

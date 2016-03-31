@@ -44,7 +44,7 @@ namespace App.Shared
             string username = tfUsername.Input;
             if (!string.IsNullOrEmpty(username))
             {
-                await loginScreen.UserManager.RequestUserBasicInfo(username);
+                await loginScreen.UserManager.RequestUserBasicInfo(LoginScreenConst.ServiceGetBasicInfo, username);
             }
             else
             {
@@ -60,7 +60,7 @@ namespace App.Shared
             {
                 if (CurrentLoginUser != null)
                 {
-                    await loginScreen.UserManager.RequestAuthentication(CurrentLoginUser, password);
+                    await loginScreen.UserManager.RequestAuthentication(LoginScreenConst.ServiceAuthenticate, CurrentLoginUser, password);
                 }
             }
             else

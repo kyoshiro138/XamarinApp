@@ -132,7 +132,6 @@
     <AndroidResource Include="Resources\layout\list_menu_item.axml" />
     <AndroidResource Include="Resources\layout\fragment_intro.axml" />
     <AndroidResource Include="Resources\layout\fragment_login.axml" />
-    <AndroidResource Include="Resources\drawable-hdpi\img_default_avatar.png" />
     <AndroidResource Include="Resources\layout-v21\activity_navigation_drawer.axml" />
     <AndroidResource Include="Resources\layout-v21\fragment_menu.axml" />
     <AndroidResource Include="Resources\layout\fragment_home.axml" />

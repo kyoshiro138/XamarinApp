@@ -41,7 +41,7 @@ namespace App.Shared
         public string LastName { get; set; }
 
         [JsonProperty(KeyAvatarUrl)]
-        [Ignore]
+        [Column(KeyAvatarUrl)]
         public string AvatarUrl { get; set; }
 
         [JsonProperty(KeyDOB)]

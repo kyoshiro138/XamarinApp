@@ -37,13 +37,13 @@
                 android:layout_height="wrap_content"
                 android:layout_above="@id/lbl_menu_user_email" />
         </RelativeLayout>
-        <ImageView
+        <Xamarin.Core.Android.FFImageLoadingCircleView
             android:id="@+id/img_menu_user_avatar"
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="40dp"
-            android:src="@drawable/img_default_avatar" />
+            android:src="@drawable/img_avatar_place_holder" />
     </android.support.percent.PercentFrameLayout>
     <Xamarin.Core.Android.SystemListView
         android:id="@+id/list_menu"

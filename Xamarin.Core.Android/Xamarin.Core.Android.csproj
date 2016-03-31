@@ -111,7 +111,9 @@
     <Compile Include="Controls\Button\BaseButton.cs" />
     <Compile Include="Controls\ImageView\BaseImageView.cs" />
     <Compile Include="Controls\ImageView\UrlImageView.cs" />
-    <Compile Include="Controls\ImageView\FFImageLoadingView.cs" />
+    <Compile Include="Controls\ImageView\CircleImageView.cs" />
+    <Compile Include="Controls\ImageView\FFImageLoading\FFImageLoadingView.cs" />
+    <Compile Include="Controls\ImageView\FFImageLoading\FFImageLoadingCircleView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -161,6 +163,7 @@
     <Folder Include="Controls\GridView\" />
     <Folder Include="Controls\RecyclerView\" />
     <Folder Include="Controls\ImageView\" />
+    <Folder Include="Controls\ImageView\FFImageLoading\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Xamarin.Core\Xamarin.Core.csproj">
