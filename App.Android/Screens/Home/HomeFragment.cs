@@ -114,6 +114,7 @@ namespace App.Android
             bool isSucceess = response.Status.Equals(true);
             if (isSucceess)
             {
+                await homeSL.SaveCountries(response.Data.Countries);
                 await homeSL.SaveTravelData(response.Data.Places);
                 List<TravelPlace> places = await homeSL.GetLocalPlaceList();
                 homeSL.DisplayPlaceList(places);
@@ -138,7 +139,7 @@ namespace App.Android
         {
             AnimationGridView gridView = e.Parent as AnimationGridView;
             IGridDataSource<TravelPlace> adapter = gridView.Adapter as IGridDataSource<TravelPlace>;
-            homeSL.HandlePlaceItemSelection(adapter, e.Position, new LocationListFragment());
+            homeSL.HandlePlaceItemSelection(adapter, e.Position, new PlaceInfoFragment());
         }
     }
 }

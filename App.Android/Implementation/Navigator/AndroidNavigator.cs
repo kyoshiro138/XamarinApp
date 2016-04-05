@@ -26,11 +26,17 @@ namespace App.Android
         {
             Bundle bundle = new Bundle();
             bundle.PutString(PARAM_TAG, tag);
+            string paramString = "";
 
-            switch(tag)
+            switch (tag)
             {
                 case HomeScreenConst.ParamLocationList:
-                    string paramString = JsonConvert.SerializeObject(param);
+                case HomeScreenConst.ParamPlaceInfo:
+                    paramString = JsonConvert.SerializeObject(param);
+                    bundle.PutString(tag, paramString);
+                    break;
+                default:
+                    paramString = JsonConvert.SerializeObject(param);
                     bundle.PutString(tag, paramString);
                     break;
             }

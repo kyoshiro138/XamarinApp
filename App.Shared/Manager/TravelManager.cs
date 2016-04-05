@@ -63,6 +63,22 @@ namespace App.Shared
             }
         }
 
+        public async Task SaveCountries(List<Country> data)
+        {
+            if (Database != null)
+            {
+                try
+                {
+                    await Database.DeleteAll<Country>();
+                    await Database.InsertAll<Country>(data);
+                }
+                catch (Exception e)
+                {
+                    string t1 = e.StackTrace;
+                }
+            }
+        }
+
         public async Task<List<TravelPlace>> GetLocalPlaceList()
         {
             if (Database != null)
@@ -80,6 +96,16 @@ namespace App.Shared
                 return locations.FindAll(l => l.PlaceId == placeId);
             }
             return new List<PlaceLocation>();
+        }
+
+        public async Task<Country> GetLocalCountry(int countryId)
+        {
+            if (Database != null)
+            {
+                List<Country> countries = await Database.GetAll<Country>();
+                return countries.Find(l => l.CountryId == countryId);
+            }
+            return null;
         }
     }
 }

@@ -12,6 +12,9 @@ namespace App.Shared
         {
             [JsonProperty("places")]
             public List<TravelPlace> Places { get; set; }
+
+            [JsonProperty("countries")]
+            public List<Country> Countries { get; set; }
         }
     }
 }

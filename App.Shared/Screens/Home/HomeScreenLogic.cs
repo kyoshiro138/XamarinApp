@@ -27,6 +27,14 @@ namespace App.Shared
             }
         }
 
+        public async Task SaveCountries(List<Country> data)
+        {
+            if (data != null && data.Count > 0)
+            {
+                await homeScreen.TravelManager.SaveCountries(data);
+            }
+        }
+
         public async Task SaveUserProfile(User user)
         {
             if (user != null)
@@ -53,12 +61,12 @@ namespace App.Shared
             await homeScreen.TravelManager.RequestTravelData(HomeScreenConst.ServiceGetTravelData, currentUser.Role);
         }
 
-        public void HandlePlaceItemSelection(IGridDataSource<TravelPlace> dataSource, int position, IScreen locationListScreen)
+        public void HandlePlaceItemSelection(IGridDataSource<TravelPlace> dataSource, int position, IScreen screen)
         {
             if (dataSource != null && dataSource.DataSource != null && dataSource.DataSource.Count > position)
             {
                 var selectedPlace = dataSource.DataSource[position];
-                homeScreen.Navigator.NavigateTo<TravelPlace>(locationListScreen, selectedPlace, HomeScreenConst.ParamLocationList);
+                homeScreen.Navigator.NavigateTo<TravelPlace>(screen, selectedPlace, HomeScreenConst.ParamPlaceInfo);
             }
         }
     }

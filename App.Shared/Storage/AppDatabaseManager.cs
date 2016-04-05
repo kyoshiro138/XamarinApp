@@ -36,10 +36,12 @@ namespace App.Shared
 
         protected override async Task InitTables()
         {
+            await DBConnection.DropTableAsync<Country>();
             await DBConnection.DropTableAsync<TravelPlace>();
             await DBConnection.DropTableAsync<PlaceLocation>();
             await DBConnection.DropTableAsync<User>();
 
+            await DBConnection.CreateTableAsync<Country>();
             await DBConnection.CreateTableAsync<TravelPlace>();
             await DBConnection.CreateTableAsync<PlaceLocation>();
             await DBConnection.CreateTableAsync<User>();
