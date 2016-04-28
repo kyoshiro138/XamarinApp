@@ -3413,6 +3413,9 @@ namespace App.Android
 			// aapt resource value: 0x7f06009b
 			public const int btn_place_map = 2131099803;
 			
+			// aapt resource value: 0x7f0600b3
+			public const int btn_toolbar_navigation = 2131099827;
+			
 			// aapt resource value: 0x7f060044
 			public const int buttonPanel = 2131099716;
 			
@@ -3616,6 +3619,9 @@ namespace App.Android
 			
 			// aapt resource value: 0x7f060093
 			public const int lbl_place_traveler_count = 2131099795;
+			
+			// aapt resource value: 0x7f0600b4
+			public const int lbl_toolbar_title = 2131099828;
 			
 			// aapt resource value: 0x7f06002f
 			public const int left = 2131099695;
@@ -4093,6 +4099,9 @@ namespace App.Android
 			// aapt resource value: 0x7f03003c
 			public const int support_simple_spinner_dropdown_item = 2130903100;
 			
+			// aapt resource value: 0x7f03003d
+			public const int toolbar_layout = 2130903101;
+			
 			static Layout()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -4211,6 +4220,12 @@ namespace App.Android
 			
 			// aapt resource value: 0x7f080149
 			public const int AppLightTheme = 2131231049;
+			
+			// aapt resource value: 0x7f08014b
+			public const int AppToolbarNavigationButtonStyle = 2131231051;
+			
+			// aapt resource value: 0x7f08014c
+			public const int AppToolbarStyle = 2131231052;
 			
 			// aapt resource value: 0x7f080080
 			public const int Base_AlertDialog_AppCompat = 2131230848;

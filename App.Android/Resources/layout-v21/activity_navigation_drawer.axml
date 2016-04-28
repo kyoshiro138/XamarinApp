@@ -12,7 +12,7 @@
             android:id="@+id/appBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <Xamarin.Core.Android.SystemSupportToolbar
+            <App.Android.AndroidToolbar
                 android:id="@+id/toolbar"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"

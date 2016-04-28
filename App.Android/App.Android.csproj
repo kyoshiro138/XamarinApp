@@ -156,7 +156,6 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\ic_sign_out.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_settings.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_sign_out.png" />
-    <AndroidResource Include="Resources\drawable-hdpi\ic_menu.png" />
     <AndroidResource Include="Resources\drawable\img_place_holder.png" />
     <AndroidResource Include="Resources\drawable\img_avatar_place_holder.png" />
     <AndroidResource Include="Resources\layout\fragment_place_info.axml" />
@@ -165,6 +164,12 @@
     <AndroidResource Include="Resources\drawable-xhdpi\ic_person.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\ic_person.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_person.png" />
+    <AndroidResource Include="Resources\layout\toolbar_layout.axml" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_menu.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_menu.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_menu.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_menu.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_menu.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Xamarin.Core.Android\Xamarin.Core.Android.csproj">

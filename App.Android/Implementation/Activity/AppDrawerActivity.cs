@@ -4,6 +4,7 @@ using FFImageLoading;
 using System.Net.Http;
 using ModernHttpClient;
 using FFImageLoading.Config;
+using Android.Support.V7.Widget;
 
 namespace App.Android
 {
@@ -36,18 +37,19 @@ namespace App.Android
 
         public AndroidNavigator Navigator { get; protected set; }
 
-        public SystemSupportToolbar Toolbar { get; protected set; }
+        public AndroidToolbar Toolbar { get; protected set; }
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             Navigator = new AndroidNavigator(FragmentContainerId, SupportFragmentManager);
-            Toolbar = FindViewById<SystemSupportToolbar>(Resource.Id.toolbar);
+            Toolbar = FindViewById<AndroidToolbar>(Resource.Id.toolbar);
+
             InitImageLoadingConfig();
 
             ExitAppOnBack = false;
-            SetSupportActionBar(Toolbar);
-            SupportActionBar.Hide();
+//            SetSupportActionBar(Toolbar);
+//            SupportActionBar.Hide();
         }
 
         private void InitImageLoadingConfig()

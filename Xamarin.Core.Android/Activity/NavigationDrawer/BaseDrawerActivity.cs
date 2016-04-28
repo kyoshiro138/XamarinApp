@@ -118,6 +118,14 @@ namespace Xamarin.Core.Android
             }
         }
 
+        public void OpenDrawer(int drawerGravity)
+        {
+            if (DrawerLayout != null && !IsDrawerOpened(drawerGravity))
+            {
+                DrawerLayout.OpenDrawer(drawerGravity);
+            }
+        }
+
         public void SetDrawerEnabled(bool enabled, int drawerGravity)
         {
             if (DrawerLayout != null)

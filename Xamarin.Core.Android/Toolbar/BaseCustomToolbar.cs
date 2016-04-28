@@ -2,6 +2,8 @@
 using Android.Util;
 using Android.Content;
 using Android.Views;
+using System;
+using Android.Runtime;
 
 namespace Xamarin.Core.Android
 {
@@ -10,6 +12,13 @@ namespace Xamarin.Core.Android
         protected abstract int ToolbarLayoutResourceId { get; }
 
         public abstract string Title { get; set; }
+
+        public abstract string NavigationIcon { set; }
+
+        protected BaseCustomToolbar(IntPtr javaReference, JniHandleOwnership transfer)
+            : base(javaReference, transfer)
+        {
+        }
 
         protected BaseCustomToolbar(Context context)
             : base(context)
@@ -32,7 +41,10 @@ namespace Xamarin.Core.Android
         private void InitToolbar(Context context)
         {
             Inflate(context, ToolbarLayoutResourceId, this);
+            BindToolbarControls();
         }
+
+        protected abstract void BindToolbarControls();
 
         public void Show()
         {

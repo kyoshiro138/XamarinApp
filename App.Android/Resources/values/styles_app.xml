@@ -11,4 +11,13 @@
 	<style name="AppDarkTheme" parent="@style/DarkTheme">
 		<item name="CardStyle">@style/CardView.Dark</item>
 	</style>
+
+	<style name="AppToolbarNavigationButtonStyle" parent="@style/Widget.AppCompat.Toolbar.Button.Navigation">
+	    <item name="android:scaleType">centerInside</item>
+	    <item name="android:background">?attr/selectableItemBackground</item>
+	</style>
+
+	<style name="AppToolbarStyle" parent="@style/Widget.AppCompat.Toolbar">
+	    <item name="android:paddingRight">0dp</item>
+	</style>
 </resources>

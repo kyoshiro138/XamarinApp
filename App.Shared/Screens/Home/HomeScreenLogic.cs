@@ -16,6 +16,7 @@ namespace App.Shared
         public async Task InitializeScreen()
         {
             homeScreen.Toolbar.Title = HomeScreenConst.StringScreenTitle;
+            homeScreen.Toolbar.NavigationIcon = "ic_menu";
             await RequestData();
         }
 

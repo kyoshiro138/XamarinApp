@@ -10,7 +10,7 @@ using Android.Widget;
 
 namespace App.Android
 {
-    public class HomeFragment : AppFragment, IHomeScreen
+    public class HomeFragment : AppFragment, IHomeScreen, View.IOnClickListener
     {
         private AnimationGridView gridPlaces;
 
@@ -52,6 +52,7 @@ namespace App.Android
             DrawerActivity.SetDrawersEnabled(true);
             Toolbar.Show();
 
+            DrawerActivity.Toolbar.SetNavigationOnClickListener(this);
             gridPlaces.ItemClick += GridPlaces_ItemClick;
 
             MainActivity activity = DrawerActivity as MainActivity;
@@ -67,6 +68,7 @@ namespace App.Android
         {
             base.OnPause();
 
+            DrawerActivity.Toolbar.SetNavigationOnClickListener(null);
             gridPlaces.ItemClick -= GridPlaces_ItemClick;
         }
 
@@ -140,6 +142,17 @@ namespace App.Android
             AnimationGridView gridView = e.Parent as AnimationGridView;
             IGridDataSource<TravelPlace> adapter = gridView.Adapter as IGridDataSource<TravelPlace>;
             homeSL.HandlePlaceItemSelection(adapter, e.Position, new PlaceInfoFragment());
+        }
+
+        public void OnClick(View v)
+        {
+            switch (v.Id)
+            {
+                case Resource.Id.btn_toolbar_navigation:
+                    DrawerActivity.OpenDrawer((int)GravityFlags.Left);
+                    break;
+            }
+
         }
     }
 }
